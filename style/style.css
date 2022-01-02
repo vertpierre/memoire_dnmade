@@ -18,6 +18,7 @@
   --color-white: white;
   --background-interviews: hsl(118, 100%, 92%);
   --background-analyses: hsl(152, 80%, 86%);
+  --background-definition: hsl(70, 100%, 86%);
 }
 
 html {
@@ -46,16 +47,24 @@ h1 {
 }
 
 h5 {
-  color: var(--color-title);
   font-family: "Cirrus";
   font-size: 4.8em;
   line-height: 1.4em;
+  color: var(--color-title);
 }
 
 p {
   font-family: "Inter";
   font-weight: 300;
   line-height: 1.2em;
+  color: var(--color-text);
+}
+
+.p-infos {
+  font-family: "Inter";
+  font-size: 1.4em;
+  font-weight: 400;
+  color: var(--color-title);
 }
 
 .text-left {
@@ -73,14 +82,30 @@ p {
 .conteneur-global {
   height: 100vh;
   width: 100vw;
+}
+
+.conteneur-index {
+  width: 100%;
+  height: 100%;
   display: flex;
 }
 
-.pdf-viewer {
+.navigation {
+  position: fixed;
   width: 100%;
-  height: 90%;
+  height: 3em;
+  top: 0;
+  border-bottom: 2px solid var(--color-title);
+  display: flex;
+  padding: 0 1em 0 1em;
+  align-items: center;
+}
+
+.pdf-viewer {
+  width: calc(100% - 2.1em);
+  height: 91%;
   border-radius: 0em;
-  margin: 2vw;
+  margin: 4em 1em 1em 1em;
   border: 2px solid var(--color-fill-darker);
 }
 
@@ -92,7 +117,7 @@ p {
 }
 
 .introduction {
-  padding: 2em;
+  padding: 1em;
   color: var(--color-white);
 }
 
@@ -103,6 +128,7 @@ p {
 
 .introduction p {
   width: 90%;
+  color: var(--color-white);
 }
 
 .conteneur-sections {
@@ -115,7 +141,7 @@ p {
 .memoire-corps,
 .memoire-interviews,
 .barre-infos {
-  border-left: 2px solid var(--color-text);
+  border-left: 2px solid var(--color-title);
 }
 
 .memoire-analyses,
@@ -175,13 +201,13 @@ p {
 }
 
 @media all and (max-width: 1100px) {
-  .conteneur-global {
+  .conteneur-index {
     height: auto;
-    width: 100vw;
+    width: 100%;
     overflow-y: auto;
   }
 
-  .conteneur-global,
+  .conteneur-index,
   .sections,
   .conteneur-sections {
     flex-direction: column;
@@ -208,7 +234,7 @@ p {
   .memoire-corps,
   .memoire-interviews,
   .barre-infos {
-    border-top: 2px solid var(--color-text);
+    border-top: 2px solid var(--color-title);
     border-left: 0px;
     width: 100%;
   }
@@ -230,6 +256,12 @@ p {
 @media all and (max-width: 700px) {
   .conteneur-introduction p {
     width: 80vw;
+  }
+
+  .pdf-viewer {
+    width: calc(100% - 4px);
+    height: 90%;
+    margin: 0;
   }
 
   .titre {

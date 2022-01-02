@@ -6,4 +6,5 @@
   --color-fill-light: hsl(152, 80%, 30%);
   --color-fill-lighter: hsl(152, 80%, 60%);
   --color-fill-lightest: hsl(152, 80%, 86%);
+  --background-definition: hsl(58, 100%, 86%);
 }

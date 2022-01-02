@@ -20,30 +20,27 @@ body {
 
 .print,
 .visibleMediumView,
-#secondaryPrint {
-  display: none;
-}
-
-#toolbarSidebar,
+#secondaryPrint,
 #openFile,
 #print,
 #secondaryPrint,
 #viewBookmark,
-#secondaryViewBookmark {
+#secondaryViewBookmark,
+#viewAttachments,
+#viewLayers,
+#outlineOptionsContainer {
   display: none;
 }
 
 #sidebarContainer {
-  top: -6px;
+  top: 36px;
 }
 
 button:hover,
-label:hover {
+label:hover,
+#scaleSelect:hover,
+#scaleSelectContainer:hover {
   cursor: pointer;
-}
-
-.overlayButton {
-  background-color: var(--color-fill-light);
 }
 
 #overlayContainer > .container > .dialog,
@@ -115,7 +112,11 @@ html[dir="ltr"] #findInput,
 .toolbarLabel,
 .thumbnailSelectionRing,
 html[dir="ltr"] .findbar .splitToolbarButton > .findNext,
-#overlayContainer > .container > .dialog {
+#overlayContainer > .container > .dialog,
+.treeItemToggler:hover,
+.treeItemToggler:hover + a,
+.treeItemToggler:hover ~ .treeItems,
+.treeItem > a:hover {
   border-radius: 0em;
 }
 
@@ -138,27 +139,53 @@ html[dir="ltr"] #toolbarSidebar,
   outline: 2px solid var(--color-fill-darker);
 }
 
+html[dir="ltr"] .treeItem > a {
+  padding: 2px 0 3px 4px;
+}
+
+.treeItem > a {
+  margin: 0 0 4px 0;
+}
+
+.treeItem > a:hover {
+  background-color: var(--background-definition);
+  outline: 2px solid var(--color-fill-darker);
+}
+
 #toolbarContainer,
 html[dir="ltr"] #toolbarSidebar,
 .doorHanger {
-  padding: 2px;
+  padding: 2px 0 2px 2px;
 }
 
 html[dir="ltr"] #toolbarSidebar {
-  padding-top: 6px;
+  padding-top: 4px;
 }
 
 #sidebarContent {
-  top: 40px;
-  padding: 2px;
+  top: 38px;
+  padding-right: 2px;
   background-color: var(--color-fill-darker);
   border-top: 2px solid var(--color-fill-darker);
   border-right: 2px solid var(--color-fill-darker);
 }
 
+.overlayButton {
+  background-color: var(--color-fill-light);
+}
+
+#outlineView,
+.treeItem > a:focus {
+  background-color: var(--background-definition);
+}
+
+#outlineView a {
+  color: hsl(150, 100%, 40%);
+}
+
 .toolbarField {
   padding: 4px;
-  margin: 1px;
+  margin: 2px;
 }
 
 .toolbarField {
@@ -184,10 +211,6 @@ html[dir="ltr"] #toolbarSidebar {
 
 .findbar {
   min-width: 0;
-}
-
-.pdfViewer {
-  border-right: 2px solid var(--color-fill-darker);
 }
 
 .pdfViewer .page {
@@ -236,6 +259,10 @@ html[dir="ltr"] .secondaryToolbar {
 
 #secondaryToolbarButtonContainer button {
   margin: 2px;
+}
+
+.thumbnailSelectionRing {
+  padding: 8px;
 }
 
 @media all and (max-width: 840px) {
