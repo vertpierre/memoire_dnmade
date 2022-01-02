@@ -1,0 +1,8 @@
+:root {
+  --color-fill-darker: hsl(180, 80%, 15%);
+  --color-fill-dark: hsl(180, 45%, 25%);
+  --toolbar-bg-color: hsl(180, 45%, 25%);
+  --doorhanger-bg-color: hsl(180, 45%, 25%);
+  --color-fill-light: hsl(180, 40%, 30%);
+  --color-fill-lighter: hsl(180, 25%, 75%);
+}

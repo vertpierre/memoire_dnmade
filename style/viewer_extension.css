@@ -1,0 +1,252 @@
+* {
+  scrollbar-color: var(--color-fill-lighter) var(--color-fill-light);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-fill-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-fill-lighter);
+}
+
+body {
+  background-color: var(--color-fill-lightest);
+  overflow: hidden;
+}
+
+.print,
+.visibleMediumView,
+#secondaryPrint {
+  display: none;
+}
+
+#toolbarSidebar,
+#openFile,
+#print,
+#secondaryPrint,
+#viewBookmark,
+#secondaryViewBookmark {
+  display: none;
+}
+
+#sidebarContainer {
+  top: -6px;
+}
+
+button:hover,
+label:hover {
+  cursor: pointer;
+}
+
+.overlayButton {
+  background-color: var(--color-fill-light);
+}
+
+#overlayContainer > .container > .dialog,
+#sidebarContainer,
+#findbar,
+#secondaryToolbar,
+#toolbarContainer,
+#toolbarSidebar,
+#errorWrapper,
+.dropdownToolbarButton > select > option,
+.toolbarField,
+.toolbarButton,
+.dropdownToolbarButton,
+.secondaryToolbarButton,
+.toolbarLabel,
+html[dir="ltr"] .secondaryToolbar,
+.dropdownToolbarButton,
+.splitToolbarButton > .toolbarButton:focus,
+.findbar input:focus + label,
+.toolbarButton:focus,
+.toolbarButton.textButton:focus,
+.findbar .splitToolbarButton > .toolbarButton,
+html[dir="ltr"] .findbar .splitToolbarButton > .findNext {
+  background-color: var(--color-fill-dark);
+}
+
+.overlayButton:hover,
+.overlayButton:focus,
+.splitToolbarButton > .toolbarButton:hover,
+.dropdownToolbarButton:hover,
+.toolbarButton.textButton:hover,
+.toolbarButton:hover,
+.secondaryToolbarButton:hover,
+#zoomOut:hover,
+#zoomIn:hover,
+#scaleSelect:hover,
+#scaleSelect,
+option:hover,
+button:hover,
+label:hover,
+.findbar label:hover,
+option,
+.findbar .splitToolbarButton > .toolbarButton:hover,
+html[dir="ltr"] .findbar .splitToolbarButton > .findNext:hover {
+  background-color: var(--color-fill-darker);
+}
+
+.secondaryToolbarButton:hover,
+#zoomOut:hover,
+#zoomIn:hover,
+.toolbarButton:hover,
+.toolbarButton:focus,
+.toolbarField,
+.overlayButton,
+button:hover,
+label:hover,
+#scaleSelect,
+#scaleSelect:hover,
+option:hover,
+.toolbarButton,
+.dropdownToolbarButton,
+.secondaryToolbarButton,
+.overlayButton,
+.toolbarLabel,
+.doorHanger,
+.doorHangerRight,
+.findbar .splitToolbarButton > .toolbarButton,
+html[dir="ltr"] #findInput,
+.toolbarLabel,
+.thumbnailSelectionRing,
+html[dir="ltr"] .findbar .splitToolbarButton > .findNext,
+#overlayContainer > .container > .dialog {
+  border-radius: 0em;
+}
+
+html[dir="ltr"] #toolbarViewerRight,
+html[dir="rtl"] #toolbarViewerLeft,
+html[dir="ltr"] #toolbarSidebarRight,
+html[dir="rtl"] #toolbarSidebarLeft {
+  margin-right: 4px;
+}
+
+#toolbarContainer,
+html[dir="ltr"] #toolbarSidebar,
+.doorHanger,
+.doorHangerRight,
+.textLayer,
+.thumbnailImage,
+#overlayContainer > .container > .dialog {
+  border: none;
+  box-shadow: none;
+  outline: 2px solid var(--color-fill-darker);
+}
+
+#toolbarContainer,
+html[dir="ltr"] #toolbarSidebar,
+.doorHanger {
+  padding: 2px;
+}
+
+html[dir="ltr"] #toolbarSidebar {
+  padding-top: 6px;
+}
+
+#sidebarContent {
+  top: 40px;
+  padding: 2px;
+  background-color: var(--color-fill-darker);
+  border-top: 2px solid var(--color-fill-darker);
+  border-right: 2px solid var(--color-fill-darker);
+}
+
+.toolbarField {
+  padding: 4px;
+  margin: 1px;
+}
+
+.toolbarField {
+  border: 2px solid var(--color-fill-light);
+}
+
+.toolbarField:focus {
+  border: 2px solid var(--color-fill-lightest);
+}
+
+#thumbnailView {
+  background-color: var(--color-fill-darker);
+  width: auto;
+}
+
+#viewerContainer {
+  top: 36px;
+}
+
+#sidebarContent {
+  overflow-x: hidden;
+}
+
+.findbar {
+  min-width: 0;
+}
+
+.pdfViewer {
+  border-right: 2px solid var(--color-fill-darker);
+}
+
+.pdfViewer .page {
+  border-image: none;
+}
+
+.splitToolbarButtonSeparator,
+.findbar .splitToolbarButtonSeparator,
+.verticalToolbarSeparator {
+  background-color: var(--color-fill-light);
+  width: 2px;
+  border-radius: 2px;
+}
+
+.horizontalToolbarSeparator,
+.dialog .separator {
+  height: 2px;
+  background-color: var(--color-fill-light);
+  border: none;
+}
+
+.findbar .splitToolbarButton > .findNext,
+.findbar .splitToolbarButton > .findPrevious {
+  width: 28px;
+}
+
+.findbar .splitToolbarButton > .toolbarButton,
+html[dir="ltr"] .findbar .splitToolbarButton > .findNext {
+  border: none;
+}
+
+.findbar {
+  top: 34px;
+  overflow: hidden;
+}
+
+html[dir="ltr"] .secondaryToolbar {
+  top: 34px;
+  right: -2px;
+  overflow: hidden;
+}
+
+#secondaryToolbarButtonContainer {
+  overflow-x: hidden;
+}
+
+#secondaryToolbarButtonContainer button {
+  margin: 2px;
+}
+
+@media all and (max-width: 840px) {
+  #outerContainer .hiddenLargeView,
+  #outerContainer .hiddenMediumView {
+    display: none;
+  }
+}
+
+@media all and (max-width: 700px) {
+  #outerContainer .visibleMediumView {
+    display: none;
+  }
+}

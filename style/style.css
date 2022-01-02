@@ -1,0 +1,239 @@
+@font-face {
+  font-family: "Inter";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: oblique 0deg 10deg;
+  src: url("../font/Inter.var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cirrus";
+  font-display: swap;
+  src: url("../font/CirrusCumulus.woff") format("woff");
+}
+
+:root {
+  --color-title: hsl(160, 88%, 40%);
+  --color-text: hsl(200, 98%, 32%);
+  --color-white: white;
+  --background-interviews: hsl(118, 100%, 92%);
+  --background-analyses: hsl(152, 80%, 86%);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+* {
+  scrollbar-color: var(--color-title) var(--color-text);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-text);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-title);
+}
+
+h1 {
+  font-family: "Cirrus";
+  font-size: 4.2em;
+  line-height: 1.2em;
+}
+
+h5 {
+  color: var(--color-title);
+  font-family: "Cirrus";
+  font-size: 4.8em;
+  line-height: 1.4em;
+}
+
+p {
+  font-family: "Inter";
+  font-weight: 300;
+  line-height: 1.2em;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.conteneur-global {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 90%;
+  border-radius: 0em;
+  margin: 2vw;
+  border: 2px solid var(--color-fill-darker);
+}
+
+.conteneur-introduction {
+  height: 100%;
+  width: 40%;
+  overflow-y: auto;
+  background-color: var(--color-text);
+}
+
+.introduction {
+  padding: 2em;
+  color: var(--color-white);
+}
+
+.introduction h1 {
+  margin-bottom: 1em;
+  color: var(--color-title);
+}
+
+.introduction p {
+  width: 90%;
+}
+
+.conteneur-sections {
+  height: 100%;
+  width: 60%;
+  display: flex;
+}
+
+.memoire-analyses,
+.memoire-corps,
+.memoire-interviews,
+.barre-infos {
+  border-left: 2px solid var(--color-text);
+}
+
+.memoire-analyses,
+.memoire-corps,
+.memoire-interviews {
+  flex-grow: 1;
+  height: 100%;
+  transition: flex-grow 0.4s;
+}
+
+.memoire-corps:hover,
+.memoire-interviews:hover,
+.memoire-analyses:hover {
+  flex-grow: 8;
+}
+
+.background-corps {
+  background-color: var(--color-white);
+}
+
+.background-interviews {
+  background-color: var(--background-interviews);
+}
+
+.background-analyses {
+  background-color: var(--background-analyses);
+}
+
+.sections {
+  display: flex;
+}
+
+.sections a {
+  display: flex;
+  flex-grow: 1;
+}
+
+.conteneur-titre {
+  position: relative;
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titre {
+  position: absolute;
+  right: 0;
+  padding: 1em;
+  width: 34vw;
+}
+
+.barre-infos {
+  height: 100%;
+  width: 3em;
+}
+
+@media all and (max-width: 1100px) {
+  .conteneur-global {
+    height: auto;
+    width: 100vw;
+    overflow-y: auto;
+  }
+
+  .conteneur-global,
+  .sections,
+  .conteneur-sections {
+    flex-direction: column;
+  }
+
+  .conteneur-introduction,
+  .conteneur-sections {
+    width: 100%;
+  }
+
+  .introduction {
+    height: max-content;
+  }
+
+  .conteneur-introduction p {
+    width: 60vw;
+  }
+
+  .conteneur-titre {
+    height: 23em;
+  }
+
+  .memoire-analyses,
+  .memoire-corps,
+  .memoire-interviews,
+  .barre-infos {
+    border-top: 2px solid var(--color-text);
+    border-left: 0px;
+    width: 100%;
+  }
+
+  .barre-infos {
+    height: 3em;
+  }
+
+  .conteneur-introduction {
+    height: max-content;
+  }
+
+  .titre {
+    left: 0;
+    width: 50vw;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .conteneur-introduction p {
+    width: 80vw;
+  }
+
+  .titre {
+    left: 0;
+    width: 90vw;
+  }
+}
