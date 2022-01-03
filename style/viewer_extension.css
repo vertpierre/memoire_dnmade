@@ -148,7 +148,7 @@ html[dir="ltr"] .treeItem > a {
 }
 
 .treeItem > a:hover {
-  background-color: var(--background-definition);
+  background-color: var(--background-link);
   outline: 2px solid var(--color-fill-darker);
 }
 
@@ -176,7 +176,7 @@ html[dir="ltr"] #toolbarSidebar {
 
 #outlineView,
 .treeItem > a:focus {
-  background-color: var(--background-definition);
+  background-color: var(--background-link);
 }
 
 #outlineView a {
@@ -276,4 +276,10 @@ html[dir="ltr"] .secondaryToolbar {
   #outerContainer .visibleMediumView {
     display: none;
   }
+}
+
+.annotationLayer .linkAnnotation > a:hover,
+.annotationLayer .buttonWidgetAnnotation.pushButton > a:hover {
+  background-color: hsl(58, 100%, 50%);
+  box-shadow: none;
 }

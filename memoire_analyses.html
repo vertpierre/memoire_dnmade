@@ -10,18 +10,25 @@
     <title>Memoire Graphisme Libre</title>
   </head>
   <body>
-    <header>
-      <div class="navigation background-analyses">
-        <a href="./memoire_index.html">
-          <p class="p-infos"></p>
-        </a>
-      </div>
-    </header>
+    <nav class="background-analyses">
+      <a href="./memoire_index.html">
+        <p class="p-infos"></p>
+      </a>
+    </nav>
     <div class="conteneur-global background-analyses">
-      <iframe
-        class="pdf-viewer"
-        src="./pdf_viewer/web/viewer_analyses.html?file=%2Fimport%2Fpdf%2Ffiches_memoire_v2.pdf"
-      ></iframe>
+      <div class="conteneur-pdf">
+        <iframe
+          class="pdf-viewer"
+          src="./pdf_viewer/web/viewer_analyses.html?file=%2Fimport%2Fpdf%2Ffiches_memoire_v2.pdf"
+        ></iframe>
+        <p>
+          Ce lecteur PDF est un fork du
+          <a href="https://mozilla.github.io/pdf.js/" target="_blank"
+            >lecteur de Firefox</a
+          >
+          personnalisé pour mon mémoire.
+        </p>
+      </div>
     </div>
   </body>
 </html>

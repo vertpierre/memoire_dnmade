@@ -22,7 +22,14 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
 }
 
 * {
@@ -40,10 +47,21 @@ html {
   background: var(--color-title);
 }
 
+.tanuki-logo {
+  fill: var(--color-title);
+}
+
 h1 {
   font-family: "Cirrus";
   font-size: 4.2em;
   line-height: 1.2em;
+}
+
+h2 {
+  font-family: "Cirrus";
+  font-size: 1.6em;
+  line-height: 1.2em;
+  color: var(--color-title);
 }
 
 h5 {
@@ -60,10 +78,8 @@ p {
   color: var(--color-text);
 }
 
-.p-infos {
-  font-family: "Inter";
-  font-size: 1.4em;
-  font-weight: 400;
+a,
+a:visited {
   color: var(--color-title);
 }
 
@@ -81,7 +97,9 @@ p {
 
 .conteneur-global {
   height: 100vh;
-  width: 100vw;
+  width: calc(100vw - 4em);
+  margin-left: 4em;
+  overflow-x: hidden;
 }
 
 .conteneur-index {
@@ -90,34 +108,57 @@ p {
   display: flex;
 }
 
-.navigation {
+.vertical {
+  writing-mode: sideways-lr;
+}
+
+nav,
+.barre-infos {
+  width: 2.4em;
+  padding: 0.8em 0.8em 0.8em 0.7em;
+  display: grid;
+  align-content: space-between;
+}
+
+nav {
+  height: calc(100vh - 1.6em);
   position: fixed;
-  width: 100%;
-  height: 3em;
-  top: 0;
-  border-bottom: 2px solid var(--color-title);
-  display: flex;
-  padding: 0 1em 0 1em;
-  align-items: center;
+  border-right: 2px solid var(--color-title);
+}
+
+nav p {
+  font-family: "Inter";
+  font-size: 1.8em;
+  font-weight: 300;
+  color: var(--color-title);
+}
+
+.conteneur-pdf {
+  height: 100%;
+  padding: 1em;
+}
+
+.conteneur-pdf p {
+  font-size: 0.8em;
+  padding: 0.1em 0;
 }
 
 .pdf-viewer {
-  width: calc(100% - 2.1em);
-  height: 91%;
+  width: 100%;
+  height: 90%;
   border-radius: 0em;
-  margin: 4em 1em 1em 1em;
   border: 2px solid var(--color-fill-darker);
 }
 
 .conteneur-introduction {
   height: 100%;
-  width: 40%;
+  width: 36%;
   overflow-y: auto;
   background-color: var(--color-text);
 }
 
 .introduction {
-  padding: 1em;
+  padding: 0.4em 1.6em;
   color: var(--color-white);
 }
 
@@ -127,14 +168,16 @@ p {
 }
 
 .introduction p {
-  width: 90%;
+  width: 80%;
   color: var(--color-white);
+  margin-bottom: 1em;
 }
 
 .conteneur-sections {
   height: 100%;
-  width: 60%;
+  width: 64%;
   display: flex;
+  overflow-x: hidden;
 }
 
 .memoire-analyses,
@@ -156,6 +199,10 @@ p {
 .memoire-interviews:hover,
 .memoire-analyses:hover {
   flex-grow: 8;
+}
+
+.background-index {
+  background-color: var(--color-text);
 }
 
 .background-corps {
@@ -195,16 +242,30 @@ p {
   width: 34vw;
 }
 
-.barre-infos {
-  height: 100%;
-  width: 3em;
+.conteneur-interview {
+  display: grid;
+  width: 60%;
+  grid-template-columns: 1fr 1.2fr;
+  margin: 1.6em 4em;
+  gap: 4em;
 }
+
+.conteneur-interview h2 {
+  margin: 1.6em 0 0.8em 0;
+}
+
+/********************************************************/
 
 @media all and (max-width: 1100px) {
   .conteneur-index {
     height: auto;
     width: 100%;
     overflow-y: auto;
+  }
+
+  .conteneur-interview {
+    width: 75%;
+    grid-template-columns: 1fr 1.4fr;
   }
 
   .conteneur-index,
@@ -254,14 +315,50 @@ p {
 }
 
 @media all and (max-width: 700px) {
+  .conteneur-global {
+    margin-left: 0;
+    margin-top: 4em;
+    width: 100vw;
+  }
+
+  .conteneur-interview {
+    width: 90%;
+    grid-template-columns: 1fr 1.8fr;
+    margin: 0.8em 2em;
+    gap: 2em;
+  }
+
+  .conteneur-interview h2 {
+    margin: 0.8em 0 0.4em 0;
+  }
+
+  .vertical {
+    writing-mode: inherit;
+    display: none;
+  }
+
+  nav,
+  .barre-infos {
+    width: 100%;
+    height: 2.4em;
+    padding: 0.8em 0.8em 0.7em 0.8em;
+    display: grid;
+  }
+
+  nav {
+    position: fixed;
+    z-index: 10;
+    border-bottom: 2px solid var(--color-title);
+  }
+
   .conteneur-introduction p {
     width: 80vw;
   }
 
-  .pdf-viewer {
+  .conteneur-pdf {
     width: calc(100% - 4px);
-    height: 90%;
-    margin: 0;
+    height: 99%;
+    padding: 0;
   }
 
   .titre {
