@@ -48,6 +48,7 @@ body {
 }
 
 .tanuki-logo {
+  height: 2.3em;
   fill: var(--color-title);
 }
 
@@ -244,8 +245,8 @@ nav p {
 
 .conteneur-interview {
   display: grid;
-  width: 60%;
-  grid-template-columns: 1fr 1.2fr;
+  width: 70%;
+  grid-template-columns: 1fr minmax(40vw, 1.2fr);
   margin: 1.6em 4em;
   gap: 4em;
 }
@@ -264,7 +265,7 @@ nav p {
   }
 
   .conteneur-interview {
-    width: 75%;
+    width: 80%;
     grid-template-columns: 1fr 1.4fr;
   }
 
@@ -315,16 +316,26 @@ nav p {
 }
 
 @media all and (max-width: 700px) {
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.2em;
+  }
+
+  h5 {
+    font-size: 3.6em;
+    line-height: 1.4em;
+  }
+
   .conteneur-global {
     margin-left: 0;
     margin-top: 4em;
     width: 100vw;
+    height: calc(100vh - 4em);
   }
 
   .conteneur-interview {
-    width: 90%;
-    grid-template-columns: 1fr 1.8fr;
-    margin: 0.8em 2em;
+    grid-template-columns: 1fr;
+    margin: 0.8em;
     gap: 2em;
   }
 
@@ -356,9 +367,13 @@ nav p {
   }
 
   .conteneur-pdf {
-    width: calc(100% - 4px);
+    width: calc(100%);
     height: 99%;
     padding: 0;
+  }
+
+  .pdf-viewer {
+    border: 0;
   }
 
   .titre {
