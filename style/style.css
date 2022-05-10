@@ -2,7 +2,6 @@
   font-family: "Inter";
   font-weight: 100 900;
   font-display: swap;
-  font-style: oblique 0deg 10deg;
   src: url("../font/Inter.var.woff2") format("woff2");
 }
 
@@ -19,6 +18,7 @@
   --background-interviews: hsl(118, 100%, 92%);
   --background-analyses: hsl(152, 80%, 86%);
   --background-definition: hsl(70, 100%, 86%);
+  --line-weight: 2px;
 }
 
 html {
@@ -47,21 +47,62 @@ body {
   background: var(--color-title);
 }
 
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: -100vh;
+}
+
+.simplebar-track.simplebar-vertical {
+  width: 20px;
+}
+
+.simplebar-scrollbar:before {
+  background: var(--color-title);
+  opacity: 1;
+  border-radius: 0;
+  left: 8.5px;
+  height: calc(100% + 100vh);
+  width: var(--line-weight);
+}
+
+.simplebar-scrollbar:after {
+  position: absolute;
+  content: "";
+  background: var(--color-title);
+  width: 16px;
+  right: var(--line-weight);
+  bottom: 0;
+  top: 0;
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+
 .tanuki-logo {
-  height: 2.3em;
   fill: var(--color-title);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2em;
 }
 
 h1 {
   font-family: "Cirrus";
   font-size: 4.2em;
-  line-height: 1.2em;
 }
 
 h2 {
   font-family: "Cirrus";
-  font-size: 1.6em;
-  line-height: 1.2em;
+  font-size: 1.8em;
+  color: var(--color-title);
+}
+
+.sommaire-interview li::before,
+h3 {
+  font-family: "Cirrus";
+  font-size: 1.46em;
   color: var(--color-title);
 }
 
@@ -72,10 +113,12 @@ h5 {
   color: var(--color-title);
 }
 
+h6,
 p {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-weight: 300;
-  line-height: 1.2em;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
   color: var(--color-text);
 }
 
@@ -113,6 +156,10 @@ a:visited {
   writing-mode: sideways-lr;
 }
 
+br {
+  margin-bottom: 10px;
+}
+
 nav,
 .barre-infos {
   width: 2.4em;
@@ -124,10 +171,11 @@ nav,
 nav {
   height: calc(100vh - 1.6em);
   position: fixed;
-  border-right: 2px solid var(--color-title);
+  z-index: 5;
+  border-right: var(--line-weight) solid var(--color-title);
 }
 
-nav p {
+nav span {
   font-family: "Inter";
   font-size: 1.8em;
   font-weight: 300;
@@ -147,8 +195,8 @@ nav p {
 .pdf-viewer {
   width: 100%;
   height: 90%;
-  border-radius: 0em;
-  border: 2px solid var(--color-fill-darker);
+  border-radius: 0;
+  border: var(--line-weight) solid var(--color-fill-darker);
 }
 
 .conteneur-introduction {
@@ -185,7 +233,7 @@ nav p {
 .memoire-corps,
 .memoire-interviews,
 .barre-infos {
-  border-left: 2px solid var(--color-title);
+  border-left: var(--line-weight) solid var(--color-title);
 }
 
 .memoire-analyses,
@@ -243,11 +291,24 @@ nav p {
   width: 34vw;
 }
 
+.steps {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  border-left: var(--line-weight) solid var(--color-title);
+}
+
+.step {
+  box-shadow: 0 2px 0 0 var(--color-title);
+}
+
 .conteneur-interview {
   display: grid;
-  width: 70%;
-  grid-template-columns: 1fr minmax(40vw, 1.2fr);
-  margin: 1.6em 4em;
+  grid-template-columns: 24vw 36vw;
   gap: 4em;
 }
 
@@ -255,7 +316,154 @@ nav p {
   margin: 1.6em 0 0.8em 0;
 }
 
-/********************************************************/
+.sommaire-interview {
+  counter-reset: mega-step;
+  border-right: var(--line-weight) solid var(--color-title);
+}
+
+.sommaire-interview ol {
+  position: fixed;
+  width: 24vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sommaire-interview li {
+  max-height: 0.8em;
+  overflow: hidden;
+  padding: 0.8em;
+  counter-increment: mega-step;
+  transition: 0.8s max-height 0.1s ease-in-out;
+}
+
+.sommaire-interview li:hover {
+  max-height: 300px;
+}
+
+.sommaire-interview li::before {
+  display: flex;
+  justify-content: flex-end;
+  content: counter(mega-step);
+  position: absolute;
+  width: 1.2em;
+  height: 1em;
+}
+
+.sommaire-interview li h3 {
+  margin: 0 0 0 2.4em;
+}
+
+.conversation-interview {
+  margin-bottom: 10vh;
+}
+
+.conversation-interview p a,
+.conversation-interview a {
+  /* box-shadow: 0 2px 0 0 var(--color-title); */
+  padding-bottom: var(--line-weight);
+  padding-top: var(--line-weight);
+  color: var(--color-title);
+}
+
+.conversation-interview h2:first-child {
+  padding-bottom: 1em;
+}
+
+/* .conversation-interview a::after {
+  content: "•";
+  position: relative;
+  top: -8px;
+  left: -var(--line-weight);
+  color: var(--color-title);
+  font-size: 0.8em;
+  font-family: "Inter";
+} */
+
+/****************************************************! WIKIPEDIA !****************************************************/
+
+.wp-popup {
+  border: var(--line-weight) solid var(--color-title) !important;
+  margin: -var(--line-weight) !important;
+}
+
+.wikipediapreview li {
+  margin: 0 20px 8px 20px;
+}
+
+.wikipediapreview p,
+.wikipediapreview ol,
+.wikipediapreview-footer-cta {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.5rem !important;
+  color: var(--color-text) !important;
+}
+
+.wikipediapreview-footer-cta {
+  color: var(--color-title) !important;
+}
+
+.wp-popup,
+.wikipediapreview {
+  box-shadow: none !important;
+  border-radius: 0rem !important;
+  background-color: var(--background-interviews) !important;
+}
+
+.wikipediapreview-body {
+  background-color: var(--background-interviews) !important;
+  overflow: hidden !important;
+  max-height: 70vh !important;
+  margin-bottom: 4px;
+}
+
+.wikipediapreview-body::after {
+  left: 2px !important;
+  width: calc(100% - 4px) !important;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%) !important;
+  display: none;
+}
+
+.wikipediapreview-gallery {
+  display: none !important;
+}
+
+.wikipediapreview-footer-cta {
+  text-transform: uppercase !important;
+  display: none !important;
+}
+
+.wikipediapreview-header-wordmark-fr {
+  background-color: var(--color-title);
+  background-image: none !important;
+  mask-image: url("https://wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-fr.svg");
+  mask-repeat: no-repeat;
+  mask-position: left;
+  height: 50px !important;
+}
+
+.wikipediapreview-header-closebtn {
+  background-color: var(--color-title);
+  background-image: none !important;
+  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBmaWxsPSIjNTQ1OTVEIiBkPSJNNi4zNjMgNUwyMCAxOC42MzcgMTguNjM3IDIwIDUgNi4zNjN6Ii8+PHBhdGggZmlsbD0iIzcyNzc3RCIgZD0iTTIwIDYuMzYzTDYuMzYzIDIwIDUgMTguNjM3IDE4LjYzNyA1eiIvPjwvZz48L3N2Zz4=");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  height: 50px !important;
+}
+
+.wikipediapreview-header-image {
+  background-color: var(--background-interviews) !important;
+  border: none !important;
+  margin-left: 12px !important;
+  margin-top: 12px !important;
+}
+
+.wikipediapreview-header-wordmark-with-image {
+  margin-top: 0 !important;
+}
+
+/****************************************************! RESPONSIVE !****************************************************/
 
 @media all and (max-width: 1100px) {
   .conteneur-index {
@@ -265,7 +473,7 @@ nav p {
   }
 
   .conteneur-interview {
-    width: 80%;
+    width: 75%;
     grid-template-columns: 1fr 1.4fr;
   }
 
@@ -296,7 +504,7 @@ nav p {
   .memoire-corps,
   .memoire-interviews,
   .barre-infos {
-    border-top: 2px solid var(--color-title);
+    border-top: var(--line-weight) solid var(--color-title);
     border-left: 0px;
     width: 100%;
   }
@@ -316,26 +524,16 @@ nav p {
 }
 
 @media all and (max-width: 700px) {
-  h1 {
-    font-size: 3.2em;
-    line-height: 1.2em;
-  }
-
-  h5 {
-    font-size: 3.6em;
-    line-height: 1.4em;
-  }
-
   .conteneur-global {
     margin-left: 0;
     margin-top: 4em;
     width: 100vw;
-    height: calc(100vh - 4em);
   }
 
   .conteneur-interview {
-    grid-template-columns: 1fr;
-    margin: 0.8em;
+    width: 90%;
+    grid-template-columns: 1fr 1.8fr;
+    margin: 0.8em 2em;
     gap: 2em;
   }
 
@@ -359,7 +557,7 @@ nav p {
   nav {
     position: fixed;
     z-index: 10;
-    border-bottom: 2px solid var(--color-title);
+    border-bottom: var(--line-weight) solid var(--color-title);
   }
 
   .conteneur-introduction p {
@@ -367,13 +565,9 @@ nav p {
   }
 
   .conteneur-pdf {
-    width: calc(100%);
+    width: calc(100% - 4px);
     height: 99%;
     padding: 0;
-  }
-
-  .pdf-viewer {
-    border: 0;
   }
 
   .titre {
