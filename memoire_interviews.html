@@ -19,6 +19,7 @@
   </head>
   <body>
     <nav class="background-interviews">
+      <span onclick="sommaire()">OP</span>
       <a href="./memoire_index.html">
         <span class="icon"></span>
       </a>
@@ -26,7 +27,7 @@
     <div data-simplebar class="conteneur-global background-interviews">
       <div class="conteneur-interview">
         <div class="sommaire-interview">
-          <ol>
+          <ol class="opacity">
             <li><h3>Peux-tu faire une présentation en quelques phrases de ton parcours&#8239;?</h3></li>
             <li><h3>Ta thèse est en partie centrée sur le graphisme, comment définirais-tu alors le rôle du design graphique&#8239;?</h3></li>
             <li>
@@ -444,7 +445,7 @@
           </p>
         </div>
       </div>
-      <div class="steps">
+      <div class="steps opacity">
         <div class="step"></div>
         <div class="step"></div>
         <div class="step"></div>
@@ -457,12 +458,13 @@
         <div class="step"></div>
       </div>
     </div>
-    <script src="./js/simplebar.js"></script>
-    <script src="./js/wikipedia_preview.js"></script>
+    <script src="libraries/jquery.min.js"></script>
+    <script src="libraries/simplebar.js"></script>
+    <script src="libraries/wikipedia_preview.js"></script>
+    <script src="js/script.js"></script>
     <script>
-      new SimpleBar(document.getElementById("myElement"));
-    </script>
-    <script>
+      // new SimpleBar(document.getElementById("myElement"));
+
       wikipediaPreview.init({
         detectLinks: true,
       });

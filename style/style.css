@@ -74,6 +74,10 @@ body {
   top: 0;
 }
 
+.simplebar-scrollbar:after:hover {
+  background: red !important;
+}
+
 .simplebar-scrollbar.simplebar-visible:before {
   opacity: 1;
 }
@@ -180,6 +184,7 @@ nav span {
   font-size: 1.8em;
   font-weight: 300;
   color: var(--color-title);
+    cursor: pointer;
 }
 
 .conteneur-pdf {
@@ -293,6 +298,7 @@ nav span {
 
 .steps {
   position: fixed;
+  z-index: 1;
   right: 0;
   top: 0;
   width: 20px;
@@ -300,50 +306,57 @@ nav span {
   display: grid;
   grid-template-rows: repeat(10, 1fr);
   border-left: var(--line-weight) solid var(--color-title);
+  /* opacity: 0;
+  transition: opacity 0.4s ease-in-out; */
 }
+
+/* .steps:hover {
+  opacity: 1;
+} */
 
 .step {
   box-shadow: 0 2px 0 0 var(--color-title);
 }
 
-.conteneur-interview {
-  display: grid;
-  grid-template-columns: 24vw 36vw;
-  gap: 4em;
+.opacity {
+  transition: opacity 0.4s ease-in-out;
 }
 
-.conteneur-interview h2 {
-  margin: 1.6em 0 0.8em 0;
+.conteneur-interview {
+  width: 60vw;
 }
 
 .sommaire-interview {
   counter-reset: mega-step;
-  border-right: var(--line-weight) solid var(--color-title);
 }
 
 .sommaire-interview ol {
   position: fixed;
   width: 24vw;
   height: 100vh;
-  overflow-y: auto;
+  overflow-x: hidden;
+  top: 0;
+  border-right: var(--line-weight) solid var(--color-title);
 }
 
 .sommaire-interview li {
-  max-height: 0.8em;
+  max-height: 1.6em;
   overflow: hidden;
-  padding: 0.8em;
+  margin: 0.6em;
   counter-increment: mega-step;
-  transition: 0.8s max-height 0.1s ease-in-out;
+  transition: 0.5s max-height ease-in-out;
 }
 
 .sommaire-interview li:hover {
   max-height: 300px;
+  cursor: pointer;
+  transition: 1s max-height ease-in-out;
 }
 
 .sommaire-interview li::before {
+  content: counter(mega-step);
   display: flex;
   justify-content: flex-end;
-  content: counter(mega-step);
   position: absolute;
   width: 1.2em;
   height: 1em;
@@ -355,6 +368,13 @@ nav span {
 
 .conversation-interview {
   margin-bottom: 10vh;
+  width: 36vw;
+  margin-left: 26vw;
+  position: relative;
+}
+
+.conversation-interview h2 {
+  margin: 1.6em 0 0.8em 0;
 }
 
 .conversation-interview p a,
@@ -465,7 +485,7 @@ nav span {
 
 /****************************************************! RESPONSIVE !****************************************************/
 
-@media all and (max-width: 1100px) {
+/* @media all and (max-width: 1100px) {
   .conteneur-index {
     height: auto;
     width: 100%;
@@ -574,4 +594,4 @@ nav span {
     left: 0;
     width: 90vw;
   }
-}
+} */
