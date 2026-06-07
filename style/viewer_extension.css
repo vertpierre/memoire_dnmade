@@ -1,6 +1,12 @@
+/* ==========================================================================
+   PDF.js viewer theme (uses THEME VARIABLES from style.css per page)
+   ========================================================================== */
+
+/* Base: scrollbars, body */
 * {
   scrollbar-color: var(--color-fill-lighter) var(--color-fill-light);
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  font-size: 1rem !important;
 }
 
 ::-webkit-scrollbar {
@@ -18,6 +24,15 @@ body {
   overflow: hidden;
 }
 
+/* Layout: sidebar, canvas */
+#sidebarContainer {
+  top: 36px !important;
+}
+
+.canvasWrapper {
+  outline: 1px solid hsla(0, 0%, 0%, 0.1);
+}
+
 .print,
 .visibleMediumView,
 #secondaryPrint,
@@ -32,10 +47,7 @@ body {
   display: none;
 }
 
-#sidebarContainer {
-  top: 36px;
-}
-
+/* Toolbar & UI: colors, borders, hover */
 button:hover,
 label:hover,
 #scaleSelect:hover,
@@ -136,7 +148,7 @@ html[dir="ltr"] #toolbarSidebar,
 #overlayContainer > .container > .dialog {
   border: none;
   box-shadow: none;
-  outline: 2px solid var(--color-fill-darker);
+  outline: none;
 }
 
 html[dir="ltr"] .treeItem > a {
@@ -145,11 +157,26 @@ html[dir="ltr"] .treeItem > a {
 
 .treeItem > a {
   margin: 0 0 4px 0;
+  color: color-mix(in srgb, var(--color-title) 60%, hsl(120, 100%, 50%));
 }
 
-.treeItem > a:hover {
-  background-color: var(--background-link);
-  outline: 2px solid var(--color-fill-darker);
+.treeItem.selected > a:hover,
+.treeItem.selected > a:focus,
+.treeItem.selected > a:focus-visible,
+.treeItem.selected > a:focus-within,
+.treeItem.selected > a:active,
+.treeItem.selected > a:visited,
+.treeItem.selected > a:target,
+.treeItem > a:hover,
+.treeItem > a:focus,
+.treeItem > a:focus-visible,
+.treeItem > a:focus-within,
+.treeItem > a:active,
+.treeItem > a:visited,
+.treeItem > a:target {
+  background-color: var(--background-link) !important;
+  outline: none !important;
+  color: var(--color-title) !important;
 }
 
 #toolbarContainer,
@@ -166,8 +193,8 @@ html[dir="ltr"] #toolbarSidebar {
   top: 38px;
   padding-right: 2px;
   background-color: var(--color-fill-darker);
-  border-top: 2px solid var(--color-fill-darker);
-  border-right: 2px solid var(--color-fill-darker);
+  border-top: none;
+  border-right: none;
 }
 
 .overlayButton {
@@ -179,21 +206,15 @@ html[dir="ltr"] #toolbarSidebar {
   background-color: var(--background-link);
 }
 
-#outlineView a {
-  color: hsl(150, 100%, 40%);
-}
-
 .toolbarField {
   padding: 4px;
-  margin: 2px;
-}
-
-.toolbarField {
-  border: 2px solid var(--color-fill-light);
+  margin-left: 16px;
+  background-color: var(--color-fill-darker);
+  border: none;
 }
 
 .toolbarField:focus {
-  border: 2px solid var(--color-fill-lightest);
+  border: none;
 }
 
 #thumbnailView {

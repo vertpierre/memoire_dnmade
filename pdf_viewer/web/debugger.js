@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 
-"use strict";
-
 // eslint-disable-next-line no-var
 var FontInspector = (function FontInspectorClosure() {
   let fonts;
@@ -34,7 +32,7 @@ var FontInspector = (function FontInspectorClosure() {
   }
   function selectFont(fontName, show) {
     const divs = document.querySelectorAll(
-      `span[${fontAttribute}=${fontName}]`
+      `span[${fontAttribute}=${fontName}]`,
     );
     for (const div of divs) {
       div.className = show ? "debuggerShowText" : "debuggerHideText";
@@ -119,21 +117,21 @@ var FontInspector = (function FontInspectorClosure() {
         download.href = url[1];
       } else if (fontObj.data) {
         download.href = URL.createObjectURL(
-          new Blob([fontObj.data], { type: fontObj.mimeType })
+          new Blob([fontObj.data], { type: fontObj.mimeType }),
         );
       }
       download.textContent = "Download";
       const logIt = document.createElement("a");
       logIt.href = "";
       logIt.textContent = "Log";
-      logIt.addEventListener("click", function (event) {
+      logIt.addEventListener("click", (event) => {
         event.preventDefault();
         console.log(fontObj);
       });
       const select = document.createElement("input");
       select.setAttribute("type", "checkbox");
       select.dataset.fontName = fontName;
-      select.addEventListener("click", function () {
+      select.addEventListener("click", () => {
         selectFont(fontName, select.checked);
       });
       font.appendChild(select);
@@ -333,7 +331,7 @@ const Stepper = (function StepperClosure() {
       const chunk = document.createDocumentFragment();
       const operatorsToDisplay = Math.min(
         MAX_OPERATORS_COUNT,
-        operatorList.fnArray.length
+        operatorList.fnArray.length,
       );
       for (let i = this.operatorListIdx; i < operatorsToDisplay; i++) {
         const line = c("tr");
@@ -407,9 +405,7 @@ const Stepper = (function StepperClosure() {
     }
 
     getNextBreakPoint() {
-      this.breakPoints.sort(function (a, b) {
-        return a - b;
-      });
+      this.breakPoints.sort((a, b) => a - b);
       for (let i = 0; i < this.breakPoints.length; i++) {
         if (this.breakPoints[i] > this.currentIdx) {
           return this.breakPoints[i];
@@ -422,7 +418,7 @@ const Stepper = (function StepperClosure() {
       StepperManager.selectStepper(this.pageIndex, true);
       this.currentIdx = idx;
 
-      const listener = evt => {
+      const listener = (evt) => {
         switch (evt.keyCode) {
           case 83: // step
             document.removeEventListener("keydown", listener);
@@ -501,9 +497,7 @@ var Stats = (function Stats() {
       wrapper.appendChild(title);
       wrapper.appendChild(statsDiv);
       stats.push({ pageNumber, div: wrapper });
-      stats.sort(function (a, b) {
-        return a.pageNumber - b.pageNumber;
-      });
+      stats.sort((a, b) => a.pageNumber - b.pageNumber);
       clear(this.panel);
       for (let i = 0, ii = stats.length; i < ii; ++i) {
         this.panel.appendChild(stats[i].div);
@@ -535,7 +529,7 @@ window.PDFBug = (function PDFBugClosure() {
       }
       if (!all) {
         // Sort the tools by the order they are enabled.
-        tools.sort(function (a, b) {
+        tools.sort((a, b) => {
           let indexA = ids.indexOf(a.id);
           indexA = indexA < 0 ? tools.length : indexA;
           let indexB = ids.indexOf(b.id);
@@ -571,7 +565,7 @@ window.PDFBug = (function PDFBugClosure() {
 
       // Initialize all the debugging tools.
       const tools = this.tools;
-      const self = this;
+
       for (let i = 0; i < tools.length; ++i) {
         const tool = tools[i];
         const panel = document.createElement("div");
@@ -579,12 +573,10 @@ window.PDFBug = (function PDFBugClosure() {
         panelButton.textContent = tool.name;
         panelButton.addEventListener(
           "click",
-          (function (selected) {
-            return function (event) {
-              event.preventDefault();
-              self.selectPanel(selected);
-            };
-          })(i)
+          ((selected) => (event) => {
+            event.preventDefault();
+            this.selectPanel(selected);
+          })(i),
         );
         controls.appendChild(panelButton);
         panels.appendChild(panel);

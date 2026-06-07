@@ -1,6 +1,18 @@
+/* ==========================================================================
+   1. FONTS
+   ========================================================================== */
 @font-face {
   font-family: "Inter";
   font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("../font/Inter.var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 100 900;
+  font-style: italic;
   font-display: swap;
   src: url("../font/Inter.var.woff2") format("woff2");
 }
@@ -11,34 +23,103 @@
   src: url("../font/CirrusCumulus.woff") format("woff");
 }
 
+/* ==========================================================================
+   2. BASE & LAYOUT
+   ========================================================================== */
 :root {
-  --color-title: hsl(160, 88%, 40%);
-  --color-text: hsl(200, 98%, 32%);
+  --color-title: hsl(160, 88%, 36%);
+  --color-text: hsl(200, 98%, 24%);
   --color-white: white;
   --background-interviews: hsl(118, 100%, 92%);
   --background-analyses: hsl(152, 80%, 86%);
   --background-definition: hsl(70, 100%, 86%);
-  --line-weight: 2px;
+  --color-line: hsla(0, 0%, 0%, 0.16);
+  --line-weight: 1px;
+  --site-sidebar-width: 3.5rem;
+
+  color: var(--color-text);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 html {
   overflow: hidden;
 }
-
-body {
+/* Main site only; viewer iframes have [data-viewer] and must not get flex layout */
+html:not([data-viewer]) body {
   height: 100vh;
   width: 100vw;
   display: flex;
   overflow: hidden;
 }
 
+iframe {
+  border: none;
+}
+
+/* ==========================================================================
+   3. VIEW TRANSITIONS (cross-document, page-turn right-to-left)
+   ========================================================================== */
+@view-transition {
+  navigation: auto;
+}
+
+/* Outgoing page slides out to the left; new page slides in from the right */
+::view-transition-old(root) {
+  animation: view-transition-page-out-left 0.35s ease-in-out both;
+}
+
+::view-transition-new(root) {
+  animation: view-transition-page-in-from-right 0.35s ease-in-out both;
+}
+
+/* Reverse direction when user navigates back (browser back/forward) */
+html.view-transition-back ::view-transition-old(root) {
+  animation: view-transition-page-out-right 0.35s ease-in-out both;
+}
+
+html.view-transition-back ::view-transition-new(root) {
+  animation: view-transition-page-in-from-left 0.35s ease-in-out both;
+}
+
+@keyframes view-transition-page-out-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes view-transition-page-in-from-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes view-transition-page-out-right {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes view-transition-page-in-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+/* ==========================================================================
+   4. SCROLLBARS
+   ========================================================================== */
 * {
   scrollbar-color: var(--color-title) var(--color-text);
   scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar {
-  width: 0.6em;
+  width: 0.6rem;
 }
 ::-webkit-scrollbar-track {
   background: var(--color-text);
@@ -47,6 +128,9 @@ body {
   background: var(--color-title);
 }
 
+/* ==========================================================================
+   5. SIMPLEBAR (interviews page)
+   ========================================================================== */
 .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
   top: -100vh;
 }
@@ -82,48 +166,63 @@ body {
   opacity: 1;
 }
 
-.tanuki-logo {
-  fill: var(--color-title);
+/* ==========================================================================
+   6. TYPOGRAPHY
+   ========================================================================== */
+
+* {
+  line-height: 1.3em;
+}
+
+sup {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  vertical-align: super;
+}
+
+/* All headings use title font (Cirrus) and title color */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.sommaire-interview li::before {
+  font-family: "Cirrus";
+  color: var(--color-title);
+  margin-bottom: 1ch;
+  margin-top: 2ch;
 }
 
 h1,
-h2,
-h3 {
-  line-height: 1.2em;
+.titre * {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  font-family: "Cirrus";
-  font-size: 4.2em;
+.conteneur-index h1 {
+  margin-bottom: 2rem;
 }
 
 h2 {
-  font-family: "Cirrus";
-  font-size: 1.8em;
-  color: var(--color-title);
+  font-size: 2rem;
 }
 
-.sommaire-interview li::before,
 h3 {
-  font-family: "Cirrus";
-  font-size: 1.46em;
-  color: var(--color-title);
+  font-size: 1.5rem;
 }
 
-h5 {
-  font-family: "Cirrus";
-  font-size: 4.8em;
-  line-height: 1.4em;
-  color: var(--color-title);
+h4,
+h5,
+h6 {
+  font-size: 1.3rem;
 }
 
-h6,
 p {
   font-family: "Inter", sans-serif;
-  font-weight: 300;
   font-size: 1.1rem;
-  line-height: 1.5rem;
-  color: var(--color-text);
 }
 
 a,
@@ -134,20 +233,24 @@ a:visited {
 .text-left {
   text-align: left;
 }
-
 .text-center {
   text-align: center;
 }
-
 .text-right {
   text-align: right;
 }
 
+br {
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   7. LAYOUT CONTAINERS
+   ========================================================================== */
 .conteneur-global {
   height: 100vh;
-  width: calc(100vw - 4em);
-  margin-left: 4em;
-  overflow-x: hidden;
+  width: calc(100vw - var(--site-sidebar-width));
+  margin-left: var(--site-sidebar-width);
 }
 
 .conteneur-index {
@@ -156,75 +259,75 @@ a:visited {
   display: flex;
 }
 
+.conteneur-pdf,
+.pdf-viewer {
+  height: 100%;
+  width: 100%;
+}
+
 .vertical {
   writing-mode: sideways-lr;
+  justify-self: center;
 }
 
-br {
-  margin-bottom: 10px;
-}
-
+/* ==========================================================================
+   8. NAV (sidebar)
+   ========================================================================== */
 nav,
 .barre-infos {
-  width: 2.4em;
-  padding: 0.8em 0.8em 0.8em 0.7em;
+  width: var(--site-sidebar-width);
+  padding: 0.6rem;
   display: grid;
   align-content: space-between;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 nav {
-  height: calc(100vh - 1.6em);
+  height: 100vh;
   position: fixed;
   z-index: 5;
-  border-right: var(--line-weight) solid var(--color-title);
-}
-
-nav span {
+  border-right: var(--line-weight) solid var(--color-line);
   font-family: "Inter";
-  font-size: 1.8em;
-  font-weight: 300;
+  font-size: 1.6rem;
   color: var(--color-title);
-    cursor: pointer;
 }
 
-.conteneur-pdf {
-  height: 100%;
-  padding: 1em;
+nav a,
+nav button {
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.conteneur-pdf p {
-  font-size: 0.8em;
-  padding: 0.1em 0;
-}
-
-.pdf-viewer {
-  width: 100%;
-  height: 90%;
-  border-radius: 0;
-  border: var(--line-weight) solid var(--color-fill-darker);
-}
-
+/* ==========================================================================
+   9. INDEX / HOME PAGE
+   ========================================================================== */
 .conteneur-introduction {
   height: 100%;
-  width: 36%;
+  width: 40%;
   overflow-y: auto;
   background-color: var(--color-text);
 }
 
 .introduction {
-  padding: 0.4em 1.6em;
+  padding: 1rem;
   color: var(--color-white);
+  height: calc(100vh - 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .introduction h1 {
-  margin-bottom: 1em;
   color: var(--color-title);
 }
 
 .introduction p {
-  width: 80%;
+  max-height: 70%;
   color: var(--color-white);
-  margin-bottom: 1em;
+  padding-right: 1rem;
+  overflow-y: auto;
 }
 
 .conteneur-sections {
@@ -234,11 +337,12 @@ nav span {
   overflow-x: hidden;
 }
 
+/* Section tiles (corps, interviews, analyses, edition) */
 .memoire-analyses,
 .memoire-corps,
 .memoire-interviews,
 .barre-infos {
-  border-left: var(--line-weight) solid var(--color-title);
+  border-left: var(--line-weight) solid var(--color-line);
 }
 
 .memoire-analyses,
@@ -252,48 +356,133 @@ nav span {
 .memoire-corps:hover,
 .memoire-interviews:hover,
 .memoire-analyses:hover {
-  flex-grow: 8;
+  flex-grow: 4;
 }
 
-.background-index {
+/* Corps section: column layout so "Édition" link sits below main title */
+.memoire-corps {
+  display: flex;
+  flex-direction: column;
+}
+
+.memoire-corps > a:first-child {
+  flex-grow: 1;
+  display: flex;
+}
+
+.memoire-corps > a.titre-edition {
+  flex-shrink: 0;
+}
+
+/* Site sidebar theme modifiers (nav) */
+.site-sidebar--index {
   background-color: var(--color-text);
 }
-
-.background-corps {
+.site-sidebar--corps {
   background-color: var(--color-white);
 }
-
-.background-interviews {
+.site-sidebar--interviews {
   background-color: var(--background-interviews);
 }
-
-.background-analyses {
+.site-sidebar--analyses {
   background-color: var(--background-analyses);
 }
 
-.sections {
+/* Main content background by page (when not set by child) */
+.page-interviews .conteneur-global {
+  background-color: var(--background-interviews);
+}
+.page-analyses .conteneur-global {
+  background-color: var(--background-analyses);
+}
+.page-edition .conteneur-global {
+  background-color: var(--color-white);
+}
+
+/* Index page section tiles: same background colors */
+.memoire-corps {
+  background-color: var(--color-white);
+}
+.memoire-interviews {
+  background-color: var(--background-interviews);
+}
+.memoire-analyses {
+  background-color: var(--background-analyses);
+}
+
+/* ==========================================================================
+   10. THEME VARIABLES (main pages + PDF viewer iframes; viewer_extension.css uses these)
+   ========================================================================== */
+.page-corps,
+.viewer-corps {
+  --color-fill-darker: hsl(200, 100%, 15%);
+  --color-fill-dark: hsl(200, 85%, 25%);
+  --toolbar-bg-color: hsl(200, 85%, 25%);
+  --doorhanger-bg-color: hsl(200, 85%, 25%);
+  --color-fill-light: hsl(200, 80%, 30%);
+  --color-fill-lighter: hsl(200, 80%, 60%);
+  --color-fill-lightest: hsl(200, 80%, 100%);
+  --background-link: hsl(58, 100%, 86%);
+}
+
+.page-interviews,
+.viewer-interviews {
+  --color-fill-darker: hsl(180, 80%, 15%);
+  --color-fill-dark: hsl(180, 45%, 25%);
+  --toolbar-bg-color: hsl(180, 45%, 25%);
+  --doorhanger-bg-color: hsl(180, 45%, 25%);
+  --color-fill-light: hsl(180, 40%, 30%);
+  --color-fill-lighter: hsl(180, 25%, 75%);
+  --background-link: hsl(58, 100%, 86%);
+}
+
+.page-analyses,
+.viewer-analyses {
+  --color-fill-darker: hsl(152, 100%, 15%);
+  --color-fill-dark: hsl(152, 85%, 25%);
+  --toolbar-bg-color: hsl(152, 85%, 25%);
+  --doorhanger-bg-color: hsl(152, 85%, 25%);
+  --color-fill-light: hsl(152, 80%, 30%);
+  --color-fill-lighter: hsl(152, 80%, 60%);
+  --color-fill-lightest: hsl(152, 80%, 86%);
+  --background-link: hsl(58, 100%, 86%);
+}
+
+/* ==========================================================================
+   11. SECTION TITLES (index tiles)
+   ========================================================================== */
+.sections,
+.sections a {
   display: flex;
 }
 
 .sections a {
-  display: flex;
   flex-grow: 1;
 }
 
-.conteneur-titre {
+[class*="conteneur-titre"] {
   position: relative;
   flex-grow: 1;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+}
+
+.conteneur-titre-1 {
+  border-bottom: var(--line-weight) solid var(--color-line);
+}
+
+.conteneur-titre-2 {
   align-items: center;
+}
+.conteneur-titre-3 {
+  align-items: end;
 }
 
 .titre {
   position: absolute;
   right: 0;
-  padding: 1em;
-  width: 34vw;
+  padding: 1rem;
+  width: 30vw;
 }
 
 .steps {
@@ -305,14 +494,8 @@ nav span {
   height: 100vh;
   display: grid;
   grid-template-rows: repeat(10, 1fr);
-  border-left: var(--line-weight) solid var(--color-title);
-  /* opacity: 0;
-  transition: opacity 0.4s ease-in-out; */
+  border-left: var(--line-weight) solid var(--color-line);
 }
-
-/* .steps:hover {
-  opacity: 1;
-} */
 
 .step {
   box-shadow: 0 2px 0 0 var(--color-title);
@@ -322,6 +505,9 @@ nav span {
   transition: opacity 0.4s ease-in-out;
 }
 
+/* ==========================================================================
+   12. INTERVIEWS PAGE
+   ========================================================================== */
 .conteneur-interview {
   width: 60vw;
 }
@@ -336,13 +522,13 @@ nav span {
   height: 100vh;
   overflow-x: hidden;
   top: 0;
-  border-right: var(--line-weight) solid var(--color-title);
+  border-right: var(--line-weight) solid var(--color-line);
 }
 
 .sommaire-interview li {
-  max-height: 1.6em;
+  max-height: 1.6rem;
   overflow: hidden;
-  margin: 0.6em;
+  margin: 0.6rem;
   counter-increment: mega-step;
   transition: 0.5s max-height ease-in-out;
 }
@@ -358,12 +544,12 @@ nav span {
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  width: 1.2em;
-  height: 1em;
+  width: 1.2rem;
+  height: 1rem;
 }
 
 .sommaire-interview li h3 {
-  margin: 0 0 0 2.4em;
+  margin: 0 0 0 2.4rem;
 }
 
 .conversation-interview {
@@ -386,23 +572,14 @@ nav span {
 }
 
 .conversation-interview h2:first-child {
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
 }
 
-/* .conversation-interview a::after {
-  content: "•";
-  position: relative;
-  top: -8px;
-  left: -var(--line-weight);
-  color: var(--color-title);
-  font-size: 0.8em;
-  font-family: "Inter";
-} */
-
-/****************************************************! WIKIPEDIA !****************************************************/
-
+/* ==========================================================================
+   13. WIKIPEDIA PREVIEW (interviews)
+   ========================================================================== */
 .wp-popup {
-  border: var(--line-weight) solid var(--color-title) !important;
+  border: var(--line-weight) solid var(--color-line) !important;
   margin: -var(--line-weight) !important;
 }
 
@@ -441,7 +618,11 @@ nav span {
 .wikipediapreview-body::after {
   left: 2px !important;
   width: calc(100% - 4px) !important;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%) !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
   display: none;
 }
 
@@ -483,115 +664,254 @@ nav span {
   margin-top: 0 !important;
 }
 
-/****************************************************! RESPONSIVE !****************************************************/
+/* ==========================================================================
+   14. CORPS PAGE (memoire_corps — thesis layout, glossary, notes)
+   ========================================================================== */
+.page-corps * {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  scroll-padding-top: 0.5rem;
+}
 
-/* @media all and (max-width: 1100px) {
-  .conteneur-index {
-    height: auto;
-    width: 100%;
-    overflow-y: auto;
-  }
+.page-corps ::-webkit-scrollbar {
+  display: none;
+}
 
-  .conteneur-interview {
-    width: 75%;
-    grid-template-columns: 1fr 1.4fr;
-  }
+.page-corps body {
+  overflow: hidden;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  background: #fff;
+}
 
-  .conteneur-index,
-  .sections,
-  .conteneur-sections {
-    flex-direction: column;
-  }
+.page-corps img {
+  mix-blend-mode: multiply;
+}
 
-  .conteneur-introduction,
-  .conteneur-sections {
-    width: 100%;
-  }
+figcaption {
+  opacity: 0.6;
+}
 
-  .introduction {
-    height: max-content;
-  }
+.page-corps dt,
+.page-corps dd,
+.page-corps ul,
+.page-corps ol,
+.page-corps li,
+.page-corps p,
+.page-corps figcaption {
+  font-size: 1.1rem;
+}
 
-  .conteneur-introduction p {
-    width: 60vw;
-  }
+.page-corps .layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100vh;
+  width: calc(100vw - var(--site-sidebar-width));
+  margin-left: var(--site-sidebar-width);
+  overflow: hidden;
+}
 
-  .conteneur-titre {
-    height: 23em;
-  }
+.page-corps .col-glossary,
+.page-corps .col-main,
+.page-corps .col-notes {
+  width: calc(100% - 2rem);
+  min-height: 0;
+  overflow-y: auto;
+  padding-inline: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+}
 
-  .memoire-analyses,
-  .memoire-corps,
-  .memoire-interviews,
-  .barre-infos {
-    border-top: var(--line-weight) solid var(--color-title);
-    border-left: 0px;
-    width: 100%;
-  }
+.page-corps .col-main .main-content,
+.page-corps .col-notes .main-content,
+.page-corps .col-glossary .main-content {
+  max-width: 80ch;
+  justify-self: center;
+}
 
-  .barre-infos {
-    height: 3em;
-  }
-
-  .conteneur-introduction {
-    height: max-content;
-  }
-
-  .titre {
-    left: 0;
-    width: 50vw;
+@media (max-width: 900px) {
+  .page-corps .col-main .main-content,
+  .page-corps .col-glossary .main-content,
+  .page-corps .col-notes .main-content {
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 }
 
-@media all and (max-width: 700px) {
-  .conteneur-global {
-    margin-left: 0;
-    margin-top: 4em;
-    width: 100vw;
+.page-corps .col-main {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  z-index: 0;
+}
+
+.page-corps .col-glossary {
+  grid-column: 2;
+  grid-row: 1;
+  z-index: 1;
+  border-left: var(--line-weight) solid var(--color-line);
+  border-bottom: var(--line-weight) solid var(--color-line);
+  background: hsl(60, 100%, 90%);
+}
+
+.page-corps .col-notes {
+  grid-column: 2;
+  grid-row: 2;
+  z-index: 1;
+  border-left: var(--line-weight) solid var(--color-line);
+  background: #fff;
+}
+
+.page-corps .main-content header .copyleft-symbol {
+  display: inline-block;
+  transform: rotate(180deg);
+  margin-right: 0.25em;
+}
+
+.page-corps .main-content figure img {
+  width: 100%;
+  max-width: 50ch;
+  height: auto;
+  display: block;
+  margin-inline: 0.2rem;
+  margin-block: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .page-corps .layout {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 2fr 1fr;
   }
 
-  .conteneur-interview {
-    width: 90%;
-    grid-template-columns: 1fr 1.8fr;
-    margin: 0.8em 2em;
-    gap: 2em;
+  .page-corps .col-main,
+  .page-corps .col-glossary,
+  .page-corps .col-notes {
+    min-width: 0;
   }
 
-  .conteneur-interview h2 {
-    margin: 0.8em 0 0.4em 0;
+  .page-corps .col-main,
+  .page-corps .col-glossary {
+    padding: 1rem;
   }
 
-  .vertical {
-    writing-mode: inherit;
-    display: none;
+  .page-corps .col-main {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    border-right: none;
   }
 
-  nav,
-  .barre-infos {
-    width: 100%;
-    height: 2.4em;
-    padding: 0.8em 0.8em 0.7em 0.8em;
-    display: grid;
+  .page-corps .col-glossary {
+    grid-column: 1;
+    grid-row: 2;
+    border-left: none;
+    border-bottom: none;
+    border-top: var(--line-weight) solid var(--color-line);
+    border-right: var(--line-weight) solid var(--color-line);
   }
 
-  nav {
-    position: fixed;
-    z-index: 10;
-    border-bottom: var(--line-weight) solid var(--color-title);
+  .page-corps .col-notes {
+    grid-column: 2;
+    grid-row: 2;
+    border-top: var(--line-weight) solid var(--color-line);
+  }
+}
+
+@media (max-width: 600px) {
+  .page-corps .layout {
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr 1fr 1fr;
   }
 
-  .conteneur-introduction p {
-    width: 80vw;
+  .page-corps .col-main,
+  .page-corps .col-glossary {
+    padding: 1rem;
   }
 
-  .conteneur-pdf {
-    width: calc(100% - 4px);
-    height: 99%;
-    padding: 0;
+  .page-corps .col-main {
+    grid-column: 1;
+    grid-row: 1;
   }
 
-  .titre {
-    left: 0;
-    width: 90vw;
+  .page-corps .col-glossary {
+    grid-column: 1;
+    grid-row: 2;
+    border-right: none;
+    border-top: var(--line-weight) solid var(--color-line);
   }
-} */
+
+  .page-corps .col-notes {
+    grid-column: 1;
+    grid-row: 3;
+    border-top: var(--line-weight) solid var(--color-line);
+  }
+}
+
+.page-corps dt {
+  color: var(--color-title);
+}
+
+.page-corps dd,
+.page-corps ul,
+.page-corps ol,
+.page-corps li {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+dd p {
+  margin-top: 0;
+}
+
+.page-corps li {
+  list-style: none;
+  margin-left: 1rem;
+}
+
+.page-corps aside.note {
+  margin-bottom: 0.75em;
+}
+
+.page-corps .note-label,
+.page-corps a.note-label {
+  color: var(--color-title);
+  text-decoration: none;
+}
+
+.page-corps a.note-ref {
+  font-size: 1.1em;
+  text-decoration: none;
+  color: var(--color-title);
+}
+
+.page-corps a.glossary-ref {
+  color: var(--color-title);
+  text-decoration: underline dotted;
+}
+
+.page-corps aside.note:target {
+  outline: none;
+}
+
+.page-corps blockquote p {
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+cite {
+  font-style: normal;
+}
+
+/* French guillemets with narrow no-break space (U+202F = &#8239;) */
+q::before {
+  content: "\00ab\202f"; /* « + narrow no-break space */
+}
+q::after {
+  content: "\202f\00bb"; /* narrow no-break space + » */
+}
+
+.page-corps #questions-et-conversations,
+.page-corps #etude-de-projets {
+  margin-top: 10rem;
+}

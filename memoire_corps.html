@@ -1,32 +1,2920 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/reset.css" />
-    <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="./style/color_corps.css" />
-    <title>Memoire Graphisme Libre</title>
-  </head>
-  <body>
-    <nav class="background-corps">
-      <a href="./memoire_index.html">
-        <span class="icon"></span>
-      </a>
-    </nav>
-    <div class="conteneur-global background-corps">
-      <div class="conteneur-pdf">
-        <iframe class="pdf-viewer" src="./pdf_viewer/web/viewer_corps.html?file=%2Fimport%2Fpdf%2Fpierre_roussel_memoire.pdf"></iframe>
-        <p>
-          Ce lecteur PDF est un fork du
-          <a href="https://mozilla.github.io/pdf.js/" target="_blank">lecteur de Firefox</a>
-          personnalisé pour mon mémoire.
-        </p>
+<!doctype html>
+<html lang="fr" class="page-corps">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="./js/view-transitions.js"></script>
+  <title>Mémoire — Pour un graphisme libre</title>
+  <meta name="description"
+    content="Version HTML sémantique du mémoire <q>Mémoire — Pour un graphisme libre</q>." />
+  <link rel="stylesheet" href="./style/style.css" />
+</head>
+
+<body>
+  <nav class="site-sidebar site-sidebar--corps" aria-label="Navigation principale">
+    <a href="./memoire_index.html" aria-label="Retour à l'accueil">
+      <span class="icon"></span>
+    </a>
+  </nav>
+  <div class="layout">
+    <div class="col-glossary">
+      <div class="main-content">
+        <section id="glossaire">
+          <h2>Glossaire</h2>
+          <dl>
+            <dt id="bibliothèque-informatique">Bibliothèque [informatique]</dt>
+            <dd>
+              <p>
+                Ensemble de fonctions déjà créées permettant d'étendre les
+                possibilités d'un langage informatique et de simplifier le
+                développement.
+              </p>
+            </dd>
+            <dt id="code-source">Code source</dt>
+            <dd>
+              <p>
+                Fichier texte écrit dans un langage informatique et composé des
+                lignes de code définissant un programme.
+              </p>
+            </dd>
+            <dt id="compositing">Compositing</dt>
+            <dd>
+              <p>
+                Signifie : composition. Modification appliquée à une image ou
+                vidéo, que ce soit pour des changements de colorimétrie, des
+                effets spéciaux, etc.
+              </p>
+            </dd>
+            <dt id="copyleft">Copyleft</dt>
+            <dd>
+              <p>
+                Jeu de mots en opposition au <q>copyright</q>. Principe qui utilise le droit
+                d'auteur pour garantir que les œuvres dérivées restent libres et
+                réutilisables, en imposant que toute modification soit diffusée
+                sous les mêmes conditions.
+              </p>
+            </dd>
+            <dt id="css-cascading-style-sheet">CSS (Cascading Style Sheet)</dt>
+            <dd>
+              <p>
+                Signifie feuille de style en cascade. Langage informatique
+                permettant de modifier visuellement et mettre en page un document
+                XML ou HTML, et généralement une page web.
+              </p>
+            </dd>
+            <dt id="expérience-utilisateur">Expérience utilisateur</dt>
+            <dd>
+              <p>
+                Aussi nommé UX (User Experience). Domaine semblable à ce que l'on
+                pourrait appeler l'ergonomie, et qui définit l'interaction qu'a
+                l'utilisateur avec son environnement.
+              </p>
+            </dd>
+            <dt id="fanzine">Fanzine</dt>
+            <dd>
+              <p>
+                Publication indépendante souvent expérimentale et initialement
+                réalisée par des amateurs passionnés d'un sujet, pour d'autres
+                passionnés.
+              </p>
+            </dd>
+            <dt id="fork">Fork</dt>
+            <dd>
+              <p>
+                Signifie : fourche. Désigne la création d'un nouveau logiciel à
+                partir du code source d'un autre, que ce soit à partir d'une
+                ancienne version modifiée, ou de la plus récente qui est adaptée
+                en continu. C'est un fonctionnement que l'on retrouve
+                majoritairement au sein de projets libres ou open source puisque
+                leurs sources sont ouvertes et modifiables par tous.
+              </p>
+            </dd>
+            <dt id="html-hypertext-markup-language">
+              HTML (HyperText Markup Language)
+            </dt>
+            <dd>
+              <p>
+                Signifie langage de balisage hypertexte. Langage de balisage
+                inspiré de la syntaxe SGML, permettant de former la structure des
+                pages web qui seront affichées. C'est l'une des créations à la
+                base du Web.
+              </p>
+            </dd>
+            <dt id="hypertexte">HyperTexte</dt>
+            <dd>
+              <p>
+                Aussi nommé HyperText. Document faisant généralement partie d'un
+                ensemble de documents liés entre eux par des hyperliens.
+              </p>
+            </dd>
+            <dt id="hyperlien">HyperLien</dt>
+            <dd>
+              <p>
+                Aussi nommé HyperLink. Élément textuel fonctionnant comme une
+                référence dans un document hypertexte, et permettant de renvoyer à
+                une autre partie, ou à un autre document.
+              </p>
+            </dd>
+            <dt id="image-vectorielle">Image vectorielle</dt>
+            <dd>
+              <p>
+                Image créée à partir de formes géométriques et donc de tracés
+                mathématiques. Cette technique s'oppose aux images matricielles
+                formées de pixels. L'avantage de l'image vectorielle est qu'elle
+                ne perd pas en qualité peu importe sa taille, et peut également
+                être très légère.
+              </p>
+            </dd>
+            <dt id="image-matricielle">Image matricielle</dt>
+            <dd>
+              <p>
+                Images basée sur une matrice de points ayant chacun sa couleur, on
+                parle alors souvent de pixels. C'est la plus communément utilisée
+                car c'est le format d'image des caméras et appareils photos
+                numériques.
+              </p>
+            </dd>
+            <dt id="interface-utilisateur">Interface utilisateur</dt>
+            <dd>
+              <p>
+                Aussi nommé UI ou (User Interface). Elle va généralement de pair
+                avec l'expérience utilisateur, et définit la partie visuelle avec
+                laquelle l'utilisateur va interagir.
+              </p>
+            </dd>
+            <dt id="internet">Internet</dt>
+            <dd>
+              <p>
+                Réseau informatique à grande échelle inventé par Tim Berners-Lee
+                début 1990, dont découlent diverses applications telles que le
+                Web, les courriers électroniques, les systèmes de visioconférence
+                et le partage en pair-à-pair.
+              </p>
+            </dd>
+            <dt id="javascript">JavaScript</dt>
+            <dd>
+              <p>
+                Langage de programmation principalement utilisé sur le Web pour
+                créer des scripts ajoutant plus d'interactions.
+              </p>
+            </dd>
+            <dt id="licence">Licence</dt>
+            <dd>
+              <p>
+                Texte définissant le cadre légal de l'utilisation d'un bien, ainsi
+                que la propriété de ce dernier.
+              </p>
+            </dd>
+            <dt id="logiciel">Logiciel</dt>
+            <dd>
+              <p>
+                Ensemble d'instructions formant des programmes exécutés sur un
+                ordinateur.
+              </p>
+            </dd>
+            <dt id="logiciel-libre">Logiciel libre</dt>
+            <dd>
+              <p>
+                Parfois abrégé <q>libre</q>, pour parler de la philosophie qui en
+                découle. Définit un type de logiciel, une pratique et un mouvement
+                social visant à donner une liberté totale à l'utilisateur d'un
+                logiciel. Elle respecte 4 libertés fondamentales :
+              <ul>
+                <li>• Exécuter un programme comme bon nous semble.</li>
+                <li>• Étudier son fonctionnement et le modifier, ce qui implique d'avoir un accès transparent au code
+                  source.</li>
+                <li>• Redistribuer des copies pour l'accessibilité.</li>
+                <li>• Distribuer des versions modifiées du code pour partager le savoir.</li>
+              </ul>
+              </p>
+            </dd>
+            <dt id="logiciel-open-source">Logiciel open source</dt>
+            <dd>
+              <p>
+                Définit un type de logiciel similaire aux logiciels libres, mais
+                où la partie philosophique et éthique est généralement mise de
+                côté afin de mettre en avant l'efficacité technique du
+                développement logiciel. Cela peut conduire à des programmes aux
+                licences hybrides, mélangeant du libre et du propriétaire. Ce
+                détournement de l'éthique libre est souvent très critiqué par la
+                communauté du libre.
+              </p>
+            </dd>
+            <dt id="logiciel-propriétaire">Logiciel propriétaire</dt>
+            <dd>
+              <p>
+                À l'opposé des logiciels libres, ce sont des programmes qui
+                restreignent la liberté de l'utilisateur que ce soit au niveau
+                légal en utilisant des licences restrictives, ou au niveau
+                technique en limitant l'accès au code source. Ils sont également
+                appelés programmes privateurs par Richard Stallman et d'autres
+                personnes de la communauté du libre, puisqu'ils nuisent à la
+                liberté de l'utilisateur.
+              </p>
+            </dd>
+            <dt id="logiciel-en-tant-que-service">
+              Logiciel en tant que service
+            </dt>
+            <dd>
+              <p>
+                Aussi nommé SAAS (Software As A Service). Modèle économique
+                nécessitant généralement un abonnement, où les logiciels ne sont
+                pas installés sur l'ordinateur du client mais sur des serveurs
+                distants.
+              </p>
+            </dd>
+            <dt id="logiciel-de-versionnage">Logiciel de versionnage</dt>
+            <dd>
+              <p>
+                Aussi nommé logiciel de gestion de versions décentralisé.
+                L'objectif est d'enregistrer différentes versions du code quand
+                l'auteur en a besoin, sans le dupliquer, en utilisant des fichiers
+                de sauvegarde.
+              </p>
+            </dd>
+            <dt id="noyau-informatique">Noyau [informatique]</dt>
+            <dd>
+              <p>
+                Système informatique composé des programmes de bas niveau
+                permettant de dialoguer avec les composants de l'ordinateur. Ce
+                dernier est nécessaire au bon fonctionnement d'un système
+                d'exploitation qui y base sa surcouche applicative.
+              </p>
+            </dd>
+            <dt id="pair-à-pair">Pair-à-pair</dt>
+            <dd>
+              <p>
+                Aussi nommé peer-to-peer. Système d'échange d'informations
+                directement d'utilisateur à utilisateur, ne nécessitant pas de
+                passer par un tiers tel qu'un serveur qui centralise les données.
+              </p>
+            </dd>
+            <dt id="pao-publication-assistée-par-ordinateur" title="PAO (Publication Assistée par Ordinateur)">
+              PAO (Publication Assistée par Ordinateur)
+            </dt>
+            <dd>
+              <p>
+                Désigne la création de documents destinés à l'impression, grâce à
+                des programmes numériques et non plus à l'aide des procédés
+                manuels et industriels jusqu'alors utilisés. La PAO est intimement
+                liée au WYSIWYG, ce qui lui a permis d'être la manière de créer
+                dominante en design aujourd'hui.
+              </p>
+            </dd>
+            <dt id="programmation-visuelle">Programmation visuelle</dt>
+            <dd>
+              <p>
+                Diffère de la programmation textuelle formée par des lignes de
+                caractères. La programmation visuelle est réalisée par
+                l'assemblage d'éléments graphiques. Elle est généralement composée
+                de boîtes intégrant des fonctions, qui peuvent aussi bien
+                s'imbriquer entre elles (briques) qu'être rattachées par des liens
+                (nodes) pour développer le résultat voulu.
+              </p>
+            </dd>
+            <dt id="prothèse-démulation">Prothèse d'émulation</dt>
+            <dd>
+              <p>
+                Aussi nommée Polyfill. Extension d'un langage informatique
+                généralement utilisé dans le Web, qui permet de faire supporter
+                des fonctions et normes aux navigateurs ne les intégrant plus ou
+                pas encore.
+              </p>
+            </dd>
+            <dt id="sgml-standard-generalized-markup-language">
+              SGML (Standard Generalized Markup Language)
+            </dt>
+            <dd>
+              <p>
+                Signifie : langage de balisage généralisé normalisé. C'est un
+                langage de balisage, employé dans les industries de la
+                documentation et de l'édition. Il servira de base au HTML.
+              </p>
+            </dd>
+            <dt id="svg-scalable-vector-graphics">
+              SVG (Scalable Vector Graphics)
+            </dt>
+            <dd>
+              <p>
+                Signifie : graphisme vectoriel adaptable. Format de fichier
+                permettant de stocker des images vectorielles, basé sur la syntaxe
+                XML.
+              </p>
+            </dd>
+            <dt id="système-dexploitation">Système d'exploitation</dt>
+            <dd>
+              <p>
+                Aussi nommé OS (Operating System). Ensemble de programmes
+                permettant de gérer les ressources utilisées par l'ordinateur via
+                des logiciels applicatifs destinés à l'utilisateur.
+              </p>
+            </dd>
+            <dt id="système-nodal">Système nodal</dt>
+            <dd>
+              <p>
+                Fonctionne sur le même principe que la programmation visuelle. Il
+                peut permettre pour des logiciels 3D ou d'effets visuels, de
+                modifier la géométrie d'un objet 3D ou 2D, de créer des textures,
+                faire du compositing, etc.
+              </p>
+            </dd>
+            <dt id="w3c-world-wide-web-consortium">
+              W3C (World Wide Web Consortium)
+            </dt>
+            <dd>
+              <p>
+                Signifie : consortium du web. En 1994, Tim-Berners Lee introduit
+                le W3C en tant que consortium international, un organisme gérant
+                les standards utilisés par le web, tels que le HTML, XML, SVG,
+                CSS, etc.
+              </p>
+            </dd>
+            <dt id="web">Web</dt>
+            <dd>
+              <p>
+                Diminutif de World Wide Web (WWW), littéralement : toile
+                d'araignée mondiale. Il est basé sur un système HyperTexte
+                permettant de créer des liens entre différents textes, et fait
+                partie du réseau informatique Internet.
+              </p>
+            </dd>
+            <dt id="web2print">Web2Print</dt>
+            <dd>
+              <p>
+                Ce terme désigne des applications web permettant le design de
+                créations destinées à l'impression. Généralement, ces applications
+                permettent à l'acheteur de personnaliser l'objet commandé.
+              </p>
+            </dd>
+            <dt id="wysiwyg-what-you-see-is-what-you-get">
+              WYSIWYG (What You See Is What You Get)
+            </dt>
+            <dd>
+              <p>
+                Signifie : ce que vous voyez est ce que vous obtenez. Définit les
+                programmes dont le résultat produit (imprimé ou numérique) est
+                similaire à ce qui est visible à l'écran. Si le WYSIWYG existait
+                depuis 1974, il faudra attendre 1984 avec des ordinateurs plus
+                puissants tels que le premier Macintosh afin de le démocratiser.
+              </p>
+            </dd>
+            <dt id="xml-extensible-markup-language">
+              XML (Extensible Markup Language)
+            </dt>
+            <dd>
+              <p>
+                Signifie : langage de balisage extensible. C'est une norme
+                formelle composant les règles de la syntaxe de certains langages
+                de balisage, formée à partir de SGML. Il a pour but d'être plus
+                simple à utiliser et plus adapté au web que le SGML.
+              </p>
+            </dd>
+          </dl>
+        </section>
       </div>
     </div>
-    <footer>
-      <p></p>
-    </footer>
-  </body>
+    <div class="col-main">
+      <div class="main-content">
+        <header>
+          <h1><span class="copyleft-symbol" aria-label="copyleft" title="copyleft">©</span> Pour un <br /> graphisme
+            libre&#8239;!</h1>
+          <br />
+          <p>
+            Écriture et conception<br /> → <a href="https://vertpierre.com" target="_blank" rel="noopener noreferrer">
+              Pierre Roussel</a><br /><br />
+            Typographies<br /> → <a href="https://velvetyne.fr/fonts/cirruscumulus/" target="_blank"
+              rel="noopener noreferrer">CirrusCumulus [Clara Sambot]</a><br /> → <a href="https://rsms.me/inter/"
+              target="_blank" rel="noopener noreferrer">Inter [Rasmus Anderson]</a><br /><br>
+            Le contenu de ce mémoire est sous <a href="#licence" class="glossary-ref">licence</a> <a href="#copyleft"
+              class="glossary-ref">copyleft</a>
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank" rel="noopener noreferrer">CC-BY-NC-SA 4.0</a>, <br /> excepté pour les images qui appartiennent à leurs
+            auteurs respectifs.
+          </p>
+        </header>
+        <section id="abstract" lang="en">
+          <h2>Abstract</h2>
+          <p>
+            This research is an exploration of free/libre software and the
+            philosophy behind it, linked to the field of graphic design. I
+            enquired if it could lead to a more ethical practice in design. My
+            dissertation shows that our practice is not always the one we have
+            chosen, which can lead to forms of design that are not always
+            human-centered. As Nolwenn Maudet explained <q>The stagnation of the
+            design tool landscape led to the progressive invisibility of design
+            software in designers practice</q>. These softwares thus made
+            invisible, like Adobe Creative Cloud tools, implies specific practice
+            even if we are not always aware of it.
+            <br />
+            <br />
+            Moreover, Adobe has complete control over the proprietary software it
+            proposes as well as the files generated. To find a way to avoid this
+            loss of control over our tools and practice, I have dug into the
+            free/libre software philosophy centered on the user's freedom. I
+            examined dissertations, projects and software, but I also interviewed
+            some users about their practice and questioned my own. Finally, even
+            if we often are biased about it, I have found that free/libre software
+            could provide designers with complete control over their tools and the
+            files they use while leading them toward a more ethical practice.
+          </p>
+        </section>
+        <section id="remerciements">
+          <h2>Remerciements</h2>
+          <p>
+            Je voudrais avant tout remercier ma professeure référente Éloïse
+            Cariou qui m'a toujours bien aiguillé pour ce mémoire autant dans
+            l'écriture que la recherche, mais aussi Anne Mortal et tous les autres
+            professeurs de la section DNMADE qui m'ont apporté de l'aide en temps
+            voulu.
+            <br />
+            <br />
+            Je remercie également Raphaël Bastide, Nolwenn Maudet, Sarah Garcin,
+            Julie Blanc mais aussi toute l'équipe d'OSP d'avoir bien voulu
+            m'accorder un peu de leur temps pour répondre à mes questions.
+            <br />
+            <br />
+            Enfin je remercie toute la classe de DNMADE 3, mais aussi mes
+            proches, notamment Claire et Michelle qui m'ont particulièrement
+            soutenu durant l'écriture de ce mémoire.
+          </p>
+        </section>
+        <section id="sommaire">
+          <h2>Sommaire</h2>
+          <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li>
+              <a href="#reprendre-le-controle-sur-ses-outils">Reprendre le contrôle sur ses outils</a>
+              <ul>
+                <li>
+                  <a href="#une-dependance-logicielle">Une dépendance logicielle</a>
+                </li>
+                <li><a href="#des-outils-inadaptes">Des outils inadaptés</a></li>
+                <li>
+                  <a href="#vers-des-logiciels-plus-ouverts">Vers des logiciels plus ouverts</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#une-pratique-liberee-et-responsable">Une pratique libérée et responsable</a>
+              <ul>
+                <li>
+                  <a href="#des-creations-reappropriables">Des créations réappropriables</a>
+                </li>
+                <li>
+                  <a href="#une-connaissance-partagee">Une connaissance partagée</a>
+                </li>
+                <li>
+                  <a href="#un-design-fait-pour-lhumain">Un design fait pour l&#x27;humain</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#conclusion">Conclusion</a></li>
+            <li><a href="#references">Références</a></li>
+            <li><a href="#questions-et-conversations">Questions et conversations</a></li>
+            <li><a href="#etude-de-projets">Étude de projets</a></li>
+          </ul>
+        </section>
+        <section id="introduction">
+          <h2>Introduction</h2>
+
+
+
+
+
+          <p>
+            En 1984 sort le premier Macintosh<a href="#note-01" id="note-ref-01" class="note-ref">¹</a> d'Apple sous la
+            direction de Steve
+            Jobs, un outil qui va révolutionner l'informatique personnelle et
+            initier une vague de création numérique, avec l'apparition de
+            <a href="#logiciel" class="glossary-ref">logiciels</a> puissants, dont la suite Adobe<a href="#note-02"
+              id="note-ref-02" class="note-ref">²</a> qui va rapidement devenir
+            l'ensemble unique de <a href="#logiciel" class="glossary-ref">logiciels</a> du designer. Ainsi, depuis plus
+            de 30
+            ans, le graphiste utilise les mêmes types d'outils numériques et
+            semble s'en contenter.
+            <br />
+            Pourtant, par sa pratique, il doit sans cesse questionner ses supports
+            et outils choisis pour une tâche autant que pour un résultat donné,
+            puisqu'ils engendrent des questions techniques, esthétiques, voire
+            parfois éthiques.
+          </p>
+          <p>
+            En 1984 naît aussi le projet GNU<a href="#note-03" id="note-ref-03" class="note-ref">³</a> initié par
+            Richard Stallman, qui
+            remet en question le manque de contrôle grandissant de l'utilisateur
+            sur les outils informatiques. Il pose les règles fondamentales du
+            <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a><a href="#note-04" id="note-ref-04"
+              class="note-ref">⁴</a> en opposition aux <a href="#logiciel" class="glossary-ref">logiciels</a> dits
+            <a href="#logiciel-propriétaire" class="glossary-ref">propriétaires</a><a href="#note-05" id="note-ref-05" class="note-ref">⁵</a>, et
+            initie un nouveau souffle de liberté sur l'informatique. Le <a href="#logiciel-libre"
+              class="glossary-ref">logiciel
+
+              libre</a> ou à minima <a href="#logiciel-open-source" class="glossary-ref">open source</a><a href="#note-06" id="note-ref-06" class="note-ref">⁶</a>, a aujourd'hui
+            fait ses preuves et
+            s'est largement démocratisé notamment grâce au <a href="#web" class="glossary-ref">Web</a><a href="#note-07"
+              id="note-ref-07" class="note-ref">⁷</a> et à Linux<a href="#note-08" id="note-ref-08"
+              class="note-ref">⁸</a>.
+          </p>
+          <figure>
+            <img src="images/02.webp" alt="Photo du premier Macintosh d'Apple, Macintosh 128k" />
+            <figcaption>
+              Photo du premier Macintosh d'Apple. Macintosh 128k
+              <br />
+              [en ligne]
+              <a target="_blank" rel="noopener noreferrer"
+                href="https://wikipedia.org/wiki/Macintosh_128K">wikipedia.org/wiki/Macintosh_128K</a>
+            </figcaption>
+          </figure>
+
+
+          <figure>
+            <img src="images/03.webp"
+              alt="Illustration par Velvetyne des 4 règles fondamentales du logiciel libre adaptées pour la typographie. The 4 fundamental freedoms of the libre fonts user." />
+            <figcaption>
+              Illustration par Velvetyne des 4 règles fondamentales du <a href="#logiciel-libre"
+                class="glossary-ref">logiciel
+
+                libre</a> adaptées pour la typographie. The 4 fundamental freedoms of
+              the libre fonts user.
+              <br />
+              [en ligne]
+              <a target="_blank" rel="noopener noreferrer" href="https://velvetyne.fr/about/">velvetyne.fr/about/</a>,
+              <a target="_blank" rel="noopener noreferrer"
+                href="https://velvetyne.fr/fonts/trickster/">velvetyne.fr/fonts/trickster/</a>
+            </figcaption>
+          </figure>
+          <p>
+            Du côté du design, de nombreux <a href="#logiciel-libre" class="glossary-ref">logiciels libres</a> ont vu le
+            jour mais
+            ont souvent été étiquetés comme inutilisables pour un usage
+            professionnel à cause de leurs interfaces<a href="#note-09" id="note-ref-09" class="note-ref">⁹</a>, et font
+            face à de nombreux
+            préjugés. De fait, le graphiste utilise en majorité des <a href="#logiciel-propriétaire"
+              class="glossary-ref">logiciels
+              propriétaires</a> tels que la suite Adobe, souvent par facilité. Mais leur
+            usage implique des pratiques (souvent liées à la recherche de profit)
+            qui ne reflètent pas la mission du designer, dont le rôle est, me
+            semble-t-il, de mettre en forme l'information, de la rendre accessible
+            à tous.
+          </p>
+          <p>
+            Face à une dépendance toujours plus importante à des outils
+            <a href="#logiciel-propriétaire" class="glossary-ref">propriétaires</a>, dans quelle mesure le <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a>
+            peut-il permettre
+            au graphiste de ré-envisager sa pratique&#8239;?
+          </p>
+          <p>
+            Suite à l'étude de réflexions théoriques ou d'objets plus pratiques,
+            mais aussi par mon expérience personnelle et celle d'autres
+            pratiquants du libre, j'ai cherché les atouts que pourrait avoir le
+            <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a> afin de repenser nos outils de création
+            graphique, et
+            de quelle manière le libre pourrait être le moteur d'une pratique du
+            graphisme plus ouverte, remettant le partage et l'accessibilité au
+            centre de la pratique.
+          </p>
+          <figure>
+            <img src="images/04.webp"
+              alt="En haut, l'interface du logiciel libre de dessin matriciel Gimp, en bas l'interface de Photoshop, un logiciel propriétaire équivalent produit par Adobe." />
+            <img src="images/05.webp"
+              alt="Affiche reprenant la Déclaration d'indépendance du Cyberespace, de John Perry Barlow, mise en page par Anton Moglia." />
+            <figcaption>
+              En haut, l'interface du <a href="#logiciel-libre" class="glossary-ref">logiciel
+                libre</a> de dessin
+              matriciel Gimp, en
+              bas l'interface de Photoshop, un <a href="#logiciel-propriétaire" class="glossary-ref">logiciel
+                propriétaire</a> équivalent
+              produit par Adobe.
+              <br />
+              Toutes deux contiennent une affiche reprenant la
+              Déclaration d'indépendance du Cyberespace, de John Perry Barlow, et
+              mise en page par Anton Moglia. La déclaration avait pour but de
+              soutenir l'idée qu'aucun gouvernement ni aucune entreprise n'a le
+              droit de s'approprier <a href="#internet" class="glossary-ref">Internet</a>.
+              Malheureusement aujourd'hui, certaines dérives de l'utilisation
+              d'<a href="#internet" class="glossary-ref">internet</a> guidées par la recherche de profit nuisent à la
+              liberté et
+              la vie privée de l'utilisateur.
+              [captures d'écran]
+            </figcaption>
+          </figure>
+        </section>
+        <section id="reprendre-le-controle-sur-ses-outils">
+          <h2>Reprendre le contrôle sur ses outils</h2>
+
+          <section id="une-dependance-logicielle">
+            <h3>Une dépendance logicielle</h3>
+            <p>
+              Le designer questionne sans cesse les moyens graphiques qu'il met en
+              œuvre, mais la question des <a href="#logiciel" class="glossary-ref">logiciels</a> reste souvent ignorée.
+              La
+              suite monopolistique Adobe Creative Cloud<a href="#note-10" id="note-ref-10" class="note-ref">¹⁰</a> est
+              généralement
+              l'unique solution, avec une chaîne de production qui dirige toutes
+              les pratiques des designers comme le souligne Anthony Masure<a href="#note-11" id="note-ref-11"
+                class="note-ref">¹¹</a> : <q>La chaîne graphique se réduit ainsi progressivement à un seul acteur
+              qui concentre tout le pouvoir dans un schéma pyramidal.</q><a href="#note-12" id="note-ref-12"
+                class="note-ref">¹²</a>.
+            </p>
+            <p>
+              C'est une usine du créatif qui vise la productivité dans la démarche
+              créative, jusqu'à la recherche de clients avec la plateforme
+              Bēhance<a href="#note-13" id="note-ref-13" class="note-ref">¹³</a>.
+            </p>
+            <p>
+              Cette logique pousse à créer des outils où <q>l'utilisateur, lui, se
+              retrouve cantonné à évoluer dans un environnement à l'apparence
+              simpliste, où tout semble facile à l'utilisation et n'a ainsi plus à
+              questionner ses usages.</q><a href="#note-14" id="note-ref-14" class="note-ref">¹⁴</a>. Si Quentin Creuzet<a
+                href="#note-15" id="note-ref-15" class="note-ref">¹⁵</a> parle ici de
+              l'usager du <a href="#web" class="glossary-ref">Web</a>, le designer s'inscrit dans le même environnement
+              au
+              travers d'Adobe, qui propose des produits voulant effacer toute
+              difficulté au profit de l'efficacité et —selon eux— de la
+              créativité, menant de fait le designer à ne plus questionner ses
+              outils.
+            </p>
+            <p>
+              Une forme de dépendance est créée, et ce dès l'enseignement reçu, où
+              la suite Adobe est privilégiée. Le designer n'est plus maître de son
+              outil, il l'utilise par défaut parce qu'il devient la norme. Il
+              semble de fait nécessaire de se tourner vers des outils plus ouverts
+              pour ne pas s'enfermer dans une logique de productivité<a href="#note-16" id="note-ref-16"
+                class="note-ref">¹⁶</a>.
+            </p>
+          </section>
+
+          <figure>
+            <img src="images/06.webp"
+              alt="Interface de l'application Creative Cloud permettant l'installation facilitée des produits d'Adobe." />
+            <figcaption>
+              Interface de l'application Creative Cloud permettant l'installation
+              facilitée des produits d'Adobe.
+              [capture d'écran]
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/07.webp"
+              alt="Interface de l'application web Bēhance présentant diverses créations des utilisateurs des produits d'Adobe." />
+            <figcaption>
+              Interface de l'application <a href="#web" class="glossary-ref">web</a> Bēhance
+              présentant
+              diverses créations des utilisateurs des produits d'Adobe. <br /> [en ligne]
+              <a target="_blank" rel="noopener noreferrer" href="https://behance.net">behance.net</a>
+            </figcaption>
+          </figure>
+
+          <section id="des-outils-inadaptes">
+            <h3>Des outils inadaptés</h3>
+            <p>
+              Outre un problème de dépendance, les outils d'Adobe ne semblent plus
+              toujours adaptés à la pratique du designer. Depuis leur création,
+              ces derniers n'ont en effet que très peu évolué, ne connaissant que
+              de légers changements d'interface ou d'<a href="#expérience-utilisateur" class="glossary-ref">expérience
+                utilisateur</a><a href="#note-17" id="note-ref-17" class="note-ref">¹⁷</a>.
+            </p>
+            <p>
+              Le designer Mitch Paone<a href="#note-18" id="note-ref-18" class="note-ref">¹⁸</a> fait part des
+              limitations d'AfterEffects<a href="#note-19" id="note-ref-19" class="note-ref">¹⁹</a>
+              pour certains de ses projets, ce qui l'a mené à créer ses propres
+              outils lui conférant plus de contrôle dans l'animation typographique
+              générative.<a href="#note-20" id="note-ref-20" class="note-ref">²⁰</a> La graphiste Nolwenn Maudet<a
+                href="#note-21" id="note-ref-21" class="note-ref">²¹</a> rapporte des constats
+              similaires. Les <a href="#logiciel" class="glossary-ref">logiciels</a> sont calqués sur des pratiques
+              manuelles
+              antérieures à la <a href="#pao-publication-assistée-par-ordinateur" class="glossary-ref">PAO</a><a
+                href="#note-22" id="note-ref-22" class="note-ref">²²</a> et dissocient la créativité de l'utilisation
+              de l'outil. Cela a mené cette designer à en imaginer de nouvelles formes qui
+              proposent plus de liberté, et à explorer la programmation.<a href="#note-23" id="note-ref-23"
+                class="note-ref">²³</a>
+            </p>
+            <p>
+              En
+              effet, le développement informatique est aujourd'hui choisi par de
+              nombreux graphistes dans l'objectif d'avoir un contrôle total dans
+              la création. Par exemple, Paged.js<a href="#note-24" id="note-ref-24" class="note-ref">²⁴</a> permet de
+              faire de la mise en
+              page à partir des langages du <a href="#web" class="glossary-ref">Web</a>, tandis que d'autres <a
+                href="#logiciel-libre" class="glossary-ref">logiciels
+                libres</a> comme Blender<a href="#note-25" id="note-ref-25" class="note-ref">²⁵</a> utilisent un <a
+                href="#système-nodal" class="glossary-ref">système nodal</a><a href="#note-26" id="note-ref-26"
+                class="note-ref">²⁶</a> liant un peu
+              plus programmation et interface. Malgré cette liberté, le
+              développement implique des connaissances spécifiques et la perte
+              d'une interaction plus naturelle<a href="#note-27" id="note-ref-27" class="note-ref">²⁷</a> développée
+              avec la révolution du
+              <a href="#wysiwyg-what-you-see-is-what-you-get" class="glossary-ref">WYSIWYG</a><a href="#note-28"
+                id="note-ref-28" class="note-ref">²⁸</a>.
+            </p>
+
+            <figure class="caption-only">
+              <figcaption>
+                Interface de l'application After Effects par Adobe. [capture d'écran]
+              </figcaption>
+            </figure>
+            <figure>
+              <img src="images/08.webp"
+                alt="A l'intérieur se trouve une affiche typographique générative réalisée par le studio DIA pour la Biennale Internationale de Design Graphique à Chaumont de 2021." />
+              <figcaption>
+                A l'intérieur se trouve une affiche
+                typographique générative réalisée par le studio DIA pour la
+                Biennale Internationale de Design Graphique à Chaumont de 2021.
+                Elle a été réalisée avec un <a href="#logiciel" class="glossary-ref">logiciel</a> créé par le studio.
+                [en ligne]
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://dia.tv/project/chaumont-biennale">dia.tv/project/chaumont-biennale</a>
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="images/09.webp"
+                alt="Illustration des différentes versions de la barre d'outils de Photoshop depuis son lancement public en 1990 jusqu'à aujourd'hui." />
+              <figcaption>
+                Illustration des différentes versions de la barre d'outils de
+                Photoshop depuis son lancement public en 1990 jusqu'à aujourd'hui.
+                [captures d'écran] & [en ligne]
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://hongkiat.com/blog/evolution-of-photoshop">hongkiat.com/blog/evolution-of-photoshop</a>
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="images/10.webp"
+                alt="Interface de Blender, avec un exemple de système nodal sur la gauche, permettant de créer la texture du bec et des pattes de Tux (mascotte de Linux) stylisé sur la droite." />
+              <figcaption>
+                Interface de Blender, avec un exemple de <a href="#système-nodal" class="glossary-ref">système nodal</a>
+                sur la
+                gauche, permettant de créer la texture du bec et des pattes de Tux
+                (mascotte de Linux) stylisé sur la droite. Création personnelle.
+                [capture d'écran]
+              </figcaption>
+            </figure>
+
+
+
+
+          </section>
+          <section id="vers-des-logiciels-plus-ouverts">
+            <h3>Vers des <a href="#logiciel" class="glossary-ref">logiciels</a> plus ouverts</h3>
+            <p>
+              Cet attachement à des outils inadaptés est d'autant plus néfaste que
+              seuls les <a href="#logiciel" class="glossary-ref">logiciels</a> Adobe peuvent ouvrir leurs fichiers
+              (basés sur
+              des formats <a href="#logiciel-propriétaire" class="glossary-ref">propriétaires</a>), conduisant à une nécessité pour tous de
+              se soumettre à l'abonnement à la suite créative.
+            </p>
+            <p>
+              Comme le dit OSP<a href="#note-29" id="note-ref-29" class="note-ref">²⁹</a>, un collectif ne travaillant
+              qu'avec des outils
+              libres, <q>[…] il serait acceptable de payer un abonnement type Adobe
+              Creative Cloud si les formats de fichiers étaient libres et
+              documentés [...]</q><a href="#note-30" id="note-ref-30" class="note-ref">³⁰</a>. En effet, ces formats
+              de
+              fichiers sur lesquels
+              l'utilisateur n'a aucun contrôle limitent ses possibilités,
+              puisqu'en plus de le forcer à utiliser un type de <a href="#logiciel" class="glossary-ref">logiciel</a>,
+              ils
+              posent des questions importantes sur la pérennité de ses données
+              captives de la volonté d'Adobe.
+            </p>
+            <p>
+              À l'inverse, du côté des <a href="#logiciel-libre" class="glossary-ref">logiciels libres</a>, tout format
+              créé est
+              extrêmement documenté. Dans la majorité des cas, les fichiers sont
+              basés sur des standards ouverts tels que le format <a href="#svg-scalable-vector-graphics"
+                class="glossary-ref">SVG</a><a href="#note-31" id="note-ref-31" class="note-ref">³¹</a> pour
+              Inkscape<a href="#note-32" id="note-ref-32" class="note-ref">³²</a>, qui permet, en plus de proposer une
+              approche <a href="#wysiwyg-what-you-see-is-what-you-get" class="glossary-ref">WYSIWYG</a>, de
+              modifier directement le <a href="#code-source" class="glossary-ref">code source</a> du fichier.
+            </p>
+            <figure>
+              <img src="images/11.webp"
+                alt="Interface de l'application Inkscape avec un fichier SVG du 5e arrondissement de Paris provenant d'Open Street Map, un projet libre et collaboratif de base de données géographiques. On peut retrouver les paramètres du code source directement modifiables sur la droite." />
+              <figcaption>
+                Interface de l'application Inkscape avec un fichier <a href="#svg-scalable-vector-graphics"
+                  class="glossary-ref">SVG</a> du 5e
+                arrondissement de Paris provenant d'Open Street Map, un projet
+                libre et collaboratif de base de données géographiques. On peut
+                retrouver les paramètres du <a href="#code-source" class="glossary-ref">code source</a> directement
+                modifiables
+                sur la droite. [capture d'écran]
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="images/12.webp"
+                alt="Photo d'une image créée à l'aide de données extraites d'Open Street Map, modifiées dans Inkscape en utilisant le format SVG, puis converties et envoyées à une machine dessinant l'illustration finale." />
+              <figcaption>
+                Photo d'une image créée à l'aide de données extraites d'Open
+                Street Map, modifiées dans Inkscape en utilisant le format <a href="#svg-scalable-vector-graphics"
+                  class="glossary-ref">SVG</a>,
+                puis converties et envoyées à une machine dessinant l'illustration
+                finale. Le processus est réalisé à l'aide d'outils libres, et peut
+                être retrouvé sur le blog d'OSP.[capture d'écran] [en ligne]
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://blog.osp.kitchen/tools/osm-to-svg.html">blog.osp.kitchen/tools/osm-to-svg.html</a>
+              </figcaption>
+            </figure>
+
+
+          </section>
+          <section id="des-creations-reappropriables">
+            <h3>Des créations réappropriables</h3>
+            <p>
+              S'il semble nécessaire de reprendre le contrôle sur nos outils
+              numériques au travers de <a href="#logiciel" class="glossary-ref">logiciels</a> vraiment adaptés à la
+              pratique du
+              graphiste et basés sur des formats ouverts, cela n'aurait que peu de
+              sens si nous ne repensons pas notre rapport à la propriété des
+              données. En effet, puisqu'un <a href="#logiciel" class="glossary-ref">logiciel</a> implique une pratique,
+              se
+              tourner vers le libre induit le fait d'utiliser et de produire des
+              fichiers sous <a href="#licence" class="glossary-ref">licence</a> libre.
+            </p>
+            <p>
+              Cette approche se retrouve principalement dans la création
+              typographique, à l'instar de Velvetyne<a href="#note-33" id="note-ref-33" class="note-ref">³³</a>, une
+              fonderie numérique qui
+              offre une grande diversité de fontes atypiques. Elle s'inscrit
+              pleinement dans l'éthique libre avec une liberté totale
+              d'utilisation et de modification des fontes : la seule demande est
+              de créditer l'auteur. Inter<a href="#note-34" id="note-ref-34" class="note-ref">³⁴</a> est également une
+              typographie libre
+              complètement réappropriable. Elle se veut principalement utilitaire,
+              développée pour une lecture optimale sur les interfaces, et dans la
+              lignée du style International.
+            </p>
+            <p>
+              À l'ère d'<a href="#internet" class="glossary-ref">Internet</a> où tout est réapproprié, nous partageons
+              sans
+              nécessairement penser au cadre légal de nos utilisations et
+              productions. Pour soutenir ce droit à la réappropriation, le choix
+              des <a href="#licence" class="glossary-ref">licences</a> appliquées à nos créations devrait être
+              conscient.
+            </p>
+          </section>
+
+          <figure>
+            <img src="images/13.webp" alt="Mise en page présentant la typographie Inter." />
+            <figcaption>Mise en page présentant la typographie Inter. [en ligne]
+              <a target="_blank" rel="noopener noreferrer"
+                href="https://rsms.me/inter/samples">rsms.me/inter/samples</a>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/14.webp" alt="Page d'accueil de Velvetyne." />
+            <figcaption>Page d'accueil de Velvetyne. [en ligne]
+              <a target="_blank" rel="noopener noreferrer" href="https://velvetyne.fr">velvetyne.fr</a>
+            </figcaption>
+          </figure>
+
+
+
+
+
+
+          <section id="une-connaissance-partagee">
+            <h3>Une connaissance partagée</h3>
+            <p>
+              L'utilisation de <a href="#logiciel" class="glossary-ref">logiciels</a> et fichiers plus ouverts ne
+              devrait pas
+              se limiter à un usage personnel, mais aussi mener à un partage de la
+              connaissance et des sources de la création, ce qui pose des
+              questions d'archivage.
+            </p>
+            <p>
+              Raphaël Bastide<a href="#note-35" id="note-ref-35" class="note-ref">³⁵</a>, au travers de Fragile Forge<a
+                href="#note-36" id="note-ref-36" class="note-ref">³⁶</a>, nous partage les
+              <a href="#logiciel" class="glossary-ref">logiciels</a> qu'il développe. Leurs fichiers et <a
+                href="#code-source" class="glossary-ref">codes sources</a> sont
+              aussi disponibles grâce au <a href="#logiciel-de-versionnage" class="glossary-ref">logiciel de
+                versionnage</a><a href="#note-37" id="note-ref-37" class="note-ref">³⁷</a> Git<a href="#note-38"
+                id="note-ref-38" class="note-ref">³⁸</a>, au
+              travers de la plateforme collaborative GitLab<a href="#note-39" id="note-ref-39" class="note-ref">³⁹</a>.
+              Tous deux sont très
+              utilisés par les développeurs afin de conserver différentes versions
+              du code, créer des <a href="#fork" class="glossary-ref">fork</a><a href="#note-40" id="note-ref-40"
+                class="note-ref">⁴⁰</a>, et partager les créations. OSP a bien
+              compris son intérêt dans le domaine du design en basant sur Git le
+              projet Visual Culture<a href="#note-41" id="note-ref-41" class="note-ref">⁴¹</a>. Il permet d'avoir un
+              aperçu visuel
+              travaillé des images et modifications appliquées à un projet, ce qui
+              permet le partage des sources de leurs créations au sein d'un
+              archivage clair<a href="#note-42" id="note-ref-42" class="note-ref">⁴²</a>.
+            </p>
+            <p>
+              La pratique du designer devrait ainsi être tournée vers un objectif
+              de partage des données, qui peuvent être utiles à l'apprentissage de
+              tous.
+            </p>
+            <figure>
+              <img src="images/15.webp" alt="Page d'accueil du site web Fragile Forge." />
+              <figcaption>Page d'accueil du <a href="#web" class="glossary-ref">site web</a> Fragile Forge. [en ligne]
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://raphaelbastide.com/fragile-forge/">raphaelbastide.com/fragile-forge/</a>
+              </figcaption>
+            </figure>
+
+
+
+
+            <figure class="caption-only">
+              <figcaption>
+                Visuels du projet page suivante. [pour plus d'informations, voir
+                la page analyses sur le <a href="#web" class="glossary-ref">site web</a>]
+              </figcaption>
+            </figure>
+            <figure>
+              <img src="images/16.webp" alt="Page GitHub du projet Linux avec son arborescence." />
+              <img src="images/17.webp" alt="Page GitLab du projet Each page a function par Raphaël Bastide." />
+              <figcaption>
+                En haut, la page GitHub du projet Linux avec son arborescence. [en ligne]
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://github.com/torvalds/linux">github.com/torvalds/linux</a>
+                <br /><br />
+                En bas, la page GitLab du projet <em>Each page a function</em> par Raphaël
+                Bastide qui est à la fois une publication imprimée sortie en 2019, et des
+                programmes libres spécifiquement développés pour le projet que l'on peut
+                retrouver sur Fragile Forge. Elle permet de remettre en questions les outils
+                que l'on utilise dans notre pratique, et ainsi d'explorer d'autres manières de
+                créer. [en ligne]
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://gitlab.com/raphaelbastide/epaf">gitlab.com/raphaelbastide/epaf</a>
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="images/18.webp"
+                alt="Exemple d'un projet utilisant Visual Culture, avec visualisation des images, arborescence et historique des actions." />
+              <figcaption>
+                Exemple d'un projet utilisant Visual Culture pour être présenté,
+                ici le projet Visual Culture lui-même. On retrouve une
+                visualisation des images contenues à l'intérieur, l'arborescence
+                du projet, mais aussi un historique des actions effectuées, ici
+                sur la droite. [en ligne]
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://osp.kitchen/tools/visualculture">osp.kitchen/tools/visualculture</a>
+              </figcaption>
+            </figure>
+
+
+
+          </section>
+          <section id="un-design-fait-pour-lhumain">
+            <h3>Un design fait pour l'humain</h3>
+            <p>
+              Si le design implique le partage et la diffusion de connaissances,
+              il implique également de questionner son usage.
+            </p>
+            <p>
+              Comme le souligne Quentin Creuzet, certaines dérives de l'usage du
+              <a href="#web" class="glossary-ref">Web</a>, renforcées par le travail du graphiste, mènent à un espace où
+              le capitalisme de surveillance règne<a href="#note-43" id="note-ref-43" class="note-ref">⁴³</a>. Anthony
+              Masure nous pose
+              ainsi cette question : <q>Où situer alors le travail du designer&#8239;?
+              Travaille-t-il pour l'utilisateur ou pour le profit des usages que
+              les firmes privées souhaitent faire de cet espace&#8239;?</q><a href="#note-44" id="note-ref-44"
+                class="note-ref">⁴⁴</a>.
+            </p>
+            <p>
+              Le graphisme est en effet un outil puissant qui utilise le visuel
+              afin d'atteindre l'individu. Créons-nous pour aider l'usager, ou
+              pour le guider vers une action prédéfinie&#8239;? Puisque le rôle du
+              graphiste est, à mon sens, de mettre en avant l'information et de la
+              rendre accessible, il me semble nécessaire de repenser notre
+              pratique, d'aller vers un design pour l'humain plutôt que de
+              l'exploiter à d'autres fins.
+            </p>
+            <figure>
+              <img src="images/19.webp" alt="Illustration Use a mask, use Tor, campagne Tor 2020." />
+              <figcaption>
+                Illustration <em>Use a mask, use Tor</em>, provenant de la
+                campagne de communication de 2020 pour une levée de dons du projet
+                Tor, un réseau informatique mondial et décentralisé superposé à
+                <a href="#internet" class="glossary-ref">internet</a>. Il sert à naviguer de manière totalement
+                anonymisée en évitant donc d'être perpétuellement surveillé sur le
+                <a href="#web" class="glossary-ref">Web</a>, et permet d'accéder à ce qui est appelé le <q>dark
+                <a href="#web" class="glossary-ref">web</a></q>. [en ligne]
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://blog.torproject.org/friends-of-tor-match-2020">blog.torproject.org/friends-of-tor-match-2020</a>
+              </figcaption>
+            </figure>
+
+          </section>
+        </section>
+        <section id="conclusion">
+          <h2>Conclusion</h2>
+          <p>
+            Il semble ainsi que la pratique du designer peut être en désaccord
+            avec les intentions des éditeurs de <a href="#logiciel-propriétaire" class="glossary-ref">logiciels
+              propriétaires</a>. Ils
+            mettent en place des systèmes qui soumettent le graphiste à des
+            <a href="#logiciel" class="glossary-ref">logiciels</a> parfois inadaptés, en lui faisant oublier la
+            possibilité
+            d'accès à d'autres outils, voire en l'empêchant d'y accéder par
+            l'usage de formats fermés dont il dépend.
+          </p>
+          <p>
+            Il semble donc urgent de se diriger vers des <a href="#logiciel" class="glossary-ref">logiciels</a> plus
+            ouverts
+            qui impliquent des pratiques plus proches du travail du designer, et
+            de fait vers le <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a> qui propose une liberté
+            totale à
+            l'utilisateur, par la philosophie sur laquelle il repose et les
+            <a href="#licence" class="glossary-ref">licences</a> qui en découlent. Il nous permet donc bien de
+            ré-envisager
+            notre pratique en allant vers un graphisme de partage, où les
+            informations sont accessibles à tous.
+          </p>
+          <p>
+            Pourrait-il y avoir un changement de paradigme à l'instar du milieu
+            informatique se tournant vers le <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a>, ou à
+            minima open
+            source&#8239;? Cela n'implique-t-il pas de se diriger vers un design où le
+            code devient la norme pour plus de liberté&#8239;?
+          </p>
+          <p>
+            Si de nombreuses solutions libres existent, j'ai pu découvrir au cours
+            de mes recherches que leurs domaines d'application et usages sont
+            rarement bien présentés. Il me semblerait intéressant de créer une
+            plateforme de sensibilisation autour de ces différents outils et des
+            productions graphiques qui y sont associées car il y a un enjeu
+            d'éducation et d'information, sans quoi ces <a href="#logiciel" class="glossary-ref">logiciels</a> resteront
+            de
+            l'ordre de l'utopie.
+          </p>
+          <figure>
+            <img src="images/20.webp" alt="Couverture réalisée avec Paged.js par Amélie Dumond pour CityFab2." />
+            <img src="images/21.webp" alt="Double page de la documentation CityFab2, fablab Bruxelles." />
+            <figcaption>
+              Couverture et double page réalisées avec Paged.js par Amélie Dumond
+              en 2020 pour la documentation du fablab CityFab2 à Bruxelles.
+              <br /><br />
+              Le concept de Fablab a été créé par Neil Gershenfeld, professeur au
+              MIT (Massachusetts Institute of Technology). Il créera un cours
+              ouvert à des étudiants qui vont venir utiliser les machines
+              sophistiquées du MIT pour réaliser ce qu'ils veulent.
+              <br /><br />
+              Ce concept va être exporté à l'international et porte le nom de
+              Fablab, signifiant <em>fabrication laboratory</em>. C'est un espace
+              ouvert au grand public, où les gens peuvent venir fabriquer des
+              choses avec les machines professionnelles proposées. Gratuits ou
+              payants, il est souvent possible d'avoir de l'aide pour réaliser ses
+              projets.
+              <br /><br />
+              Cette édition s'inscrit donc pleinement dans un graphisme plus ouvert
+              se rapprochant de l'éthique libre. [en ligne]
+              <a target="_blank" rel="noopener noreferrer"
+                href="https://pagedjs.org/en/examples/">pagedjs.org/examples</a>
+            </figcaption>
+          </figure>
+
+        </section>
+        <section id="references">
+          <h2>Références</h2>
+          <section id="ouvrages">
+            <h3>Ouvrages</h3>
+            <ul class="reference-list">
+              <li>
+                MASURE, Anthony. <em>Design et humanités numériques</em>, Paris : éd. B42,
+                coll. Esthétique des données, 2017.
+              </li>
+              <li>
+                MAUDET, Nolwenn. <em>Designing design tools</em>, 2017. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://designing-design-tools.nolwennmaudet.com/">https://designing-design-tools.nolwennmaudet.com/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+            </ul>
+          </section>
+          <section id="articles">
+            <h3>Articles</h3>
+            <ul class="reference-list">
+              <li>
+                BackOffice. <q>Workshops libres, Entretien avec OLA</q>, in <em>BackOffice</em>, n° 1, 2017.
+                [en ligne],
+                disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="http://www.revue-backoffice.com/numeros/01-faire-avec">http://www.revue-backoffice.com/numeros/01-faire-avec</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                CREUZET, Quentin. <q>Croisades graphiques – le minimalisme à l'ère
+                du néolibéralisme</q>, in <em>Pli</em>, n° 6, septembre 2020, p. 117-124.
+              </li>
+              <li>
+                Entretien avec PAONE, Mitch. <q>Le mouvement plus que la matière</q>,
+                in <em>BackOffice</em>, n° 4, avril 2021, p. 46, 53.
+              </li>
+              <li>
+                Free Software Foundation&#8239;; traduit par COUCHET, Frédéric et
+                PRADENE, Karl. <q>Qu'est-ce que le <a href="#logiciel-libre" class="glossary-ref">logiciel
+                  libre</a> ?</q>,
+                4 novembre 2021. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://www.gnu.org/philosophy/free-sw.html">https://www.gnu.org/philosophy/free-sw.html</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                MASURE, Anthony. <q>Visual Culture, Open Source Publishing, Git et
+                le design graphique</q>, in <em>Strabic</em>, 2014. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://strabic.fr/OSP-Visual-Culture">https://strabic.fr/OSP-Visual-Culture</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                TAFFINS, Nicolas. <q>Dans les recoins de la double page (Paged.js à
+                la maison, saison 2)</q>, in <em>Polylogue</em>, 1 mars 2021. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://polylogue.org/apres-la-page-la-double-page/">https://polylogue.org/apres-la-page-la-double-page/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+            </ul>
+          </section>
+          <section id="projets">
+            <h3>Projets</h3>
+            <ul class="reference-list">
+              <li>
+                ABBINK, Mike. <em>IBM Plex</em>, 2018. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://www.ibm.com/plex/">https://www.ibm.com/plex/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                ANDERSON, Rasmus. <em>Inter</em>, 2016. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer" href="https://rsms.me/inter/">https://rsms.me/inter/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                BASTIDE, Raphaël. <em>Each Page A Function</em>, Paris : éd. LeMégot, 2019. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://raphaelbastide.com/epaf/zine/">https://raphaelbastide.com/epaf/zine/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                BASTIDE, Raphaël. <em>Fragile Forge</em>. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://raphaelbastide.com/fragile-forge/">https://raphaelbastide.com/fragile-forge/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                BIANCHI, Lætitia&#8239;; MELTZ, Raphaël. <em>Le Tigre</em>, 2006-2014. [en ligne], archives disponibles
+                sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="http://www.le-tigre.net/">http://www.le-tigre.net/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+            </ul>
+          </section>
+          <section id="logiciels">
+            <h3><a href="#logiciel" class="glossary-ref">Logiciels</a></h3>
+            <ul class="reference-list">
+              <li>
+                Adobe Systems. <em>Adobe Creative Cloud</em>, 2011. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://creativecloud.adobe.com/">https://creativecloud.adobe.com/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                Adobe Systems. <em>Bēhance</em>, 2005. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://www.behance.net/">https://www.behance.net/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                Collectif. <em>Inkscape</em>, 2003. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer" href="https://inkscape.org/">https://inkscape.org/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                Collectif. <em>Scribus</em>, 2003. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://www.scribus.net/">https://www.scribus.net/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                Collectif OSP. <em>Visual Culture</em>, 2014. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="http://osp.kitchen/tools/visualculture">http://osp.kitchen/tools/visualculture</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                Design Systems International. <em>Mechanic</em>. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://mechanic.design/">https://mechanic.design/</a>,
+                page consultée le 3 janvier 2021.
+              </li>
+              <li>
+                FRY, Ben&#8239;; REAS, Casey. <em>Processing</em>, 2001. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer" href="https://processing.org/">https://processing.org/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                HYDE, Adam. <em>Paged.js</em>, 2017. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer" href="https://www.pagedjs.org">https://www.pagedjs.org</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                Krita Foundation. <em>Krita</em>, 2005. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer" href="https://krita.org/">https://krita.org/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                MATTIS, Peter&#8239;; KIMBALL, Spencer. <em>Gimp</em>, 1995. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer" href="https://www.gimp.org/">https://www.gimp.org/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+              <li>
+                ROOSENDAAL, Ton. <em>Blender</em>, 1994. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="https://www.blender.org/">https://www.blender.org/</a>,
+                consulté le 3 janvier 2021.
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section id="questions-et-conversations">
+          <h2>Questions et conversations</h2>
+          <p>
+            <a target="_blank" rel="noopener noreferrer"
+              href="memoire_interviews.html">vertpierre.com/websites/memoire_dnmade/memoire_interviews.html</a>
+          </p>
+        </section>
+        <section id="annexes">
+          <section id="sommaire-2">
+            <h3>Sommaire</h3>
+            <ul>
+              <li><a href="#raphael-bastide">Raphaël Bastide</a></li>
+              <li><a href="#nolwenn-maudet">Nolwenn Maudet</a></li>
+            </ul>
+          </section>
+          <section id="raphael-bastide">
+            <h3>Raphaël Bastide</h3>
+            <p>
+              Interview réalisée en visioconférence sur Jitsi [<a href="#logiciel" class="glossary-ref">Logiciel</a> de
+              visioconférence libre] avec Raphaël Bastide, professeur en art et
+              graphisme, le 1er novembre 2021 à 15:00, durant 1h15min.
+            </p>
+            <p>
+              La retranscription suivante représente une partie réduite et
+              retravaillée de l'échange global. [voir le <a href="#web" class="glossary-ref">site web</a> pour l'échange
+              complet]
+            </p>
+            <h4>Une présentation de ton parcours en quelques phrases&#8239;?</h4>
+            <p>
+              J'ai fait des études à la fois techniques et artistiques. J'ai
+              commencé à l'IUT [Institut Universitaire Technologique] de Bordeaux,
+              qui s'appelait Services et Réseaux de Communication. Il avait une
+              petite entrée sur le graphisme qui m'avait bien plu. J'ai par la
+              suite enchaîné sur une école de graphisme à Toulouse qui ne doit
+              plus exister, ça n'était pas une très bonne école. Mais j'ai
+              beaucoup appris seul et j'ai découvert l'<a href="#internet" class="glossary-ref">Internet</a> social des
+              premiers réseaux sociaux entre 2000 et 2005, où des artistes et des
+              graphistes commençaient à faire des expérimentations faites pour
+              <a href="#internet" class="glossary-ref">Internet</a>.
+            </p>
+            <p>
+              Donc ça a influencé leurs propres pratiques et ça m'intéressait
+              beaucoup. J'ai découvert peu après le Net.art [créations
+              généralement interactives, conçues par et pour <a href="#internet" class="glossary-ref">Internet</a>]. Là
+              j'y ai
+              trouvé un vrai intérêt, c'était vraiment de l'art et ça l'est
+              toujours d'ailleurs, de l'art fait pour <a href="#internet" class="glossary-ref">Internet</a> en tant que
+              médium
+              artistique.
+            </p>
+            <p>
+              J'ai approfondi tout ça, j'ai fait des recherches personnelles en
+              parallèle de mes études de graphisme. Puis j'ai aussi découvert le
+              <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a> et j'ai décidé d'aller à l'ERG [École de
+              Recherche
+              Graphique] de Bruxelles, où j'ai fait un Master artistique en Arts
+              Numériques avec option typographie. J'ai ainsi pu continuer
+              d'explorer cette partie du graphisme, dans l'art numérique.
+            </p>
+            <h4>
+              Tu publies quasiment tous tes travaux sous <a href="#licence" class="glossary-ref">licence</a> libre,
+              quelle est
+              ta volonté derrière son utilisation&#8239;?
+            </h4>
+            <p>
+              En fait, aujourd'hui c'est plus un non choix dans le sens où je ne
+              choisis plus de distribuer sous une <a href="#licence" class="glossary-ref">licence</a> libre, c'est
+              plutôt
+              quelque chose que je fais naturellement, c'est rentré dans ma
+              méthodologie de travail et c'est aussi une façon pour moi de
+              contribuer à un ensemble plus grand, dans la mesure où j'utilise
+              beaucoup de choses qui ont été faites par d'autres.
+            </p>
+            <p>
+              Donc a priori je vais redistribuer ce que je fais à celles et ceux
+              que ça intéresse, si jamais ils existent.
+            </p>
+            <p>
+              Et donc voilà, c'est plus faire partie d'un flux qui m'intéresse, et
+              les caractéristiques ainsi que la méthodologie qui l'accompagnent me
+              conviennent tout à fait, conviennent à ma façon de travailler. Tout
+              ce qui est versioning [création de versions avec un <a href="#logiciel-de-versionnage"
+                class="glossary-ref">logiciel de
+                versionnage</a>], choix de <a href="#licence" class="glossary-ref">licence</a>, collaboration quand elle
+              existe, la
+              documentation, tout ça m'intéresse profondément.
+            </p>
+            <p>
+              À la limite, je documente pour les autres pour ne pas documenter
+              pour moi, c'est une espèce de rigueur de travail qui me permet de
+              travailler efficacement.
+            </p>
+            <p>
+              Je pense qu'à l'origine j'ai peut-être un petit problème de rigueur
+              qui la plupart du temps est comblé par l'idée que d'autres vont voir
+              ce que je fais, ou moi-même à l'avenir. C'est-à-dire qu'il y a un
+              moi dans dix ans qui va retourner sur ce que je fais et qui va se
+              dire <q>Ha heureusement que j'avais marqué ce truc&#8239;!</q> ou <q>ha tant
+              pis, il y a pas ça, etc.</q>
+            </p>
+            <h4>
+              Que peux-tu me dire du fait qu'il y ait plus de diversité logicielle
+              dans le domaine de la comptabilité que dans le design graphique
+              comme le souligne Franck Adebiaye&#8239;?
+            </h4>
+            <p>
+              MASURE, Anthony. <q>Visual Culture, Open Source Publishing, Git et le
+              design graphique</q>, in <em>Strabic</em>, 2014. [en ligne],
+              disponible sur :
+              <a target="_blank" rel="noopener noreferrer"
+                href="https://strabic.fr/OSP-Visual-Culture">https://strabic.fr/OSP-Visual-Culture</a>, consulté le 3
+              janvier 2021.
+            </p>
+            <p>
+              Je dirais que je connais l'un mais pas l'autre, contrairement à
+              Franck, donc je ne pourrais pas dire pourquoi il n'y a pas de major
+              dans la comptabilité, même si j'ai peut-être une idée. Mais en tous
+              cas je suis attristé de constater qu'effectivement il y a des
+              <a href="#logiciel" class="glossary-ref">logiciels</a> qui ont complètement dominé le marché et les usages
+              du
+              design graphique, et je comprends pourquoi. Parce qu'en fait rien
+              n'était en place pour les contrer. Maintenant, c'est quelque chose
+              qui a tendance à être un peu moins vrai. J'ai l'impression que la
+              suite Adobe a un peu plus de mal à garder sa place de marché.
+            </p>
+            <p>
+              Malgré tout, parmi les livres qui sont dans une librairie
+              aujourd'hui, je pense que 99,9 % ont été designés avec InDesign
+              [<a href="#logiciel-propriétaire" class="glossary-ref">logiciel propriétaire</a> de <a
+                href="#pao-publication-assistée-par-ordinateur" class="glossary-ref">PAO</a> lancé en 1999 par Adobe].
+              Donc c'est
+              assez important, et je pense que ce qui est le plus intéressant dans
+              cette citation de Franck, c'est le fait qu'elle existe. C'est-à-dire
+              qu'a priori, ce manque de diversité n'embête personne.
+            </p>
+            <p>
+              Et moi, ce qui m'intéresse là-dedans, c'est qu'il y a des gens, une
+              poignée de personnes qui veulent dire non.
+            </p>
+            <p>
+              Les formes éditoriales au sens très large que l'on produit
+              aujourd'hui sont issues des mêmes boîtes noires qui sont des
+              produits d'entreprises et qui ne sont pas remises en question. Qu'il
+              y ait des boîtes noires, il n'y a aucun problème, il y en a partout.
+              Des boîtes noires, on en conduit, on en a dans les poches. Mais là,
+              le problème c'est qu'il y a très peu de critiques par rapport à ça
+              et la diversité manque cruellement. D'ailleurs on voit que dès qu'il
+              commence à y voir un peu plus de diversité technologique, eh bien ça
+              permet d'avoir de grandes respirations culturelles et esthétiques.
+              Ça permet d'avoir des émancipations, mais aussi de donner la parole
+              à des minorités. Tout cela est très lié en fait. Le <a href="#logiciel" class="glossary-ref">logiciel</a>
+              que
+              l'on utilise a un impact à la fois sur les productions et les
+              producteurs.
+            </p>
+            <h4>
+              Que penses-tu des outils de production graphique libres plus <q>génériques</q> tels que Scribus
+              [<a href="#logiciel-libre" class="glossary-ref">logiciel libre</a> de <a
+                href="#pao-publication-assistée-par-ordinateur" class="glossary-ref">PAO</a>] comparé à
+              d'autres comme Paged.js [<a href="#logiciel-libre" class="glossary-ref">logiciel libre</a> de <a
+                href="#pao-publication-assistée-par-ordinateur" class="glossary-ref">PAO</a> basé sur le
+              développement <a href="#web" class="glossary-ref">web</a>] ?
+            </h4>
+            <p>
+              Je vois ça comme un dégradé. C'est-à-dire qu'il y a plusieurs
+              niveaux, il y a plusieurs types de <a href="#logiciel" class="glossary-ref">logiciels</a>. Il y a autant
+              d'interfaces que de créateurs d'interfaces. L'équipe derrière
+              Inkscape ou l'équipe derrière Paged.js ne sont pas du tout les
+              mêmes. Elles n'ont pas du tout la même culture du <a href="#logiciel" class="glossary-ref">logiciel</a>,
+              n'ont
+              pas le même stack, donc la pile d'outils n'est pas la même non plus.
+              L'âge du programme n'est pas le même et les usagers ne sont pas les
+              mêmes.
+            </p>
+            <p>
+              Inkscape [<a href="#logiciel-libre" class="glossary-ref">logiciel libre</a> destiné à la création d'<a
+                href="#image-vectorielle" class="glossary-ref">images
+                vectorielles</a>], par exemple, est un <a href="#logiciel" class="glossary-ref">logiciel</a> qui
+              s'adresse à un
+              public très large, alors que le Paged.js s'adresse à des
+              développeurs qui vont devoir l'appeler comme une librairie dans un
+              programme.
+            </p>
+            <p>
+              Je trouve que cette granularité de différences est hyper saine parce
+              qu'il y a aussi beaucoup de pratiques différentes et d'usages.
+              Moi-même, ça m'intéresse de me frotter à tout ça en tant qu'auteur
+              de <a href="#logiciel" class="glossary-ref">logiciels</a> ou de programmes, ou de je ne sais pas quoi
+              d'ailleurs.
+              Ça m'intéresse de jouer à faire des choses très arides, ou au
+              contraire de travailler sur des interfaces qui vont beaucoup plus
+              caresser l'utilisateur dans le sens du poil en lui proposant des
+              choses qu'il connaît déjà.
+            </p>
+            <p>
+              En fait, ça serait trop triste de n'avoir qu'un type de <a href="#logiciel"
+                class="glossary-ref">logiciel</a>. Et
+              d'ailleurs, il y a beaucoup de gens qui disent que le <a href="#logiciel-libre"
+                class="glossary-ref">logiciel libre</a>
+
+              c'est du mauvais <a href="#logiciel" class="glossary-ref">logiciel</a>, ou que les formes du libre sont
+              des
+              formes moches.
+            </p>
+            <p>
+              C'est fondé dans le sens où les gens font des formes moches avec du
+              <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a>, mais c'est peut-être parce que les gens
+              qui
+              utilisent le libre sont déjà persuadés qu'ils ne peuvent faire que
+              ça, c'est le serpent qui se mord la queue. Mais en y repensant,
+              c'est un argument qui n'existe plus vraiment. Ce que je dis, c'est
+              qu'il y a énormément de choses très intéressantes qui se sont faites
+              avec des <a href="#logiciel-libre" class="glossary-ref">logiciels libres</a> comme un navigateur tel que
+              Firefox
+              [navigateur libre développé par la Mozilla Foundation depuis 2003].
+              Firefox ne produit pas des formats moches. Firefox permet de
+              développer toutes les interfaces de <a href="#web" class="glossary-ref">sites web</a> que l'on voit
+              aujourd'hui.
+            </p>
+            <p>
+              Donc il n'y a pas de <a href="#logiciel" class="glossary-ref">logiciels</a> qui produisent des formes
+              moches, il
+              n'y a que des individus qui produisent des formes moches et j'irais
+              même jusqu'à dire qu'il n'y a que des individus qui jugent que ces
+              formes sont moches. Personnellement ça m'intéresse énormément de
+              travailler avec ces formes dites moches parce qu'elles font partie
+              d'un certain folklore et qu'elles créent une histoire non seulement
+              au <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a>, mais plus globalement à l'histoire
+              de
+              l'interface, à l'histoire du <a href="#web" class="glossary-ref">web</a> design, à l'histoire des
+              communautés en ligne.
+            </p>
+            <h4>[Conversation finale autour de ma problématique de mémoire]</h4>
+            <p>
+              Là où il y a aussi un truc à creuser, c'est dans les pratiques
+              libres du graphisme. Il y a des choses qui émergent, qui ne peuvent
+              pas être faites avec des <a href="#logiciel-propriétaire" class="glossary-ref">logiciels
+                propriétaires</a>. Il y en a plein
+              d'autres qui peuvent être faites avec du <a href="#logiciel-propriétaire" class="glossary-ref">logiciel
+                propriétaire</a> sans
+              aucun problème. Mais les outils libres, les interfaces, les outils
+              sur mesure ont un impact esthétique sur certaines pratiques qui n'a,
+              à ma connaissance, jamais été cartographié. Ça pourrait être
+              intéressant de voir dans quelle mesure les outils et les
+              méthodologies libres peuvent influencer les choix esthétiques.
+              Est-ce qu'on ne peut pas en dégager une scène&#8239;? Ne peut-on pas
+              retrouver des particularités qui sont bien définissables, bien
+              associables avec le <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a>, et donc
+              cartographier et trouver
+              les acteurs&#8239;?
+            </p>
+            <p>
+              La première chose qui me vient c'est l'acceptation et la mise en
+              avant de l'erreur, mais bien entendu, il n'y a pas que ça. Il y a
+              par exemple la typographie vernaculaire numérique. Là il y a quelque
+              chose d'intéressant, la question de la mise en page avec des outils
+              de <a href="#web2print" class="glossary-ref">web2print</a>, du <a href="#fanzine"
+                class="glossary-ref">fanzine</a>. Quelles traces peuvent laisser des
+              <a href="#logiciel" class="glossary-ref">logiciels</a> comme Inkscape ou Paged.js, est-ce qu'il y a des
+              traces
+              graphiques&#8239;? C'est peut-être un peu long à explorer, mais je pense
+              que c'est hyper intéressant.
+            </p>
+            <p>
+              Il y a aussi la question de la diffusion de la culture du graphisme
+              libre. Il y a eu des choses, il y a eu le
+              <em>Libre Graphics Magazine</em> [magazine annuel sur la création
+              graphique libre qui ne paraît plus depuis 2015], les
+              <em>Libre Graphics Meeting</em> [rencontre internationale annuelle
+              sur les outils de création graphique libre]. Il y a eu des blogs, il
+              y a eu des choses, mais il n'y a pas d'énergie qui rassemble. On
+              essaie de le faire avec PrePostPrint [label et <a href="#web" class="glossary-ref">site web</a> qui met en
+              avant des publications et ressources basées sur des créations libres
+              expérimentales], ça reste très niche sur la mise en page et la
+              publication, mais on a un compte Twitter, on publie des trucs quand
+              il y a des étudiants intéressants.
+            </p>
+            <p>
+              Ça manque d'un truc qui fédère autour de la diffusion, de la culture
+              et des possibilités du graphisme libre. Parce qu'il y a des choses,
+              il y a des blogs qui parlent beaucoup de Gimp [<a href="#logiciel-libre" class="glossary-ref">logiciel
+                libre</a>
+
+              destiné à la création d'<a href="#image-matricielle" class="glossary-ref">images matricielles</a>],
+              Inkscape, mais ils
+              t'apprennent à faire des coccinelles en vecteurs.
+            </p>
+            <p>
+              C'est pas inintéressant, mais ça manque de quelque chose qui
+              intéresse les étudiants, les professeurs, les professionnels du
+              design graphique.
+            </p>
+          </section>
+          <section id="nolwenn-maudet">
+            <h3>Nolwenn Maudet</h3>
+            <p>
+              Interview réalisée en visioconférence sur Jitsi avec Nolwenn Maudet,
+              designer d'interaction et chercheuse en design, le 4 novembre à
+              09:00, durant 45min.
+            </p>
+            <p>
+              La retranscription suivante représente une partie réduite et
+              retravaillée de l'échange global. [voir le <a href="#web" class="glossary-ref">site web</a> pour l'échange
+              complet]
+            </p>
+            <h4>
+              Peux-tu faire une présentation en quelques phrases de ton parcours&#8239;?
+            </h4>
+            <p>
+              Je m'appelle Nolwenn Maudet, je suis designer d'interaction et
+              enseignante chercheuse, maître de conférences et enseignante à
+              l'université. J'ai plutôt un parcours design produit, et j'ai été
+              formée à l'école Boulle avec un BTS et un DSAA. Je me suis rendu
+              compte par la suite que j'étais plus intéressée par le numérique. De
+              fait, j'ai voulu compléter mes études après mon DSAA avec un Master
+              que j'ai réalisé à l'UTC Compiègne, qui était dédié à l'<a href="#expérience-utilisateur"
+                class="glossary-ref">expérience
+                utilisateur</a>.
+            </p>
+            <p>
+              Ce Master m'a ainsi ouvert au monde de la recherche, grâce à de
+              nombreux enseignants extrêmement intéressants, et j'ai pu découvrir
+              un laboratoire qui faisait ce qui s'appelait de l'interaction humain
+              machine, qui m'a menée à faire ma thèse en informatique, mais qui
+              était en réalité plus liée au design.
+            </p>
+            <p>
+              Ensuite, je suis allée faire ce qui s'appelle un post-doc,
+              c'est-à-dire un séjour de recherche contre un poste non permanent de
+              chercheur à l'Université de Tokyo, pour ensuite obtenir un poste
+              d'enseignante chercheuse à l'Université de Strasbourg, où je suis
+              toujours actuellement.
+            </p>
+            <h4>
+              Tu as publié ta thèse sous <a href="#licence" class="glossary-ref">licence</a> libre, c'est quelque chose
+              que tu
+              appliques régulièrement dans tes projets&#8239;?
+            </h4>
+            <p>
+              En effet, c'est quelque chose qui me tient vraiment à cœur. Avec le
+              numérique en particulier, je pense que les anciennes idées de la
+              propriété intellectuelle telles qu'elles pouvaient se faire dans le
+              design n'ont plus vraiment d'intérêt. Au contraire, je pense
+              qu'aujourd'hui il est beaucoup plus intéressant de partager ce qu'on
+              fait en tant que designer, et a fortiori quand on est chercheur.
+              Cela me semble aberrant que parfois les publications de recherche ne
+              soient pas accessibles à tout le monde, sachant que c'est l'argent
+              du contribuable, il n'y a pas de raison que la connaissance ne soit
+              pas accessible à tous.
+            </p>
+            <p>
+              Même au-delà de cette raison purement financière, il y a aussi une
+              raison plus idéologique. Pour moi, la connaissance, c'est quelque
+              chose qui devrait être accessible à tous. Ça n'a que des bénéfices,
+              donc oui, c'était vraiment important que ma thèse soit accessible en
+              <a href="#logiciel-open-source" class="glossary-ref">open source</a>. Si je ne l'avais pas fait, les seules personnes qui
+              auraient eu accès à cette recherche auraient probablement été les
+              grands groupes du type Google, Facebook, Adobe qui auraient eu les
+              moyens de payer l'accès aux librairies souvent anglo-saxonnes dans
+              le milieu de la recherche, alors que moi je m'intéressais beaucoup
+              plus à la communauté francophone. Je pense que mettre cette <a href="#licence"
+                class="glossary-ref">licence</a>
+
+              était le seul moyen pour la rendre accessible.
+            </p>
+            <h4>
+              Quel est ton rapport au libre dans le reste de tes productions&#8239;?
+            </h4>
+            <p>
+              Je dirais que cela tourne principalement autour des <a href="#licence" class="glossary-ref">licences</a>
+              que
+              j'attribue à mon travail plus que les outils. Je suis vraiment une
+              supportrice du libre mais paradoxalement, j'utilise peu de <a href="#logiciel-libre"
+                class="glossary-ref">logiciels
+                libres</a>. Pour tout ce qui touche à la production, je pense que je
+              n'utilise presque que des outils sous <a href="#licence" class="glossary-ref">licence</a> <a href="#logiciel-propriétaire" class="glossary-ref">propriétaire</a>.
+            </p>
+            <p>
+              Malgré tout, j'utilise parfois des outils libres, comme dans l'un
+              des derniers projets réalisés avec mon collègue Thomas Thibault
+              [designer numérique et cofondateur] du collectif BAM [un studio de
+              design favorisant l'autonomie du designer et de l'utilisateur dans
+              ses productions]. Ne pas le mettre sous cette <a href="#licence" class="glossary-ref">licence</a> irait à
+              l'encontre de tout ce que je défends dans mes projets eux-mêmes,
+              puisque la plupart s'intéressent à un <q>empouvoirement</q>,
+              c'est-à-dire redonner des outils, des manières pour que tous,
+              designers et utilisateurs, puissent se réapproprier le monde du
+              numérique.
+            </p>
+            <p>
+              Cela me tient vraiment à cœur, et les <a href="#licence" class="glossary-ref">licences</a> libres en
+              particulier
+              sont vitales pour ça.
+            </p>
+            <p>
+              Je collabore ainsi régulièrement avec le collectif BAM, au sein
+              duquel il y a une vraie démarche pour utiliser des outils qui soient
+              libres mais ça n'est pas toujours facile. Par exemple, un choix qui
+              a été fait et qui est le mien aussi, a été d'abandonner la suite
+              Adobe au profit d'une suite qui s'appelle Affinity [suite de 3
+              <a href="#logiciel-propriétaire" class="glossary-ref">logiciels propriétaires</a> semblables à la suite
+              Adobe].
+            </p>
+            <p>
+              Et je pense que sur ce point on est de plus en plus nombreux, même
+              si ce n'est pas la meilleure solution puisque ce ne sont pas des
+              outils libres. Malgré cela, cette utilisation a tout de même le
+              mérite de faire exister une solution qui ne soit pas Adobe et de
+              réduire un monopole.
+            </p>
+            <p>
+              Par ailleurs, j'utilise de moins en moins de <a href="#logiciel" class="glossary-ref">logiciels</a> dans
+              ma
+              pratique personnelle. La suite Affinity m'est utile de temps à
+              autres, mais au quotidien je n'utilise pratiquement plus que la
+              programmation. L'utilisation de langages ouverts tels que ceux du
+              <a href="#web" class="glossary-ref">web</a> fait que oui, j'utilise en réalité une grande partie du temps
+              des outils libres.
+            </p>
+            <h4>
+              Que peux-tu me dire du fait qu'il y ait plus de diversité logicielle
+              dans le domaine de la comptabilité que dans le design graphique
+              comme le souligne Franck Adebiaye&#8239;?
+            </h4>
+            <p>
+              MASURE, Anthony. <q>Visual Culture, Open Source Publishing, Git et le
+              design graphique</q>, in <em>Strabic</em>, 2014. [en ligne],
+              disponible sur :
+              <a target="_blank" rel="noopener noreferrer"
+                href="https://strabic.fr/OSP-Visual-Culture">https://strabic.fr/OSP-Visual-Culture</a>, consulté le 3
+              janvier 2021.
+            </p>
+            <p>
+              Tel était aussi mon constat, et c'est notamment la raison pour
+              laquelle j'ai voulu faire ma thèse. Je trouve en effet que c'est
+              d'une extrême tristesse et je pense qu'il y a plusieurs facteurs qui
+              y sont liés : historiques, politiques, contextuels, mais aussi le
+              fait que pendant très longtemps cette question de l'outil n'a pas du
+              tout été un souci pour le designer. Ils ont considéré qu'il y avait
+              un outil sans réellement se poser la question, sans se demander si
+              les outils utilisés pouvaient avoir un impact sur leur pratique.
+              C'était Adobe ou rien.
+            </p>
+            <p>
+              Par ailleurs, j'ai adoré mes études et la manière dont on m'a
+              enseigné le design. Mais l'outil était vraiment un point noir, un
+              angle mort, ce qui m'a beaucoup touchée. Lorsque j'ai commencé à me
+              pencher sur le sujet, j'ai pu voir la richesse des pratiques des
+              designers, qui, étant créatifs par nature, dépassent toujours les
+              outils.
+            </p>
+            <p>
+              Nous avons un outil qui est exactement le même, mais il n'y a
+              pourtant pas un seul designer qui l'utilise de la même manière que
+              l'autre, qui crée la même chose, puisque par définition dans nos
+              métiers on réinvente des choses, on cherche à inventer son propre
+              processus. De fait, la créativité est bien plus du côté des
+              designers que du côté des outils.
+            </p>
+            <p>
+              Donc cet aspect du designer a entraîné ce problème faisant que l'on
+              partait toujours de la même base sans jamais la remettre en
+              question, ce qui est toujours un problème de nos jours me
+              semble-t-il. Ainsi, lorsque j'ai commencé ma thèse en 2014, tout
+              était très figé au niveau des <a href="#logiciel" class="glossary-ref">logiciels</a> type Adobe.
+            </p>
+            <p>
+              Par contre, il y avait un foisonnement énorme dans les années 2015 à
+              2017 du côté des <a href="#logiciel" class="glossary-ref">logiciels</a> dans les disciplines de l'UX [<a
+                href="#expérience-utilisateur" class="glossary-ref">expérience
+                utilisateur</a>] et de l'UI [<a href="#interface-utilisateur" class="glossary-ref">interface
+                utilisateur</a>], mais on est en
+              train de voir se passer exactement le même processus de
+              monopolisation aujourd'hui avec Figma [<a href="#logiciel" class="glossary-ref">logiciel</a> spécialisé
+              dans la
+              conception d'UX et UI]. Tout cela me semble alors presque lié à une
+              Taylorisation [systématisation de la production pour un rendement
+              maximum] des métiers du design faisant qu'il nous semble plus
+              pratique, plus efficace de se reposer sur un <a href="#logiciel" class="glossary-ref">logiciel</a> plutôt
+              que de
+              laisser une liberté aux personnes.
+            </p>
+            <h4>
+              Que penses-tu des outils de production graphique libres plus <q>génériques</q>, tels que Scribus,
+              comparés à d'autres tels que
+              Paged.js&#8239;?
+            </h4>
+            <p>
+              Je pense que c'est vraiment super que le libre et que cette
+              diversité existent, et je pense qu'il y a un vrai intérêt à aller
+              vers de la programmation qui offre une puissance, une liberté, un
+              pouvoir qui est assez incroyable et jouissif en tant que designer.
+            </p>
+            <p>
+              Pour autant, et c'est un peu mon regret, une chose que j'ai essayé
+              de dire dans ma thèse, c'est que je trouve cela triste qu'on ait si
+              rapidement abandonné les <a href="#logiciel" class="glossary-ref">logiciels</a> parce qu'on ne pense pas
+              de la
+              même manière quand on pense à travers la programmation ou quand on
+              pense à travers des interfaces graphiques, on ne visualise pas les
+              choses et on n'interagit pas de la même manière.
+            </p>
+            <p>
+              Je ne dis pas pour autant qu'il y a une façon qui soit meilleure que
+              l'autre. Je pense que les deux sont passionnantes. On peut faire des
+              choses différentes avec les deux, mais je suis vraiment persuadée
+              que la programmation seule a quand même des limitations sévères, il
+              y a des choses qu'elle n'offre pas de manière <q>naturelle</q>, une
+              facilité que l'on retrouve dans les <a href="#logiciel" class="glossary-ref">logiciels</a> à interfaces
+              graphiques. Je trouve dommage qu'il n'y ait que très peu
+              d'explorations actuellement sur des mécanismes d'interface graphique
+              qui offriraient de nouvelles manières de mettre en page, par
+              exemple.
+            </p>
+          </section>
+          <section id="etude-de-projets">
+            <h2>Étude de projets</h2>
+            <p>
+              <a target="_blank" rel="noopener noreferrer"
+                href="memoire_analyses.html">vertpierre.com/websites/memoire_dnmade/memoire_analyses.html</a>
+            </p>
+          </section>
+          <section id="sommaire-3">
+            <h3>Sommaire</h3>
+            <ul>
+              <li><a href="#pagedjs">Paged.js</a></li>
+              <li><a href="#visual-culture">Visual Culture</a></li>
+              <li>
+                <a href="#designing-design-tools">Designing design tools</a>
+              </li>
+              <li>
+                <a href="#design-et-humanites-numeriques">Design et humanités numériques</a>
+              </li>
+            </ul>
+          </section>
+          <section id="pagedjs">
+            <h3>Paged.js</h3>
+            <section id="logiciel-dedition-augmente">
+              <h4><a href="#logiciel" class="glossary-ref">Logiciel</a> d'édition augmenté</h4>
+              <p>
+                Paged.js est une <a href="#bibliothèque-informatique" class="glossary-ref">bibliothèque</a> <a
+                  href="#javascript" class="glossary-ref">JavaScript</a> libre et <a href="#logiciel-open-source" class="glossary-ref">open source</a>, qui
+                permet de réaliser des mises en page de documents imprimables en
+                PDF directement depuis un navigateur. Cette <a href="#bibliothèque-informatique"
+                  class="glossary-ref">bibliothèque</a> est donc
+                semblable à un <a href="#logiciel" class="glossary-ref">logiciel</a> de <a
+                  href="#pao-publication-assistée-par-ordinateur" class="glossary-ref">PAO</a>.
+              </p>
+              <p>
+                Ce projet s'adresse principalement au domaine de la production, et
+                a été initié en 2017 par Adam Hyde [créateur à l'initiative de
+                nombreux projets mettant en avant l'<a href="#logiciel-open-source" class="glossary-ref">open source</a> dans le milieu de
+                la publication, au travers de nouvelles manières de la repenser].
+                Il dirige des projets techniques, construit des plateformes, des
+                méthodologies au sein de Coko [Collaborative Knowledge]
+                Foundation, afin de soutenir la production et la publication de
+                documents et connaissances en <a href="#logiciel-open-source" class="glossary-ref">open source</a>.
+              </p>
+              <p>
+                Aujourd'hui, Julie Blanc [graphiste qui prépare actuellement une
+                thèse en ergonomie et design graphique, questionnant notamment la
+                mise en page et l'automatisation dans le milieu du graphisme] est
+                l'une des contributrices les plus importantes de ce projet, en
+                apportant notamment son savoir en <a href="#css-cascading-style-sheet" class="glossary-ref">CSS</a>.
+              </p>
+              <figure>
+                <img src="images/22.webp" alt="Capture d'écran de la page d'accueil du site Paged.js." />
+                <figcaption>
+                  Capture d'écran de la page d'accueil du site Paged.js. HYDE, Adam.
+                  <em>Paged.js</em>, 2017. [en ligne], disponible sur :
+                  <a target="_blank" rel="noopener noreferrer"
+                    href="https://www.pagedjs.org">https://www.pagedjs.org</a>,
+                  consulté le 3 janvier 2021.
+                </figcaption>
+              </figure>
+
+
+              <p>
+                Paged.js est ainsi une <a href="#bibliothèque-informatique" class="glossary-ref">bibliothèque</a> <a
+                  href="#javascript" class="glossary-ref">JavaScript</a> qui va permettre
+                d'étendre les possibilités de langage de base du <a href="#web" class="glossary-ref">Web</a>, telles que
+                le <a href="#css-cascading-style-sheet" class="glossary-ref">CSS</a>, afin de l'adapter à la production
+                de mises en page. Cette
+                extension de langage s'appelle alors une <a href="#prothèse-démulation" class="glossary-ref">prothèse
+                  d'émulation</a>,
+                puisqu'elle permet de faire supporter de nouvelles normes aux
+                navigateurs qui ne les supportent pas encore.
+              </p>
+              <p>
+                Le projet s'inscrit dans une démarche ancrée dans l'esprit du <a href="#web"
+                  class="glossary-ref">Web</a>,
+                puisque les nouvelles fonctions ajoutées au <a href="#css-cascading-style-sheet"
+                  class="glossary-ref">CSS</a> suivent les normes
+                de médias paginées publiées par le <a href="#w3c-world-wide-web-consortium"
+                  class="glossary-ref">W3C</a>.
+              </p>
+              <p>
+                Ainsi, grâce à cette <a href="#bibliothèque-informatique" class="glossary-ref">bibliothèque</a> et à
+                l'apprentissage de
+                certaines de ses nouvelles fonctions, il est possible de créer des
+                documents dédiés à la publication au sein même de son navigateur,
+                en utilisant les langages standards du <a href="#web" class="glossary-ref">web</a> tels que le <a
+                  href="#html-hypertext-markup-language" class="glossary-ref">HTML</a> et le
+                <a href="#css-cascading-style-sheet" class="glossary-ref">CSS</a>. Avec un peu d'entraînement, n'importe
+                quel graphiste ayant
+                des connaissances sur la création de <a href="#web" class="glossary-ref">sites web</a> peut créer des
+                objets de publication allant du <a href="#fanzine" class="glossary-ref">fanzine</a> à un livre plus
+                étoffé
+                [pour lequel Paged.js a été imaginé], au sein d'un navigateur. Il
+                y a ainsi cette volonté de créer un système complètement ouvert,
+                aussi accessible grâce à un GitLab, mais surtout un <a href="#web" class="glossary-ref">site web</a>
+                très
+                bien documenté, que ce soit au niveau de la mise en place globale
+                d'un projet ou des divers petits détails de la <a href="#bibliothèque-informatique"
+                  class="glossary-ref">bibliothèque</a>.
+              </p>
+              <figure>
+                <img src="images/23.webp"
+                  alt="Image présentant la méthode de travail mise en place grâce à Paged.js et citation de l'article TAFFINS." />
+                <figcaption>
+                  Image présentant la méthode de travail mise en place grâce à
+                  Paged.js et citation suivante provenant de l'article : TAFFINS, Nicolas. <q>Dans les recoins de
+                  la double page (Paged.js à la maison, saison 2)</q>, in
+                  <em>Polylogue</em>, 1 mars 2021. [en ligne], disponible sur :
+                  <a target="_blank" rel="noopener noreferrer"
+                    href="https://polylogue.org/apres-la-page-la-double-page/">https://polylogue.org/apres-la-page-la-double-page/</a>,
+                  consulté le 27 octobre 2021.
+                </figcaption>
+              </figure>
+
+            </section>
+          </section>
+          <section id="liens-au-libre">
+            <h3>Liens au libre</h3>
+            <p>
+              Ce qui est intéressant ici, c'est que Paged.js permet de
+              complètement repenser la manière de faire de la mise en page, en
+              utilisant des standards et formats complètement ouverts. De plus, le
+              fait que la <a href="#bibliothèque-informatique" class="glossary-ref">bibliothèque</a> se base sur les
+              langages du <a href="#web" class="glossary-ref">web</a>, donc des
+              langages de programmation, permet également de mettre en place
+              diverses expérimentations en utilisant des éléments génératifs
+              autant que des animations. Paged.js a de fait été repris par
+              PrePostPrint, qui est à la fois un label et un <a href="#web" class="glossary-ref">site web</a> dont
+              l'objectif est de promouvoir des objets et des ressources graphiques
+              basées sur des créations expérimentales, libres, et bien
+              documentées. Il a pour but de rassembler divers <a href="#logiciel" class="glossary-ref">logiciels</a> et
+              travaux
+              utilisant des techniques d'édition expérimentales et d'aider à
+              rendre leurs projets et outils plus accessibles.
+            </p>
+            <p>
+              Cette <a href="#bibliothèque-informatique" class="glossary-ref">bibliothèque</a> permet également de
+              repenser la publication de
+              manière plus modulaire et plus ouverte, comme le souligne Nicolas
+              Taffin [concepteur graphique et éditeur], qui travaille aux éditions
+              C&amp;F [dont il est le cofondateur avec Hervé Le Crosnier] :
+            </p>
+            <blockquote>
+              <p><q>L'auteur et le designer travaillent ensemble sur le livre, chacun
+                a ses fichiers. Au vu de la mise en page, chacun peut décider de
+                changer des choses, l'auteur peut couper du texte par exemple, le
+                designer peut déplacer des éléments, ajuster localement ses règles
+                de mise en page, mais en évitant d'intervenir dans le fichier de
+                l'auteur pour cela.</q></p>
+            </blockquote>
+            <p>
+              En effet, en travaillant directement chacun de son côté sur des
+              fichiers qui vont ensuite être réunis dans la mise en page finale,
+              il est possible de créer un livre où les textes de l'auteur ainsi
+              que les modifications du graphistes peuvent être appliquées en temps
+              réel grâce à un serveur hébergeant les fichiers, comme le fait
+              actuellement Nicolas Taffin au sein de la collection Interventions,
+              en utilisant ici NextCloud [site d'hébergement de fichiers et
+              plateforme de collaboration qui peut être auto-hébergée. C'est une
+              alternative libre au Drive de Google].
+            </p>
+            <p>
+              Ainsi, avec quelques idées et extensions, Paged.js peut devenir une
+              plateforme d'édition en temps réel, ce qui est notamment permis par
+              son ancrage dans une logique de <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a>. En
+              outre, Paged.js
+              met aussi en avant la question de la pérennité des fichiers. En
+              effet, là où des <a href="#logiciel" class="glossary-ref">logiciels</a> tels que InDesign [<a
+                href="#logiciel-propriétaire" class="glossary-ref">logiciel propriétaire</a>
+
+              de <a href="#pao-publication-assistée-par-ordinateur" class="glossary-ref">PAO</a> lancé en 1999] de Adobe
+              [éditeur de <a href="#logiciel" class="glossary-ref">logiciels</a> de création
+              <a href="#logiciel-propriétaire" class="glossary-ref">propriétaire</a>] utilisent des formats de fichiers <a href="#logiciel-propriétaire" class="glossary-ref">propriétaires</a> et
+              complètement opaques sur leur fonctionnement, Paged.js a la force de
+              proposer des formats de fichiers supportés par quasiment n'importe
+              quel <a href="#logiciel" class="glossary-ref">logiciel</a> d'édition de texte brut, puisque ce dernier
+              repose sur
+              des langages de programmation ouverts. Si on a ici un cas extrême
+              avec des langages <a href="#web" class="glossary-ref">web</a>, il me semble néanmoins que les outils
+              libres
+              ont cette force de reposer sur des standards, et à minima sur des
+              formats de fichiers ouverts, permettant de fait d'avoir des
+              créations qui ne dépendent pas d'un seul outil, donc des créations
+              qui vont avoir la capacité d'être réutilisées dans le temps.
+            </p>
+          </section>
+          <section id="visual-culture">
+            <h3>Visual Culture</h3>
+            <figure>
+              <img src="images/24.webp" alt="Capture d'écran de la page Visual Culture du site d'OSP." />
+              <figcaption>
+                Capture d'écran de la page Visual Culture du site d'OSP. Collectif OSP.
+                <em>Visual Culture</em>, 2014. [en ligne], disponible sur :
+                <a target="_blank" rel="noopener noreferrer"
+                  href="http://osp.kitchen/tools/visualculture">http://osp.kitchen/tools/visualculture</a>,
+                consulté le 3 janvier 2021.
+              </figcaption>
+            </figure>
+
+
+            <section id="versionnage-du-visuel">
+              <h4>Versionnage du visuel</h4>
+              <p>
+                Visual Culture est un projet libre qui utilise Git [<a href="#logiciel-de-versionnage"
+                  class="glossary-ref">logiciel de
+                  versionnage</a> décentralisé et développé par Linus Torvald, créateur
+                de Linux], une sorte de système d'archivage des versions du <a href="#code-source"
+                  class="glossary-ref">code
+                  source</a> d'un projet pour le visuel, lancé par le collectif OSP
+                [Open Source Publishing, un collectif de graphistes qui travaille
+                exclusivement avec des outils libres et <a href="#logiciel-open-source" class="glossary-ref">open source</a>] au début de
+                l'année 2014 sous la forme d'un financement participatif qui n'a
+                pas abouti.
+              </p>
+              <p>
+                Par ailleurs, ce projet qui a été développé en interne au sein du
+                collectif existait déjà avant le lancement du financement, et
+                existe toujours aujourd'hui, puisqu'il fait partie intégrante de
+                son <a href="#web" class="glossary-ref">site web</a>. On ne retrouve cependant pas toujours certaines
+                fonctionnalités qui auraient dû être développées grâce au
+                financement participatif. D'autres systèmes tels que Git
+                existaient déjà auparavant, avec des fonctionnements plus ou moins
+                proches de ce dernier, mais les plus performants étaient souvent
+                très chers et proposaient un système fermé et centralisé. Git a
+                alors su se démarquer par un fonctionnement décentralisé et en
+                <a href="#pair-à-pair" class="glossary-ref">pair-à-pair</a>. C'est une démarche qui s'inscrit pleinement
+                dans
+                l'esprit du <a href="#web" class="glossary-ref">Web</a>, d'autant plus que Git est un projet libre et
+                donc
+                complètement ouvert.
+              </p>
+              <p>
+                Mais comme son histoire l'indique, ce projet a été initialement
+                créé pour et par des développeurs. De fait, il rend uniquement
+                compte des changements textuels au sein d'un fichier. Même
+                aujourd'hui, des plateformes collaboratives basées sur Git telles
+                que GitLab ou GitHub [tous deux sont des systèmes de gestion de
+                texte collaboratifs <a href="#logiciel-propriétaire" class="glossary-ref">propriétaires</a> utilisant Git, mais GitLab
+                propose une version auto-hébergeable <a href="#logiciel-open-source" class="glossary-ref">open source</a>] ne permettent
+                pas d'afficher de manière efficace les différentes versions d'une
+                production visuelle. Visual Culture repose donc sur cette base
+                qu'est Git, et a pour but d'offrir un <a href="#logiciel" class="glossary-ref">logiciel</a> pour
+                visualiser le
+                processus de création, archiver et échanger des données, des
+                changements dans des projets donnant une grande part au visuel tel
+                que le graphisme. Dans l'idéal, on pourrait alors visualiser les
+                différentes versions d'un fichier, ce qui permettrait de
+                comprendre et d'explorer l'histoire de ces objets numériques,
+                comme une sorte de système d'archivage. Une fois le fichier
+                modifié, ces modifications peuvent être partagées avec les
+                collaborateurs, mais aussi avec le public, dans une optique
+                d'ouverture qui est propre au libre. Aujourd'hui, même si le
+                financement participatif n'a pas abouti, ce projet continue de
+                vivre au travers du <a href="#web" class="glossary-ref">site web</a> d'OSP.
+              </p>
+              <p>
+                On peut retrouver pour chacun de leurs projets un historique des
+                changements, accessible visuellement sous la forme d'une longue
+                frise chronologique, où chaque changement est représenté par de
+                petites notes, avec un espace plus ou moins important entre chaque
+                en fonction du temps qui s'est écoulé entre deux modifications.
+                Même si l'on retrouve à l'intérieur des projets une visualisation
+                des fichiers images, il ne semble pas y avoir un historique de ces
+                versions de fichiers, et les notes présentes sur la frise
+                chronologique n'affichent pas d'images.
+              </p>
+              <figure>
+                <img src="images/25.webp" alt="Visualisation de l'historique des avancées sur le site d'OSP." />
+                <figcaption>
+                  Visualisation de l'historique des avancées sur le site d'OSP.
+                  Collectif OSP. <em>Visual Culture</em>, 2014. [en ligne], disponible sur :
+                  <a target="_blank" rel="noopener noreferrer"
+                    href="http://osp.kitchen/tools/visualculture">http://osp.kitchen/tools/visualculture</a>,
+                  consulté le 3 janvier 2021.
+                </figcaption>
+              </figure>
+
+            </section>
+            <section id="liens-au-libre-2">
+              <h4>Liens au libre</h4>
+              <p>
+                Visual Culture est ainsi un outil qui me semble complémentaire à
+                une pratique du graphisme qui se veut plus ouverte, puisque c'est
+                un projet qui permet une collaboration et une étude approfondie
+                des fichiers réalisés par les créateurs, en présentant
+                l'historique des images, des typographies, ainsi que les choix qui
+                ont mené à appliquer ces diverses modifications. Ce projet offre
+                une autre approche du graphisme, dans laquelle la notion de
+                partage de la connaissance est au centre de la création puisqu'il
+                s'enracine dans la dynamique des <a href="#logiciel-libre" class="glossary-ref">logiciels libres</a>. Il
+                a pour but
+                de partager des méthodes de collaboration très utilisées dans le
+                milieu du développement, de les rendre accessibles à un public de
+                professionnels de l'image.
+              </p>
+              <p>
+                Cette méthode de travail, qui est aujourd'hui très répandue dans
+                le monde de la programmation, me paraît représenter une voie
+                intéressante pour la pratique du graphisme, puisque plus qu'un
+                système de versionnage, Visual Culture s'inscrit dans une démarche
+                ouverte, qui permet de transmettre la pratique du graphisme, son
+                fonctionnement, d'ouvrir les connaissances à tous. Mais qui permet
+                également, me semble-t-il, d'avoir un outil qui pourrait mieux
+                présenter les différentes versions et évolutions d'un fichier ou
+                d'un projet avec un client, mieux réadapter un design en ayant
+                accès à ses anciennes versions, et tout cela de manière
+                simplifiée, avec un système d'archivage puissant.
+              </p>
+            </section>
+          </section>
+          <section id="designing-design-tools">
+            <h3>Designing design tools</h3>
+            <p>
+              MAUDET, Nolwenn. <em>Designing design tools</em>, 2017. [en ligne], disponible sur :
+              <a target="_blank" rel="noopener noreferrer"
+                href="https://designing-design-tools.nolwennmaudet.com/">https://designing-design-tools.nolwennmaudet.com/</a>,
+              consulté le 3 novembre 2021.
+            </p>
+            <blockquote>
+              <p><q>The stagnation of the design tool landscape led to the progressive
+                invisibility of design software in designers practice.</q></p>
+            </blockquote>
+            <blockquote>
+              <p><q>Experienced designers know that off-the-shelf, general software
+                tools obscure the potential of software as a medium for expression
+                and communication. Writing custom, unique tools with software opens
+                new potentials for creative authorship.</q></p>
+              <cite>Reas, C. &amp; McWilliams, C. 2012. <em>Programmer avec Erik van Blokland, Catalogtree,
+                  Amanda Cox,
+                  Nicholas Felton, FIELD, LUST, Boris Müller, onformative, Jonathan
+                  Puckey, Sosolimited &amp; Trafik</em>, Graphisme en France,
+                code&lt;&gt;outils&lt;&gt;design. Centre National d'Art Plastique.</cite>
+            </blockquote>
+            <blockquote>
+              <p><q>Why couldn't we accept that tools influence us and that we
+                could choose them depending on their impact&#8239;? Shouldn't we ask
+                ourselves which tool is appropriate before mechanically resorting to
+                our usual software&#8239;?</q></p>
+              <cite>Donnot, K. 2011. <em>Outil Numérique et Design Graphique</em>. Thèse, École des Beaux-Arts de
+                Rennes.</cite>
+            </blockquote>
+            <blockquote>
+              <p><q>That is why, for example, a command approach to perform alignment
+                does not necessarily ease designers’ work. In fact, this approach
+                limits exploration.</q></p>
+            </blockquote>
+            <blockquote>
+              <p><q>Therefore I argue that we need to preserve the power of graphical
+                user interface tools while enhancing them with more computational
+                power.</q></p>
+            </blockquote>
+            <p>
+              Citations tirées de la thèse : MAUDET, Nolwenn. <em>Designing design
+                tools</em>, 2017. [en ligne], disponible sur :
+              <a target="_blank" rel="noopener noreferrer"
+                href="https://designing-design-tools.nolwennmaudet.com/">https://designing-design-tools.nolwennmaudet.com/</a>,
+              consulté le 3 janvier 2021.
+            </p>
+            <section id="un-outil-plus-ouvert">
+              <h4>Un outil plus ouvert</h4>
+              <p>
+                Cette thèse de doctorat en Interaction Homme-Ordinateur a été
+                réalisée en 2017 par Nolwenn Maudet [designer d'interaction et
+                chercheuse en design], qui travaille notamment au sein du
+                collectif BAM [un studio de design favorisant l'autonomie du
+                designer et de l'utilisateur dans ses productions]. De fait, cet
+                écrit prend un ton académique, presque scientifique puisqu'il va
+                avoir une démarche fortement basée sur des pratiques que l'on
+                retrouve au sein de la culture scientifique, avec différents tests
+                proposés directement à des designers. Nolwenn Maudet explore le
+                fond tant que la forme des <a href="#logiciel" class="glossary-ref">logiciels</a> de production
+                graphique, et
+                remet en question le fonctionnement de ces <a href="#logiciel" class="glossary-ref">logiciels</a>, en
+                les
+                opposant à la manière de créer et d'utiliser les outils des
+                designers aujourd'hui. Elle met en avant d'autres manières
+                d'imaginer le <a href="#logiciel" class="glossary-ref">logiciel</a> du graphiste, notamment au travers
+                du
+                développement et d'outils qui proposent plus de liberté. En effet,
+                les <a href="#logiciel" class="glossary-ref">logiciels</a> actuels, et notamment ceux de la suite Adobe
+                Creative Cloud [suite de divers <a href="#logiciel" class="glossary-ref">logiciels</a> créatifs
+                <a href="#logiciel-propriétaire" class="glossary-ref">propriétaires</a>
+                appartenant à Adobe], n'ont que très peu évolué depuis les 3
+                dernières décennies et sont devenus tellement omniprésents
+                aujourd'hui que l'on a tendance à omettre de les questionner : ils
+                en deviennent alors invisibles.
+              </p>
+              <p>
+                Cette thèse porte donc sur un décalage entre la pratique
+                quotidienne des graphistes et les outils actuels du design
+                graphique qui sont proposés. Ainsi, les outils de conception
+                traditionnels tels que la suite Adobe dissocient la créativité de
+                l'utilisation de l'outil, en priorisant plutôt des valeurs comme
+                l'efficacité et la facilité d'utilisation, qui permettraient
+                d'avoir plus de temps pour être créatif. La thèse se décompose en
+                deux grandes parties, présentant en tout 13 chapitres. Dans la
+                première partie de sa thèse, Nolwenn Maudet étudie les pratiques
+                des designers, au travers d'outils numériques qui permettent une
+                étude de leur comportement au quotidien ou directement dans les
+                <a href="#logiciel" class="glossary-ref">logiciels</a> qu'ils utilisent. Ces études sont basées sur 4
+                principes
+                utilisés par les graphistes, tels que la couleur, l'alignement, la
+                mise en page, et la collaboration.
+              </p>
+              <p>
+                Dans une seconde partie, une fois ces pratiques définies par une
+                étude approfondie des comportements des designers graphiques et de
+                leur nécessité, l'auteur s'intéresse à la création d'outils de
+                conception qui soutiennent ces principes majeurs et leur
+                exploration par des designers. Nolwenn Maudet propose ainsi de
+                repenser les <a href="#logiciel" class="glossary-ref">logiciels</a> de conception, de les transformer
+                pour en
+                outre rapprocher la pratique du développement, en la liant à
+                l'interface graphique. Le développement informatique est en effet
+                une pratique vers laquelle se tournent de nombreux designers afin
+                de retrouver une plus grande liberté dans leur conception. Dans
+                l'optique de repenser son rapport à sa pratique, et donc à
+                l'outil, cette notion d'invisibilité de l'outil me semble très
+                intéressante. En effet, la pratique du designer revient sans cesse
+                à questionner les outils qui peuvent lui servir pour une tâche
+                autant que pour un résultat donné, comme on questionnerait le
+                choix d'utiliser une imprimante laser plutôt qu'une risographie.
+                L'outil, notamment pour le designer, n'est pas quelque chose qui
+                est censé aller de soi&#8239;; il engendre des questions esthétiques,
+                techniques, voire même parfois éthiques, qui font partie du
+                processus de création et ne devraient pas être prises comme
+                acquises.
+              </p>
+            </section>
+            <section id="liens-au-libre-3">
+              <h4>Liens au libre</h4>
+              <p>
+                Par ailleurs, au sein de sa thèse Nolwenn Maudet présente la
+                création de ces outils basés directement sur la pratique des
+                graphistes, et la manière avec laquelle ces derniers se
+                réapproprient ces outils en les adaptant à une pratique plus
+                personnelle. Cette réappropriation passe par une possibilité
+                accrue d'adapter ses outils. Ils peuvent de fait évoluer par leur
+                flexibilité, permettant de créer des outils puissants. Cette
+                manière d'imaginer l'outil du graphiste comme malléable s'inscrit
+                complètement dans l'éthique hacker, mais aussi dans la démarche
+                libre, et se rapproche de fait des outils libres actuels qui ont
+                tous cette capacité d'adaptation par la programmation [directement
+                en ligne de codes ou par de la <a href="#programmation-visuelle" class="glossary-ref">programmation
+                  visuelle</a>].
+              </p>
+              <p>
+                Autre fait intéressant qui n'est mentionné qu'à la fin du site, cette thèse a
+                été rédigée uniquement sous <a href="#logiciel-libre" class="glossary-ref">logiciels libres</a> en
+                utilisant le
+                format <a href="#web" class="glossary-ref">web</a> avec du <a href="#html-hypertext-markup-language"
+                  class="glossary-ref">HTML</a>, et la thèse imprimée a été exportée en
+                utilisant HTML2PRINT [<a href="#logiciel" class="glossary-ref">logiciel</a> de <a
+                  href="#pao-publication-assistée-par-ordinateur" class="glossary-ref">PAO</a> développé par OSP, qui
+                utilise les langages du <a href="#web" class="glossary-ref">web</a> et permet de convertir une page <a
+                  href="#html-hypertext-markup-language" class="glossary-ref">HTML</a>
+                en document imprimable. Il est d'une certaine manière semblable à
+                Paged.js]. Par ailleurs, dans la même lignée qu'Anthony Masure,
+                cette thèse a été publiée sous la <a href="#licence" class="glossary-ref">licence</a> CC-BY-NC-SA [<a
+                  href="#licence" class="glossary-ref">licence</a>
+
+                Creative Commons, un type de <a href="#licence" class="glossary-ref">licence</a> <a href="#logiciel-open-source" class="glossary-ref">open source</a> très
+                adaptable.
+                Ici CC = Creative Commons, BY = communiquer le nom de l'auteur, NC
+                = non commercial, SA = redistribuer sous la même <a href="#licence" class="glossary-ref">licence</a>],
+                intégrant d'autant plus ce document dans une pratique du libre par
+                l'utilisation de <a href="#logiciel" class="glossary-ref">logiciels</a> alternatifs spécifiques qui
+                permettent
+                de passer du format <a href="#web" class="glossary-ref">Web</a> à l'imprimé.
+              </p>
+            </section>
+          </section>
+          <section id="design-et-humanites-numeriques">
+            <h3>Design et humanités numériques</h3>
+            <p>
+              Anthony Masure. <em>Design et humanités numériques</em>, Paris : éd.
+              B42, coll. Esthétique des données, 2017.
+            </p>
+            <blockquote>
+              <p><q>Les icônes remplacent les <q>lignes de commande</q> qui se voient
+                <q>refoulées</q> un peu plus en profondeur à chaque itération du <q><a href="#système-dexploitation"
+                    class="glossary-ref">système
+                    d'exploitation</a></q>, limitant d'un côté nos possibilités d'accéder au
+                centre technique des machines, et permettant, d'un autre côté, à de
+                plus en plus de personnes d'accéder au <q>monde du computationnel</q>.</q>
+              </p>
+              <cite>Design et humanités numériques, p. 25</cite>
+            </blockquote>
+            <blockquote>
+              <p><q>Le design apparaît comme la nouvelle fondation pour la
+                conceptualisation et la production des connaissances.
+              </p>
+              <p>
+                Anne Burdick, Johanna Drucker, Peter Lunenfeld, Todd Presner,
+                Jeffrey Schnapp&#8239;; Digital_Humanities, op. cit., p. 117.</q></p>
+              <cite>Design et humanités numériques, p. 32</cite>
+            </blockquote>
+            <blockquote>
+              <p><q>Où situer alors le travail du designer&#8239;? Travaille-t-il pour
+                l'utilisateur ou pour le profit des usages que les firmes privées
+                souhaitent faire de cet espace&#8239;?</q></p>
+              <cite>Design et humanités numériques, p. 57</cite>
+            </blockquote>
+            <blockquote>
+              <p><q>Celui qui est <q>au service de</q> n'est pas libre, il cherche, dit
+                Montaigne, <q>à s'enrichir</q>.</q></p>
+              <cite>Design et humanités numériques, p. 60</cite>
+            </blockquote>
+            <blockquote>
+              <p><q>Les <a href="#logiciel" class="glossary-ref">logiciels</a> dits <q>de création</q> jouent un
+                rôle
+                essentiel, puisque leur appellation même indique un nœud entre les notions de
+                <q>programmes</q> (supposant une modélisation) et de <q>créativité</q> (qui ne
+                peut avoir lieu sans écarts).</q>
+              </p>
+              <cite>Design et humanités numériques, p. 67</cite>
+            </blockquote>
+            <blockquote>
+              <p><q>La chaîne graphique se réduit ainsi progressivement à un seul
+                acteur qui concentre tout le pouvoir dans un schéma pyramidal.</q></p>
+              <cite>Design et humanités numériques, p. 70</cite>
+            </blockquote>
+            <p>
+              Citations tirées de l'ouvrage : MASURE, Anthony.
+              <em>Design et humanités numériques</em>, Paris : éd. B42, coll.
+              Esthétique des données, 2017.
+            </p>
+            <section id="le-designer-et-ses-outils">
+              <h4>Le designer et ses outils</h4>
+              <p>
+                Design et humanités numériques est un essai rédigé de mars 2015 à
+                mai 2017 par Anthony Masure, chercheur en design. Le livre a été
+                publié en 2017 en tant que premier livre de la collection
+                Esthétique des données aux éditions B42 [réputée pour ses ouvrages
+                consacrés au domaine du design et de l'art], mais aussi comme
+                premier texte sous <a href="#licence" class="glossary-ref">licence</a> libre de la maison d'édition. Ce
+                texte
+                est ainsi un essai qui questionne et met en relation le design et
+                les humanités numériques, pour une collection qui portait à
+                l'origine le nom de 404. Le travail sur cet essai est issu de la
+                proposition de Nicolas Thély [chercheur et professeur en art,
+                esthétique et humanités numériques] qui était dans le jury de
+                thèse d'Anthony Masure, et lui a proposé de rédiger un
+                prolongement de sa thèse.
+              </p>
+              <p>
+                Ce livre prend deux formes : une forme imprimée qui reprend une
+                partie de sa thèse, et en extrapole une autre au travers de 7
+                chapitres qui peuvent être lus indépendamment, et un <a href="#web" class="glossary-ref">site web</a>
+                qui
+                contient des contenus complémentaires. Cette seconde partie en
+                ligne permet d'avoir accès librement à des contenus
+                complémentaires tels que des images, des descriptions et analyses
+                d'objets, qui ont été retranchés de la version imprimée pour des
+                questions de place et d'encombrement liées à une volonté
+                d'accessibilité. Accessibilité notamment économique mais aussi due
+                à son format réduit. Le site permet dès lors de trouver des images
+                qui complètent ces contenus, et le site devait également proposer
+                un an plus tard une version de l'ouvrage sous <a href="#licence" class="glossary-ref">licence</a> libre
+                dans
+                son intégralité.
+              </p>
+              <p>
+                À travers cet essai, Anthony Masure tente de nous faire prendre du
+                recul sur les liens qui peuvent exister entre le design et les
+                enjeux de ce que l'on appelle <q>recherche et développement</q>. Il
+                lie alors le design aux humanités numériques, qui pourraient être
+                définies comme l'association de pratiques savantes en littérature,
+                en sciences humaines, avec des matériaux numériques de tous
+                ordres, qu'ils soient <a href="#logiciel" class="glossary-ref">logiciels</a> ou matériels.
+              </p>
+              <p>
+                Ainsi, ce qui rapproche selon lui ces deux domaines est que les
+                humanités numériques, à l'instar du design, sont aujourd'hui
+                confrontées à des processus numériques depuis de nombreuses
+                années. Il est de fait logique que ces deux champs se rencontrent,
+                autant dans la production que dans la transmission des savoirs, au
+                travers des matériaux numériques. Au sein de l'essai, il développe
+                le fait que le domaine de la recherche et du développement est
+                aujourd'hui soumis à des exigences de rentabilité, et qu'il semble
+                que le design connaisse fréquemment, en tous cas dans le langage
+                commun, l'objectif de faire vendre.
+              </p>
+              <p>
+                Il souhaite de fait remettre
+                en question ce point de vue, avec une idée du design qui pourrait
+                au contraire déjouer ces attendus de rentabilité qui peuvent venir
+                normer nos environnements [on peut le voir notamment au travers de
+                <a href="#système-dexploitation" class="glossary-ref">systèmes d'exploitation</a> tels que Android et
+                iOS, qui sont de plus
+                en plus semblables à chaque itération, ou même au travers de sites
+                <a href="#web" class="glossary-ref">web</a> de vente, utilisant toujours les mêmes structures]. Le
+                design
+                devrait venir en opposition à cette évolution actuelle de notre
+                paysage, et devrait entamer des réflexions visant à réinventer nos
+                cadres de vie, à questionner de nouveau ce qui existe avec
+                l'apport du numérique, plutôt que de seulement l'adapter. Ainsi,
+                dans le cadre de la recherche d'Anthony Masure, le design n'a pas
+                seulement pour vocation de mettre en forme des contenus produits,
+                mais il peut aussi re-questionner la façon même de produire les
+                savoirs, que ce soit par leur valorisation, leurs formes
+                graphiques, ou même les différents médias sur lesquels ceux-ci
+                s'inscrivent.
+              </p>
+              <p>
+                Anthony Masure défend ainsi l'idée que le design a
+                plus qu'une simple valeur d'exposition, de besoin ergonomique, qui
+                peut mener à de plus en plus de normes. Il a une capacité de
+                transmettre le savoir au moyen de démarches qui peuvent être plus
+                expérimentales, et notamment au sein des Humanités Numériques. De
+                fait, comme il le dit dès la fin de son introduction, il y a de la
+                place pour une autre forme de design, qui ne suit pas la seule
+                logique industrielle.
+              </p>
+              <h4>Liens au libre</h4>
+              <p>
+                Pour la suite, je me suis alors plutôt intéressé au troisième
+                chapitre, intitulé “L'injonction à la créativité et à
+                l'innovation”, de la page 57 à 73. Ici, Masure s'intéresse à la
+                place de la productivité et au terme d'innovation dans le champ du
+                design [et notamment du <a href="#logiciel" class="glossary-ref">logiciel</a>], à ce qui permettrait de
+                déplacer des habitudes, des attendus, que l'on impose au design ou
+                que le design s'impose parfois à lui-même. Ce qu'il redoute est un
+                design à sens unique, tourné vers une logique d'efficacité, mais
+                qui risque de ce fait d'être de plus en plus normé. Au contraire,
+                il aimerait aller vers un design qui active une pluralité de
+                possibles, qui ne soit pas à sens unique. Il cherche des questions
+                plus ouvertes que le seul objectif d'être une machine à produire,
+                ce qui est notamment mis en avant par la <q>Suite Creative Cloud</q>,
+                fonctionnant comme une injonction à la créativité, à la nécessité
+                d'être créatif.
+              </p>
+              <p>
+                Dans une première partie introductive, Masure pose
+                de nombreuses questions, et notamment celles-ci : <q>Où situer
+                alors le travail du designer&#8239;? Travaille-t-il pour l'utilisateur
+                ou pour le profit des usages que les firmes privées souhaitent
+                faire de cet espace&#8239;?</q> (p. 57). Ces dernières me semblent
+                intéressantes, car elles posent une question fondamentale sur le
+                design qui me semble bien lié à la pratique du libre. Le libre,
+                par son fonctionnement, donne un accès complet à la connaissance
+                de son outil, en autorisant à faire ce qu'on veut du programme,
+                tout cela dans un objectif de donner une liberté totale à
+                l'utilisateur. Cette volonté est apparue en opposition aux
+                <a href="#logiciel" class="glossary-ref">logiciels</a> <q>privateurs</q> [qui privent
+                l'utilisateur des
+                libertés
+                définies par le <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a>], qui peuvent avoir
+                pour objectif
+                premier de se servir de l'utilisateur, et non pas de le servir.
+              </p>
+              <p>
+                La deuxième partie continue de poser cette question de service,
+                notamment à travers cette citation : <q>Celui qui est <q>au service
+                  de</q> n'est pas libre, il cherche, dit Montaigne, <q>à s'enrichir</q>.</q>
+                (p. 60). Il revient sur l'utilisation d'interfaces simplifiées, et
+                de fait vantées par les sociétés, mais qui en réalité sont une
+                expérience réfléchie de bout en bout afin d'absorber le temps de
+                l'utilisateur. Est-ce vraiment là le travail du designer&#8239;? De
+                fait, comme pour le <a href="#logiciel" class="glossary-ref">logiciel</a>, il me semble que le designer
+                doit
+                avant tout créer en ayant pour objectif de servir l'utilisateur,
+                et non pas de l'utiliser dans des objectifs de rentabilité à la
+                manière d'Instagram et de son design créé pour capter l'attention.
+                L'objectif est d'avoir une pratique la plus transparente possible.
+                Dans un troisième temps, Masure présente les différences
+                fondamentales entre le design innovant et le design inventif. Le
+                terme innovation n'est pas historiquement issu du champ du design.
+                Il vient plutôt du milieu de la gestion, de l'économie, du brevet,
+                de la mise au secret des procédés techniques. De fait, si le
+                design va trop loin dans ce champ, il risque de se refermer, et de
+                ne plus être intéressant pour nous en tant que citoyens.
+              </p>
+              <p>
+                Il
+                faudrait alors plutôt créer pour l'humain, avoir un travail
+                créatif <q>pour la vie</q> (p. 67), et de fait <q>les <a href="#logiciel"
+                  class="glossary-ref">logiciels</a>
+                dits <q>de création</q> jouent un rôle essentiel, puisque leur appellation
+                même indique un nœud entre les notions de <q>programmes</q> (supposant
+                une modélisation) et de <q>créativité</q> (qui ne peut avoir lieu sans
+                écarts).</q> (p. 67). La quatrième partie développe alors cette
+                notion de <a href="#logiciel" class="glossary-ref">logiciel</a> de création, et notamment le quasi
+                monopole de
+                la suite Adobe, qui a créé une chaîne de production qui dirige
+                toutes les pratiques des designers. <q>La chaîne graphique se
+                réduit ainsi progressivement à un seul acteur qui concentre tout
+                le pouvoir dans un schéma pyramidal.</q> (p. 70). En effet, Adobe
+                est devenu une sorte d'usine du créatif, dans laquelle chacun
+                utilise les mêmes outils avec une logique de productivité dans le
+                domaine de la création, mais aussi dans la recherche de clients au
+                travers de leur plateforme Behance [plateforme <a href="#web" class="glossary-ref">web</a>, sorte de
+                portfolio où les utilisateurs de Creative Cloud peuvent présenter
+                leurs créations]. Une dépendance est dès lors créée, et notamment
+                dès l'enseignement, au sein duquel la suite Adobe est privilégiée.
+                Ceci est d'autant plus néfaste que l'accès aux <a href="#logiciel" class="glossary-ref">logiciels</a>
+                nécessite
+                un abonnement, et les fichiers créés n'utilisant pas des formats
+                ouverts, seuls les outils Adobe peuvent les ouvrir, ce qui conduit
+                à une nécessité pour tous de se soumettre à la <q>suite créative</q>.
+              </p>
+              <p>
+                Finalement, si le design s'enfonce trop profondément dans le champ
+                de l'innovation autant que dans celui de la créativité, il risque
+                de se refermer et ne plus être intéressant pour nous. Au
+                contraire, en tant qu'être humain et designer, il vaudrait mieux
+                concevoir des objets, des systèmes techniques plus ouverts, plus
+                libres, mieux partagés. Et ceci notamment dans des logiques d'open
+                source et de libre accès aux techniques ainsi qu'aux savoirs.
+              </p>
+              <p>
+                Autre fait intéressant concernant cette fois-ci la vente du livre
+                en lui-même : il n'y a eu aucun problème de vente, malgré une
+                <a href="#licence" class="glossary-ref">licence</a> libre qui rendait de fait le texte accessible
+                librement.
+                De la même manière, même si sa thèse était sous <a href="#licence" class="glossary-ref">licence</a>
+                libre, un
+                éditeur est venu vers lui afin de la faire publier, et les stocks
+                ont été écoulés en moins d'un an, provoquant de fait un nouveau
+                tirage. Il semble donc qu'en plus d'être bénéfiques à la pratique,
+                les <a href="#licence" class="glossary-ref">licences</a> libres n'empêchent pas la vente de produits.
+              </p>
+            </section>
+          </section>
+        </section>
+      </div>
+    </div>
+    <div class="col-notes">
+      <div class="main-content">
+        <h2>Notes</h2>
+        <aside class="note" id="note-01">
+          <p>
+            <a href="#note-ref-01" class="note-label">1 —</a> Macintosh est un ordinateur conçu sous la
+            direction de Steve Jobs, un entrepreneur américain qui a créé
+            l'entreprise Apple. Il sera le premier ordinateur personnel
+            disponible à grande échelle intégrant une interface graphique
+            novatrice. Les utilisateurs n'interagissent plus avec des lignes de
+            commandes textuelles, mais à l'aide d'un bureau métaphorique composé
+            d'icônes inspirées d'éléments réels.
+          </p>
+        </aside>
+        <aside class="note" id="note-02">
+          <p>
+            <a href="#note-ref-02" class="note-label">2 —</a> La suite Adobe est une suite de logiciels
+            dits “créatifs” appartenant à Adobe, créant des logiciels depuis
+            1982. Cette suite survole toutes les gammes de métiers du milieu de
+            la création, que ce soit l'audio, la vidéo, l'illustration, etc. Adobe a
+            obtenu au fur et à mesure des années une forme de quasi monopole.
+          </p>
+        </aside>
+        <aside class="note" id="note-03">
+          <p>
+            <a href="#note-ref-03" class="note-label">3 —</a> GNU pour GNU is Not Unix est le premier
+            système d'exploitation <a href="#système-dexploitation" class="glossary-ref">[voir glossaire]</a> diffusé
+            sous un nouveau type
+            de licence <a href="#licence" class="glossary-ref">[voir glossaire]</a>, la GNU GPL (GNU General Public
+            Licence)
+            qui donne une liberté totale à l'utilisateur sur le programme. Le
+            <a href="#système-dexploitation" class="glossary-ref">système d'exploitation</a> comme la <a href="#licence" class="glossary-ref">licence</a> ont été créés par Richard
+            Stallman, alors professeur au MIT.
+          </p>
+        </aside>
+        <aside class="note" id="note-04">
+          <p><a href="#note-ref-04" class="note-label">4 —</a> Logiciel libre. <a href="#logiciel-libre"
+              class="glossary-ref">[voir glossaire]</a></p>
+        </aside>
+        <aside class="note" id="note-05">
+          <p>
+            <a href="#note-ref-05" class="note-label">5 —</a> Logiciel propriétaire. <a href="#logiciel-propriétaire"
+              class="glossary-ref">[voir glossaire]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-06">
+          <p><a href="#note-ref-06" class="note-label">6 —</a> Logiciel open source. <a href="#logiciel-open-source"
+              class="glossary-ref">[voir glossaire]</a></p>
+        </aside>
+        <aside class="note" id="note-07">
+          <p><a href="#note-ref-07" class="note-label">7 —</a> Web. <a href="#web" class="glossary-ref">[voir
+              glossaire]</a></p>
+        </aside>
+        <aside class="note" id="note-08">
+          <p>
+            <a href="#note-ref-08" class="note-label">8 —</a> Linux est un noyau <a href="#noyau-informatique"
+              class="glossary-ref">[voir glossaire]</a> de
+            <a href="#système-dexploitation" class="glossary-ref">système d'exploitation</a> développé par Linus Torvald alors étudiant en
+            informatique. Lorsque le <a href="#système-dexploitation" class="glossary-ref">système d'exploitation</a> GNU a été créé, il
+            manquait un noyau libre pour avoir un système complet, et Linux a
+            par la suite été raccroché au projet de Richard Stallman : GNU/Linux
+            est né.
+          </p>
+        </aside>
+        <aside class="note" id="note-09">
+          <p>
+            <a href="#note-ref-09" class="note-label">9 —</a> Interface utilisateur. <a href="#interface-utilisateur"
+              class="glossary-ref">[voir glossaire]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-10">
+          <p>
+            <a href="#note-ref-10" class="note-label">10 —</a> La suite Adobe est plus généralement
+            appelée aujourd'hui Adobe Creative Cloud (Adobe CC) depuis son
+            passage à un système de logiciel en tant que service en 2011. Elle
+            propose ainsi des services en ligne à côté de ses logiciels qui ne
+            sont accessibles que par abonnement.
+          </p>
+        </aside>
+        <aside class="note" id="note-11">
+          <p>
+            <a href="#note-ref-11" class="note-label">11 —</a> Anthony Masure est un professeur associé
+            et responsable de la recherche à la HEAD de Genève (Haute école
+            d'art et de design) et a réalisé en 2014 une thèse en esthétique
+            nommée
+            <em>Le design des programmes, des façons de faire du numérique</em>.
+            A partir de cette dernière, il réalise en 2017 un essai,
+            <em>Design et humanités numériques</em>, pour la collection
+            Esthétique des Données éd. B42, et a participé à la création des
+            revues <em>Back Office</em> et <em>Réel-Virtuel</em>.
+          </p>
+        </aside>
+        <aside class="note" id="note-12">
+          <p>
+            <a href="#note-ref-12" class="note-label">12 —</a> Masure, Anthony.
+            <em>Design et humanités numériques</em>, Paris : éd. B42, coll.
+            Esthétique des données, 2017, p. 70. <a href="#design-et-humanites-numeriques"> [pour plus d'informations,
+              voir
+              l'annexe]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-13">
+          <p>
+            <a href="#note-ref-13" class="note-label">13 —</a> Bēhance est une plateforme Web où les
+            utilisateurs de Creative Cloud peuvent présenter leurs créations.
+            Entre portfolio et réseau social, elle sert aussi à la recherche de
+            clients pour les designers qui sont mis en concurrence dans une
+            foule de visuels.
+          </p>
+        </aside>
+        <aside class="note" id="note-14">
+          <p>
+            <a href="#note-ref-14" class="note-label">14 —</a> Creuzet, Quentin. <q>Croisades graphiques -
+            le minimalisme à l'ère du néolibéralisme</q>, in <em>Pli</em>, n° 6,
+            septembre 2020, p. 122. <a target="_blank" rel="noopener noreferrer" href="memoire_analyses.html">[pour plus
+              d'informations, voir la page étude de projets sur le site web]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-15">
+          <p>
+            <a href="#note-ref-15" class="note-label">15 —</a>Quentin Creuzet est un designer et
+            développeur Web. Il a cofondé le studio de design F451 avec
+            Domitille Debret.
+          </p>
+        </aside>
+        <aside class="note" id="note-16">
+          <p>
+            <a href="#note-ref-16" class="note-label">16 —</a> Il me semble cependant que divers outils
+            libres calquent trop souvent leurs fonctionnalités sur des <a href="#logiciel" class="glossary-ref">logiciels</a>
+            <a href="#logiciel-propriétaire" class="glossary-ref">propriétaires</a>, intégrant de fait les mêmes logiques. Il me semblerait
+            alors intéressant de repenser des outils du design destinés à une
+            pratique libre.
+          </p>
+        </aside>
+        <aside class="note" id="note-17">
+          <p>
+            <a href="#note-ref-17" class="note-label">17 —</a> Expérience utilisateur. <a href="#expérience-utilisateur"
+              class="glossary-ref">[voir glossaire]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-18">
+          <p>
+            <a href="#note-ref-18" class="note-label">18 —</a> Mitch Paone est directeur artistique au
+            studio DIA, et enseigne le design à la HEAD (Haute École d'Art et de
+            Design) de Genève, ainsi qu'à la KABK (Koninklĳke Academie van
+            Beeldende Kunsten) aux Pays-Bas.
+          </p>
+        </aside>
+        <aside class="note" id="note-19">
+          <p>
+            <a href="#note-ref-19" class="note-label">19 —</a> AfterEffects fait partie de la suite Adobe
+            CC. C'est à l'origine un logiciel de montage vidéo, aujourd'hui
+            tourné vers les effets visuels. Il est l'un des pionniers de
+            l'animation graphique assistée par ordinateur, et est de fait
+            actuellement l'outil privilégié pour le motion design, une branche
+            du graphisme centrée sur l'animation.
+          </p>
+        </aside>
+        <aside class="note" id="note-20">
+          <p>
+            <a href="#note-ref-20" class="note-label">20 —</a> Entretien avec PAONE, Mitch. <q>Le
+            mouvement plus que la matière.</q>, in <em>BackOffice</em>, n° 4,
+            avril 2021, p. 46, 53.
+          </p>
+        </aside>
+        <aside class="note" id="note-21">
+          <p>
+            <a href="#note-ref-21" class="note-label">21 —</a> Nolwenn Maudet est designer d'interaction
+            et chercheuse en design, ainsi que maître de conférence à
+            l'université de Strasbourg. Elle travaille notamment en collaboration
+            avec le collectif BAM qui prône l'autonomie du designer et de
+            l'utilisateur.
+          </p>
+        </aside>
+        <aside class="note" id="note-22">
+          <p>
+            <a href="#note-ref-22" class="note-label">22 —</a> PAO. <a href="#pao-publication-assistée-par-ordinateur"
+              class="glossary-ref">[voir glossaire]</a>
+
+          </p>
+        </aside>
+        <aside class="note" id="note-23">
+          <p><a href="#note-ref-23" class="note-label">23 —</a> MAUDET, Nolwenn.
+            <em>Designing design tools</em>, 2017. [en ligne]
+            <a target="_blank" rel="noopener noreferrer"
+              href="https://designing-design-tools.nolwennmaudet.com/">https://designing-design-tools.nolwennmaudet.com/</a>,
+            consulté le 3 janvier 2021.
+          </p>
+        </aside>
+        <aside class="note" id="note-24">
+          <p>
+            <a href="#note-ref-24" class="note-label">24 —</a> Paged.js est une bibliothèque JavaScript
+            libre, qui permet de réaliser des mises en page de documents
+            imprimables, en PDF, directement depuis un navigateur. Cette
+            bibliothèque est donc semblable à un <a href="#logiciel" class="glossary-ref">logiciel</a> de <a href="#pao-publication-assistée-par-ordinateur" class="glossary-ref">PAO</a>, et est une
+            prothèse d'émulation <a href="#prothèse-démulation" class="glossary-ref">[voir glossaire]</a> qui étend les
+            fonctionnalités du CSS <a href="#css-cascading-style-sheet" class="glossary-ref">[voir glossaire]</a>.
+            <a href="#pagedjs">[pour plus d'informations, voir l'annexe]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-25">
+          <p>
+            <a href="#note-ref-25" class="note-label">25 —</a> Blender est un <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a> de création 3D multitâche
+            (modélisation, animation, rendu) créé en 1994 par Ton Roosendaal.
+            Il est aujourd'hui l'un des <a href="#logiciel-libre" class="glossary-ref">logiciels libres</a> de création le plus
+            réputé et utilisé face aux alternatives <a href="#logiciel-propriétaire" class="glossary-ref">propriétaires</a>, notamment
+            dans divers studios.
+          </p>
+        </aside>
+        <aside class="note" id="note-26">
+          <p>
+            <a href="#note-ref-26" class="note-label">26 —</a> Système nodal. <a href="#système-nodal"
+              class="glossary-ref">[voir glossaire]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-27">
+          <p><a href="#note-ref-27" class="note-label">27 —</a> <a href="#nolwenn-maudet">[voir l'interview avec Nolwenn
+              Maudet
+              pour plus d'informations]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-28">
+          <p>
+            <a href="#note-ref-28" class="note-label">28 —</a> WYSIWYG. <a href="#wysiwyg-what-you-see-is-what-you-get"
+              class="glossary-ref">[voir glossaire]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-29">
+          <p>
+            <a href="#note-ref-29" class="note-label">29 —</a> OSP ou Open Source Publishing, est un
+            collectif de graphistes lancé en 2006, dont la pratique est
+            complètement ancrée dans l'esprit du libre. Ils n'utilisent que
+            des <a href="#logiciel-libre" class="glossary-ref">logiciels libres</a>, et publient leurs travaux sous <a href="#licence" class="glossary-ref">licence</a>
+            libre.
+          </p>
+        </aside>
+        <aside class="note" id="note-30">
+          <p>
+            <a href="#note-ref-30" class="note-label">30 —</a> Masure, Anthony. Visual Culture, Open
+            Source Publishing, Git et le design graphique, dans
+            <em>Strabic</em>, 2014. [en ligne] :
+            <a target="_blank" rel="noopener noreferrer"
+              href="https://strabic.fr/OSP-Visual-Culture">https://strabic.fr/OSP-Visual-Culture</a>, consulté le 3
+            janvier 2021.
+          </p>
+        </aside>
+        <aside class="note" id="note-31">
+          <p><a href="#note-ref-31" class="note-label">31 —</a> SVG. <a href="#svg-scalable-vector-graphics"
+              class="glossary-ref">[voir glossaire]</a></p>
+        </aside>
+        <aside class="note" id="note-32">
+          <p>
+            <a href="#note-ref-32" class="note-label">32 —</a> Inkscape est un <a href="#logiciel-libre" class="glossary-ref">logiciel libre</a>
+            permettant l'édition de fichiers conformes aux standards du SVG
+            dictés par le <a href="#w3c-world-wide-web-consortium" class="glossary-ref">W3C</a>, ainsi
+            qu'au CSS permettant de
+            mettre en forme le SVG. Il supporte également certains autres
+            formats d'<a href="#image-vectorielle" class="glossary-ref">images vectorielles</a>.
+          </p>
+        </aside>
+        <aside class="note" id="note-33">
+          <p>
+            <a href="#note-ref-33" class="note-label">33 —</a> Velvetyne (VTF) est une fonderie
+            numérique libre créée en 2010 par Frank Adebiaye. Il a rapidement
+            été rejoint par de nombreuses personnes dans ce projet qui
+            aujourd'hui propose également des workshops. La fonderie présente
+            diverses polices de caractères, qui partagent toutes un esprit
+            punk, parfois expérimental, où chaque nouvelle typographie diffère
+            de ce qui y est déjà proposé. <a target="_blank" rel="noopener noreferrer"
+              href="memoire_analyses.html">[pour plus
+              d'informations, voir la page étude de projets sur le site web]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-34">
+          <p>
+            <a href="#note-ref-34" class="note-label">34 —</a> Inter est une typographie libre
+            et <a href="#logiciel-open-source" class="glossary-ref">open source</a> conçue par Rasmus Andersson, graphiste et
+            typographe Suisse vivant à San Francisco, qui travaille
+            principalement avec ce qui se rapproche de près ou de loin à des
+            programmes. Elle est aujourd'hui utilisée par de nombreuses
+            entreprises et réappropriée par diverses versions de Linux.
+            <a target="_blank" rel="noopener noreferrer" href="memoire_analyses.html">[pour plus
+              d'informations, voir la page étude de projets sur le site web]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-35">
+          <p>
+            <a href="#note-ref-35" class="note-label">35 —</a> Raphaël Bastide est un enseignant en art,
+            design et culture numérique à Montreuil. Il a une pratique entre art
+            et graphisme et crée des objets, des programmes, des performances,
+            des instruments et divers outils.
+          </p>
+        </aside>
+        <aside class="note" id="note-36">
+          <p>
+            <a href="#note-ref-36" class="note-label">36 —</a> FragileForge est un site web ancré dans
+            une pratique libre, regroupant différents outils, expérimentations
+            et typographies réalisés par Raphaël Bastide.
+          </p>
+        </aside>
+        <aside class="note" id="note-37">
+          <p>
+            <a href="#note-ref-37" class="note-label">37 —</a> Logiciel de versionnage. <a
+              href="#logiciel-de-versionnage" class="glossary-ref">[voir glossaire]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-38">
+          <p>
+            <a href="#note-ref-38" class="note-label">38 —</a> Git est un logiciel de versionnage
+            décentralisé et en lignes de commande créé en 2005 par Linus Torvald
+            pour le développement de Linux. D'autres systèmes similaires
+            existaient alors déjà, mais les plus performants étaient souvent
+            très chers et proposaient un système fermé. Git a su se démarquer
+            par un fonctionnement décentralisé et en pair-à-pair, qui s'inscrit
+            dans la démarche libre. Il est depuis 2016 le logiciel de
+            versionnage le plus utilisé.
+          </p>
+        </aside>
+        <aside class="note" id="note-39">
+          <p>
+            <a href="#note-ref-39" class="note-label">39 —</a> GitLab est un système de gestion de texte
+            collaboratif créé en 2011 par Dmitriy Zaporozhets et Valery Sizov.
+            Il a pour but de simplifier le développement et la collaboration sur
+            les projets Git. GitHub, créé en 2008 et racheté par Microsoft en
+            2018, est une autre plateforme similaire.
+            Le <a href="#code-source" class="glossary-ref">code source</a> de ce dernier est complètement fermé, là
+            où GitLab possède une version <a href="#logiciel-open-source" class="glossary-ref">open source</a> auto-hébergeable, mais
+            aussi une seconde avec une surcouche <a href="#logiciel-propriétaire" class="glossary-ref">propriétaire</a> qui est celle de
+            la version du client web.
+          </p>
+        </aside>
+        <aside class="note" id="note-40">
+          <p><a href="#note-ref-40" class="note-label">40 —</a> Fork. <a href="#fork" class="glossary-ref">[voir
+              glossaire]</a></p>
+        </aside>
+        <aside class="note" id="note-41">
+          <p>
+            <a href="#note-ref-41" class="note-label">41 —</a> Visual Culture est un projet
+            libre de versionnage basé sur Git, et adapté pour le visuel. Il est
+            présenté en 2014 par le collectif OSP sous la forme d'un
+            financement participatif qui n'a pas abouti. Le projet était déjà
+            développé en interne, et fait aujourd'hui partie intégrante de
+            leur site web. Visual Culture présente l'arborescence complète de
+            chacun de leurs projets, avec une visualisation temporelle des
+            modifications effectuées. On peut également avoir un aperçu des
+            images utilisées dans un projet, ce que ne retrouve pas sur GitLab
+            ou GitHub. Visuels du projet page suivante. <a target="_blank" rel="noopener noreferrer"
+              href="memoire_analyses.html">[pour
+              plus
+              d'informations, voir la page étude de projets sur le site web]</a>
+          </p>
+        </aside>
+        <aside class="note" id="note-42">
+          <p>
+            <a href="#note-ref-42" class="note-label">42 —</a> Par ailleurs, si Visual Culture
+            met plus en avant la mise en forme des versions d'un projet, il me
+            semblerait intéressant d'encore plus développer ce projet pour
+            qu'il devienne à part entière un système de versionnage du visuel,
+            que ce soit au travers de la création de <a href="#web" class="glossary-ref">sites web</a>, d'affiches ..
+          </p>
+        </aside>
+        <aside class="note" id="note-43">
+          <p>
+            <a href="#note-ref-43" class="note-label">43 —</a> CREUZET, Quentin. <q>Croisades graphiques
+            – le minimalisme à l'ère du néolibéralisme</q>, in <em>Pli</em>, n°
+            6, septembre 2020.
+          </p>
+        </aside>
+        <aside class="note" id="note-44">
+          <p>
+            <a href="#note-ref-44" class="note-label">44 —</a> MASURE, Anthony.
+            <em>Design et humanités numériques</em>, Paris : éd. B42, coll.
+            Esthétique des données, 2017, p. 57.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      var colMain = document.querySelector('.col-main');
+      var sectionQuestions = document.getElementById('questions-et-conversations');
+      var sectionEtude = document.getElementById('etude-de-projets');
+      if (!colMain || !sectionQuestions || !sectionEtude) return;
+
+      var colorDefault = 'hsl(0, 0%, 96%)';
+      var colorQuestions = 'hsl(115, 100%, 90%)';
+      var colorEtude = 'hsl(155, 50%, 80%)';
+
+      function getOffsetTop(el, container) {
+        var top = 0;
+        while (el && el !== container) {
+          top += el.offsetTop;
+          el = el.offsetParent;
+        }
+        return top;
+      }
+
+      function updateGradient() {
+        var totalH = colMain.scrollHeight;
+        if (totalH <= 0) return;
+
+        var qTop = getOffsetTop(sectionQuestions, colMain);
+        var qH = sectionQuestions.offsetHeight;
+        var eTop = getOffsetTop(sectionEtude, colMain);
+        var eH = sectionEtude.offsetHeight;
+
+        var transition = Math.min(2000, totalH);
+        var lead = transition * 0.6;
+        var p0 = 0;
+        var p1 = Math.max(0, (qTop - lead) / totalH * 100);
+        var p2 = (qTop + transition - lead) / totalH * 100;
+        var p3 = Math.max(p2, (eTop - lead) / totalH * 100);
+        var p4 = (eTop + transition - lead) / totalH * 100;
+
+        var gradient = 'linear-gradient(to bottom, ' +
+          colorDefault + ' ' + p0 + '%, ' +
+          colorDefault + ' ' + p1 + '%, ' +
+          colorQuestions + ' ' + p2 + '%, ' +
+          colorQuestions + ' ' + p3 + '%, ' +
+          colorEtude + ' ' + p4 + '%, ' +
+          colorEtude + ' 100%)';
+
+        colMain.style.backgroundImage = gradient;
+        colMain.style.backgroundSize = '100% ' + totalH + 'px';
+        colMain.style.backgroundAttachment = 'local';
+        colMain.style.backgroundRepeat = 'no-repeat';
+      }
+
+      updateGradient();
+      window.addEventListener('resize', updateGradient);
+      if (window.ResizeObserver) {
+        var ro = new ResizeObserver(updateGradient);
+        ro.observe(colMain);
+      }
+    })();
+  </script>
+</body>
+
 </html>

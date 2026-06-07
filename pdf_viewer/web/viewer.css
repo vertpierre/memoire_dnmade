@@ -1125,11 +1125,15 @@ html[dir="rtl"] #sidebarContent {
   transition-duration: 0s;
 }
 
-html[dir="ltr"] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode) {
+html[dir="ltr"]
+  #outerContainer.sidebarOpen
+  #viewerContainer:not(.pdfPresentationMode) {
   transition-property: left;
   left: var(--sidebar-width);
 }
-html[dir="rtl"] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode) {
+html[dir="rtl"]
+  #outerContainer.sidebarOpen
+  #viewerContainer:not(.pdfPresentationMode) {
   transition-property: right;
   right: var(--sidebar-width);
 }
@@ -1152,10 +1156,16 @@ html[dir="rtl"] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentatio
   background-color: var(--sidebar-toolbar-bg-color);
 }
 html[dir="ltr"] #toolbarSidebar {
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    inset -1px 0 0 rgba(0, 0, 0, 0.25),
+    0 1px 0 rgba(0, 0, 0, 0.15),
+    0 0 1px rgba(0, 0, 0, 0.1);
 }
 html[dir="rtl"] #toolbarSidebar {
-  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    inset 1px 0 0 rgba(0, 0, 0, 0.25),
+    0 1px 0 rgba(0, 0, 0, 0.15),
+    0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 html[dir="ltr"] #toolbarSidebar .toolbarButton {
@@ -1434,7 +1444,9 @@ html[dir="rtl"] .secondaryToolbar {
 .doorHanger,
 .doorHangerRight {
   border-radius: 2px;
-  box-shadow: 0 1px 5px var(--doorhanger-border-color), 0 0 0 1px var(--doorhanger-border-color);
+  box-shadow:
+    0 1px 5px var(--doorhanger-border-color),
+    0 0 0 1px var(--doorhanger-border-color);
   border: var(--doorhanger-border-color-whcm);
 }
 .doorHanger:after,
@@ -1711,7 +1723,10 @@ html[dir="rtl"] .dropdownToolbarButton::after {
 }
 
 .dropdownToolbarButton > select {
-  width: calc(var(--scale-select-container-width) + var(--scale-select-overflow));
+  width: calc(
+    var(--scale-select-container-width) +
+    var(--scale-select-overflow)
+  );
   height: 28px;
   font-size: 12px;
   color: var(--main-color);
@@ -2173,7 +2188,9 @@ html[dir="rtl"] .thumbnail {
 
 .thumbnailImage {
   border: 1px solid rgba(0, 0, 0, 0);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.3);
   opacity: 0.8;
   z-index: 99;
   background-color: rgba(255, 255, 255, 1);
@@ -2565,7 +2582,8 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
   cursor: -webkit-grab !important;
   cursor: grab !important;
 }
-.grab-to-pan-grab *:not(input):not(textarea):not(button):not(select):not(:link) {
+.grab-to-pan-grab
+  *:not(input):not(textarea):not(button):not(select):not(:link) {
   cursor: inherit !important;
 }
 .grab-to-pan-grab:active,

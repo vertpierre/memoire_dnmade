@@ -1,14 +1,22 @@
-op = true;
+let op = true;
 
 function sommaire() {
-  if (op == true) {
-    $(".opacity").css("opacity", "0");
+  const elements = document.querySelectorAll(".opacity");
+  if (op === true) {
+    elements.forEach((el) => {
+      el.style.opacity = "0";
+    });
     op = false;
-    setTimeout(function () {
-      $(".opacity").css("visibility", "hidden");
+    setTimeout(() => {
+      elements.forEach((el) => {
+        el.style.visibility = "hidden";
+      });
     }, 400);
   } else {
-    $(".opacity").css({ opacity: "1", visibility: "visible" });
+    elements.forEach((el) => {
+      el.style.opacity = "1";
+      el.style.visibility = "visible";
+    });
     op = true;
   }
 }
